@@ -421,7 +421,7 @@ jobs:
         <div className="container">
           <AnimatedSection className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Comment ça <span className="gradient-text">fonctionne</span>
+              <span className="gradient-text">Documentation</span>
             </h1>
             <p className="text-xl text-muted-foreground">De l'installation à la conformité ISO 27001 en 3 étapes</p>
           </AnimatedSection>
