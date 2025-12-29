@@ -26,7 +26,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary/30">
+    <section className="py-24 lg:py-32">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -45,14 +45,14 @@ const HowItWorks = () => {
                 <div className="hidden md:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-border to-transparent z-0" />
               )}
               
-              <div className="relative bg-background rounded-2xl p-8 border border-border hover:border-accent/30 hover:shadow-glass-lg transition-all h-full">
+              <div className="relative bg-background/60 backdrop-blur-sm rounded-2xl p-8 border border-border/50 hover:border-accent/30 hover:shadow-xl hover:bg-background/80 transition-all h-full group-hover:-translate-y-1">
                 {/* Step number */}
                 <div className="absolute -top-4 left-8 px-4 py-1 gradient-primary rounded-full">
                   <span className="text-sm font-bold text-primary-foreground">{step.number}</span>
                 </div>
 
                 {/* Icon */}
-                <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:gradient-primary transition-colors">
+                <div className="w-16 h-16 bg-secondary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:gradient-primary transition-colors">
                   <step.icon className="w-8 h-8 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
                 </div>
 
