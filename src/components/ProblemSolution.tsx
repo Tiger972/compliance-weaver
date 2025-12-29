@@ -46,7 +46,7 @@ const ProblemSolution = () => {
             <span className="gradient-text">est un frein</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Découvrez comment COMPLIO transforme votre approche de la conformité
+            Découvrez comment Compl.io transforme votre approche de la conformité
           </p>
         </div>
 
@@ -84,7 +84,7 @@ const ProblemSolution = () => {
               <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center">
                 <Check className="w-5 h-5 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">Avec COMPLIO</h3>
+              <h3 className="text-xl font-semibold text-foreground">Avec Compl.io</h3>
             </div>
             
             {solutions.map((solution, index) => (
