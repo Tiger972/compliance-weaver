@@ -853,8 +853,7 @@ jobs:
                   version: "v0.1.0",
                   tests: "4 tests",
                   coverage: "8% Annex A",
-                  price: "€149/mois",
-                  priceNote: "",
+                  framework: "ISO 27001",
                   highlight: true,
                 },
                 {
@@ -862,8 +861,7 @@ jobs:
                   version: "v0.2.0",
                   tests: "10 tests",
                   coverage: "20% Annex A",
-                  price: "€299/mois",
-                  priceNote: "",
+                  framework: "ISO 27001",
                   highlight: false,
                 },
                 {
@@ -871,8 +869,7 @@ jobs:
                   version: "v0.3.0",
                   tests: "40 tests",
                   coverage: "83% Annex A",
-                  price: "€599/mois",
-                  priceNote: "",
+                  framework: "ISO 27001",
                   highlight: false,
                 },
               ].map((item, index) => (
@@ -891,8 +888,7 @@ jobs:
                     <div className="text-2xl font-bold text-foreground mb-1">{item.tests}</div>
                     <div className="text-sm text-muted-foreground mb-4">{item.coverage}</div>
                     <div className="pt-4 border-t border-border">
-                      <div className="text-lg font-semibold text-primary">{item.price}</div>
-                      <div className="text-xs text-muted-foreground">{item.priceNote}</div>
+                      <div className="text-lg font-semibold text-primary">{item.framework}</div>
                     </div>
                   </div>
 
@@ -934,6 +930,161 @@ jobs:
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+
+            {/* Future Frameworks Roadmap */}
+            <div className="mt-16">
+              <AnimatedSection>
+                <div className="text-center mb-12">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                    Évolution vers <span className="gradient-text">Multi-Référentiels</span>
+                  </h3>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Notre roadmap pour vous accompagner vers une conformité complète
+                  </p>
+                </div>
+
+                {/* Horizontal Timeline */}
+                <div className="relative">
+                  {/* Timeline Line */}
+                  <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 transform -translate-y-1/2 hidden lg:block" />
+                  
+                  {/* Animated Glow on Line */}
+                  <div className="absolute top-1/2 left-0 right-0 h-1 transform -translate-y-1/2 hidden lg:block overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 animate-pulse" />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 relative z-10">
+                    {[
+                      {
+                        framework: "ISO 27001",
+                        date: "Disponible",
+                        description: "Sécurité de l'information",
+                        status: "active",
+                        icon: Shield,
+                      },
+                      {
+                        framework: "HDS",
+                        date: "Q2 2026",
+                        description: "Hébergement données de santé",
+                        status: "upcoming",
+                        icon: Activity,
+                      },
+                      {
+                        framework: "PCI DSS",
+                        date: "Q4 2026",
+                        description: "Sécurité des paiements",
+                        status: "upcoming",
+                        icon: Lock,
+                      },
+                      {
+                        framework: "SOC 2",
+                        date: "Q2 2027",
+                        description: "Contrôles organisationnels",
+                        status: "planned",
+                        icon: BarChart,
+                      },
+                      {
+                        framework: "NIST CSF",
+                        date: "Q4 2027",
+                        description: "Framework cybersécurité",
+                        status: "planned",
+                        icon: GitBranch,
+                      },
+                    ].map((item, index) => (
+                      <div key={index} className="flex flex-col items-center group">
+                        {/* Connector dot */}
+                        <div className={`
+                          w-5 h-5 rounded-full border-4 mb-4 transition-all duration-500 relative
+                          ${item.status === 'active' 
+                            ? 'bg-primary border-primary shadow-[0_0_20px_rgba(59,130,246,0.5)]' 
+                            : item.status === 'upcoming'
+                              ? 'bg-secondary border-primary/50 group-hover:border-primary group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]'
+                              : 'bg-secondary border-border group-hover:border-primary/30'
+                          }
+                        `}>
+                          {item.status === 'active' && (
+                            <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-30" />
+                          )}
+                        </div>
+
+                        {/* Card */}
+                        <div className={`
+                          w-full p-5 rounded-xl border transition-all duration-500 text-center
+                          ${item.status === 'active'
+                            ? 'bg-primary/10 border-primary shadow-lg shadow-primary/20'
+                            : item.status === 'upcoming'
+                              ? 'bg-card border-border hover:border-primary/50 hover:shadow-md hover:shadow-primary/10'
+                              : 'bg-card/50 border-border/50 hover:bg-card hover:border-border'
+                          }
+                        `}>
+                          {/* Status Badge */}
+                          <div className={`
+                            inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-3
+                            ${item.status === 'active'
+                              ? 'bg-primary/20 text-primary'
+                              : item.status === 'upcoming'
+                                ? 'bg-accent/20 text-accent'
+                                : 'bg-secondary text-muted-foreground'
+                            }
+                          `}>
+                            {item.status === 'active' && (
+                              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                            )}
+                            {item.date}
+                          </div>
+
+                          {/* Icon */}
+                          <div className={`
+                            w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors
+                            ${item.status === 'active'
+                              ? 'gradient-primary'
+                              : 'bg-secondary group-hover:bg-primary/10'
+                            }
+                          `}>
+                            <item.icon className={`
+                              w-6 h-6 transition-colors
+                              ${item.status === 'active'
+                                ? 'text-primary-foreground'
+                                : 'text-muted-foreground group-hover:text-primary'
+                              }
+                            `} />
+                          </div>
+
+                          {/* Framework Name */}
+                          <h4 className={`
+                            text-lg font-bold mb-1 transition-colors
+                            ${item.status === 'active' ? 'gradient-text' : 'text-foreground'}
+                          `}>
+                            {item.framework}
+                          </h4>
+
+                          {/* Description */}
+                          <p className="text-xs text-muted-foreground">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Legend */}
+                <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                    <span className="text-sm text-muted-foreground">Disponible</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-secondary border-2 border-primary/50" />
+                    <span className="text-sm text-muted-foreground">En développement</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-secondary border-2 border-border" />
+                    <span className="text-sm text-muted-foreground">Planifié</span>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
           </AnimatedSection>
         </div>
       </section>
