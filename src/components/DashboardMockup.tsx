@@ -34,7 +34,7 @@ const DashboardMockup = () => {
             <span className="text-2xl font-bold text-cyber-green">68%</span>
           </div>
           <div className="w-full bg-border rounded-full h-2">
-            <div className="bg-cyber-green h-2 rounded-full" style={{ width: "94%" }} />
+            <div className="bg-cyber-green h-2 rounded-full" style={{ width: "68%" }} />
           </div>
         </div>
 
