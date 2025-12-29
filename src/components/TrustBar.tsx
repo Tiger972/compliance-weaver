@@ -8,7 +8,7 @@ const TrustBar = () => {
     },
     {
       icon: Shield,
-      label: "ISO 27001 Ready",
+      label: "ISO 27001",
     },
     {
       icon: Lock,
@@ -21,7 +21,7 @@ const TrustBar = () => {
   ];
 
   return (
-    <section className="py-8">
+    <section className="py-8 bg-trust-bg border-y border-border">
       <div className="container">
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
           {trustItems.map((item, index) => (
@@ -29,7 +29,7 @@ const TrustBar = () => {
               key={index}
               className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <item.icon className="w-5 h-5 text-primary/60" />
+              <item.icon className="w-5 h-5" />
               <span className="text-sm font-medium">{item.label}</span>
             </div>
           ))}
