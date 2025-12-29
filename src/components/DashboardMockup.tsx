@@ -68,21 +68,21 @@ const DashboardMockup = () => {
           <div className="flex items-center justify-between p-2 bg-cyber-green/10 rounded-lg border border-cyber-green/20">
             <div className="flex items-center gap-2">
               <Lock className="w-4 h-4 text-cyber-green" />
-              <span className="text-xs font-medium text-foreground">A.9 Access Control</span>
+              <span className="text-xs font-medium text-foreground">A.8.24 - Encryption at Rest</span>
             </div>
             <span className="text-xs text-cyber-green font-medium">Conforme</span>
           </div>
           <div className="flex items-center justify-between p-2 bg-cyber-green/10 rounded-lg border border-cyber-green/20">
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-cyber-green" />
-              <span className="text-xs font-medium text-foreground">A.12 Operations Security</span>
+              <span className="text-xs font-medium text-foreground">A.13.1.1 - Network Security</span>
             </div>
             <span className="text-xs text-cyber-green font-medium">Conforme</span>
           </div>
           <div className="flex items-center justify-between p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-amber-500" />
-              <span className="text-xs font-medium text-foreground">A.18 Compliance</span>
+              <span className="text-xs font-medium text-foreground">A.9.4.3 - Password Policy</span>
             </div>
             <span className="text-xs text-amber-500 font-medium">2 actions</span>
           </div>
