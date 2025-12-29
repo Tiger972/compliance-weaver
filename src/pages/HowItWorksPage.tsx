@@ -850,23 +850,26 @@ jobs:
                   version: "v0.1.0",
                   tests: "4 tests",
                   coverage: "8% Annex A",
-                  price: "€149/mois",
+                  price: "€99/mois",
+                  priceNote: "(locked)",
                   highlight: true,
                 },
                 {
-                  phase: "BIENTOT DISPONIBLE",
-                  version: "v0.2.0",
+                  phase: "SEMAINE 5",
+                  version: "",
                   tests: "10 tests",
                   coverage: "20% Annex A",
-                  price: "€299/mois",
+                  price: "€99/mois",
+                  priceNote: "(locked)",
                   highlight: false,
                 },
                 {
-                  phase: "BIENTOT DISPONIBLE",
-                  version: "v0.3.0",
+                  phase: "SEMAINE 10",
+                  version: "",
                   tests: "40 tests",
                   coverage: "83% Annex A",
-                  price: "€599/mois",
+                  price: "€99/mois",
+                  priceNote: "(locked)",
                   highlight: false,
                 },
               ].map((item, index) => (
@@ -1011,7 +1014,7 @@ jobs:
                 <div className="mt-6 pt-6 border-t border-border space-y-3">
                   <div className="flex justify-between text-foreground">
                     <span>Prix</span>
-                    <span className="font-semibold">€99/mois</span>
+                    <span className="font-semibold">€149/mois</span>
                   </div>
                   <div className="flex justify-between text-foreground">
                     <span>Temps/an</span>
@@ -1019,7 +1022,7 @@ jobs:
                   </div>
                   <div className="flex justify-between font-semibold text-emerald-500">
                     <span>Coût/an</span>
-                    <span>€1,188</span>
+                    <span>€1,788</span>
                   </div>
                 </div>
                 <div className="mt-6 space-y-2">
@@ -1036,7 +1039,7 @@ jobs:
             <div className="text-center mt-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full">
                 <TrendingUp className="w-5 h-5 text-emerald-500" />
-                <span className="text-emerald-500 font-semibold">Économisez €48,812/an</span>
+                <span className="text-emerald-500 font-semibold">Économisez €49,998/an</span>
               </div>
             </div>
           </AnimatedSection>
