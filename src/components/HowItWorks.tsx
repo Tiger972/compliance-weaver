@@ -15,7 +15,7 @@ const HowItWorks = () => {
       icon: Scan,
       title: "Scan automatisé",
       description:
-        "Compl.io scanne votre infrastructure AWS et teste 40 contrôles ISO 27001. Résultats en 2 minutes. Rapports prêts pour auditors.",
+        "Compl.io scanne votre infrastructure AWS et teste 40 contrôles ISO 27001. Rapports pdf/json prêts pour auditeurs.",
       highlight: "Monitoring 24/7",
     },
     {
