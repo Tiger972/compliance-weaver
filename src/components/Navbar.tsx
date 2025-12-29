@@ -36,11 +36,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA buttons */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button variant="ghost" size="sm">
-              Connexion
-            </Button>
+          {/* CTA button */}
+          <div className="hidden lg:flex items-center">
             <Button variant="gradient" size="sm">
               Demander une démo
             </Button>
@@ -74,11 +71,8 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="justify-start">
-                  Connexion
-                </Button>
-                <Button variant="gradient" size="sm">
+              <div className="pt-4 border-t border-border">
+                <Button variant="gradient" size="sm" className="w-full">
                   Demander une démo
                 </Button>
               </div>
