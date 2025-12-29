@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="text-xl font-bold text-foreground">COMPLIO</span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              La plateforme de conformité automatisée pour les infrastructures AWS. ISO 27001 aujourd'hui, HDS et PCI DSS demain.
+              La plateforme de conformité automatisée pour les infrastructures AWS.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
               <span className="w-2 h-2 bg-cyber-green rounded-full animate-pulse" />
@@ -27,34 +27,22 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Produit</h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Fonctionnalités
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Tarifs
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Documentation
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Changelog
                 </a>
               </li>
@@ -66,34 +54,22 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Entreprise</h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   À propos
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Contact
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Mentions légales
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Politique de confidentialité
                 </a>
               </li>
