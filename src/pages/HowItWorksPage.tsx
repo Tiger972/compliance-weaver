@@ -1,23 +1,36 @@
 import { useState, useEffect, useRef } from "react";
-import { 
-  Terminal, Activity, FileText, Lock, Shield, Users, BarChart, 
-  CheckCircle, AlertTriangle, GitBranch, Copy, Check, ChevronRight,
-  Zap, Clock, TrendingUp, ArrowRight
+import {
+  Terminal,
+  Activity,
+  FileText,
+  Lock,
+  Shield,
+  Users,
+  BarChart,
+  CheckCircle,
+  AlertTriangle,
+  GitBranch,
+  Copy,
+  Check,
+  ChevronRight,
+  Zap,
+  Clock,
+  TrendingUp,
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Code Block Component with copy functionality
-const CodeBlock = ({ code, language = "bash", showLineNumbers = true }: { 
-  code: string; 
+const CodeBlock = ({
+  code,
+  language = "bash",
+  showLineNumbers = true,
+}: {
+  code: string;
   language?: string;
   showLineNumbers?: boolean;
 }) => {
@@ -29,7 +42,7 @@ const CodeBlock = ({ code, language = "bash", showLineNumbers = true }: {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const lines = code.split('\n');
+  const lines = code.split("\n");
 
   return (
     <div className="relative group rounded-xl overflow-hidden border border-border bg-[#1a1b26]">
@@ -48,13 +61,9 @@ const CodeBlock = ({ code, language = "bash", showLineNumbers = true }: {
           {lines.map((line, i) => (
             <div key={i} className="flex">
               {showLineNumbers && (
-                <span className="w-8 text-muted-foreground/50 select-none text-right mr-4">
-                  {i + 1}
-                </span>
+                <span className="w-8 text-muted-foreground/50 select-none text-right mr-4">{i + 1}</span>
               )}
-              <span className="flex-1">
-                {formatCodeLine(line)}
-              </span>
+              <span className="flex-1">{formatCodeLine(line)}</span>
             </div>
           ))}
         </code>
@@ -66,39 +75,39 @@ const CodeBlock = ({ code, language = "bash", showLineNumbers = true }: {
 // Syntax highlighting helper
 const formatCodeLine = (line: string) => {
   // Comments
-  if (line.trim().startsWith('#') || line.trim().startsWith('//')) {
-    return <span className="text-gray-400">{line}</span>;
+  if (line.trim().startsWith("#") || line.trim().startsWith("//")) {
+    return <span className="text-muted-foreground">{line}</span>;
   }
   // Success messages
-  if (line.includes('✅') || line.includes('PASS')) {
+  if (line.includes("✅") || line.includes("PASS")) {
     return <span className="text-emerald-400">{line}</span>;
   }
   // Warnings
-  if (line.includes('⚠️') || line.includes('FAIL')) {
+  if (line.includes("⚠️") || line.includes("FAIL")) {
     return <span className="text-amber-400">{line}</span>;
   }
   // Commands
-  if (line.trim().startsWith('$')) {
-    const [cmd, ...rest] = line.split(' ');
+  if (line.trim().startsWith("$")) {
+    const [cmd, ...rest] = line.split(" ");
     return (
       <>
-        <span className="text-gray-400">{cmd}</span>
-        <span className="text-cyan-400">{' '}{rest.join(' ')}</span>
+        <span className="text-muted-foreground">{cmd}</span>
+        <span className="text-cyan-400"> {rest.join(" ")}</span>
       </>
     );
   }
   // Keys in YAML/JSON
-  if (line.includes(':')) {
-    const [key, ...value] = line.split(':');
+  if (line.includes(":")) {
+    const [key, ...value] = line.split(":");
     return (
       <>
         <span className="text-purple-400">{key}</span>
-        <span className="text-white">:</span>
-        <span className="text-emerald-400">{value.join(':')}</span>
+        <span className="text-foreground">:</span>
+        <span className="text-emerald-400">{value.join(":")}</span>
       </>
     );
   }
-  return <span className="text-white">{line}</span>;
+  return <span className="text-foreground">{line}</span>;
 };
 
 // Animated section wrapper
@@ -113,7 +122,7 @@ const AnimatedSection = ({ children, className = "" }: { children: React.ReactNo
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
@@ -307,8 +316,8 @@ jobs:
         "ElastiCache encryption",
         "Redshift encryption",
         "EFS encryption",
-        "Backup encryption"
-      ]
+        "Backup encryption",
+      ],
     },
     {
       icon: Shield,
@@ -323,8 +332,8 @@ jobs:
         "CloudFront HTTPS only",
         "API Gateway security",
         "VPN configuration",
-        "Transit Gateway security"
-      ]
+        "Transit Gateway security",
+      ],
     },
     {
       icon: Users,
@@ -339,8 +348,8 @@ jobs:
         "Service-linked roles",
         "Permission boundaries",
         "Identity federation",
-        "Session policies"
-      ]
+        "Session policies",
+      ],
     },
     {
       icon: BarChart,
@@ -355,50 +364,58 @@ jobs:
         "GuardDuty enabled",
         "Security Hub enabled",
         "EventBridge rules",
-        "SNS notifications"
-      ]
-    }
+        "SNS notifications",
+      ],
+    },
   ];
 
   const faqs = [
     {
       question: "Quelles permissions AWS sont nécessaires ?",
-      answer: "Read-only IAM permissions suffisent. Compl.io ne modifie JAMAIS votre infrastructure. Nous utilisons uniquement des actions Describe* et Get* pour analyser votre configuration."
+      answer:
+        "Read-only IAM permissions suffisent. Compl.io ne modifie JAMAIS votre infrastructure. Nous utilisons uniquement des actions Describe* et Get* pour analyser votre configuration.",
     },
     {
       question: "Mes credentials AWS sont-elles sécurisées ?",
-      answer: "Oui. Vos credentials sont chiffrées AES-256 localement sur votre machine (~/.complio/credentials.enc). Elles ne sont jamais envoyées à nos serveurs."
+      answer:
+        "Oui. Vos credentials sont chiffrées AES-256 localement sur votre machine (~/.complio/credentials.enc). Elles ne sont jamais envoyées à nos serveurs.",
     },
     {
       question: "Compl.io modifie-t-il mon infrastructure ?",
-      answer: "Non. Compl.io est 100% read-only. Nous ne créons, modifions ou supprimons aucune ressource AWS. L'outil se contente de lire les configurations existantes."
+      answer:
+        "Non. Compl.io est 100% read-only. Nous ne créons, modifions ou supprimons aucune ressource AWS. L'outil se contente de lire les configurations existantes.",
     },
     {
       question: "Puis-je scanner plusieurs comptes AWS ?",
-      answer: "Oui. Vous pouvez configurer plusieurs profiles AWS avec 'complio configure' et spécifier le profile lors du scan avec --profile."
+      answer:
+        "Oui. Vous pouvez configurer plusieurs profiles AWS avec 'complio configure' et spécifier le profile lors du scan avec --profile.",
     },
     {
       question: "Les rapports sont-ils acceptés par les auditeurs ?",
-      answer: "Oui. Les rapports PDF sont formatés selon les exigences des auditeurs ISO 27001, avec preuves horodatées et hash cryptographique pour garantir l'intégrité."
+      answer:
+        "Oui. Les rapports PDF sont formatés selon les exigences des auditeurs ISO 27001, avec preuves horodatées et hash cryptographique pour garantir l'intégrité.",
     },
     {
       question: "Combien de temps prend un scan ?",
-      answer: "2 à 5 minutes selon la taille de votre infrastructure. Un compte avec 50 ressources prend environ 2 minutes, 500+ ressources environ 5 minutes."
+      answer:
+        "2 à 5 minutes selon la taille de votre infrastructure. Un compte avec 50 ressources prend environ 2 minutes, 500+ ressources environ 5 minutes.",
     },
     {
       question: "Puis-je automatiser les scans ?",
-      answer: "Oui. Compl.io s'intègre facilement dans vos pipelines CI/CD (GitHub Actions, GitLab CI, Jenkins). Voir la section Intégration CI/CD ci-dessus."
+      answer:
+        "Oui. Compl.io s'intègre facilement dans vos pipelines CI/CD (GitHub Actions, GitLab CI, Jenkins). Voir la section Intégration CI/CD ci-dessus.",
     },
     {
       question: "Que se passe-t-il en cas d'échec de test ?",
-      answer: "Le rapport détaille chaque échec avec: la description du problème, la ressource concernée, le risque associé et la commande AWS CLI exacte pour corriger."
-    }
+      answer:
+        "Le rapport détaille chaque échec avec: la description du problème, la ressource concernée, le risque associé et la commande AWS CLI exacte pour corriger.",
+    },
   ];
 
   return (
     <div className="min-h-screen page-gradient">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container">
@@ -406,43 +423,42 @@ jobs:
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Comment ça <span className="gradient-text">fonctionne</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              De l'installation à la conformité ISO 27001 en 3 étapes
-            </p>
+            <p className="text-xl text-muted-foreground">De l'installation à la conformité ISO 27001 en 3 étapes</p>
           </AnimatedSection>
 
           {/* Timeline Visual */}
           <AnimatedSection className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
               {[
-                { icon: Terminal, label: "Installation", time: "30 secondes", step: 1, target: "installation" },
-                { icon: Activity, label: "Scan", time: "5 minutes", step: 2, target: "scan" },
-                { icon: FileText, label: "Rapport", time: "Instantané", step: 3, target: "reports" },
+                { icon: Terminal, label: "Installation", time: "30 secondes", step: 1 },
+                { icon: Activity, label: "Scan", time: "5 minutes", step: 2 },
+                { icon: FileText, label: "Rapport", time: "Instantané", step: 3 },
               ].map((item, index) => (
                 <div key={index} className="flex items-center">
                   <button
-                    onClick={() => {
-                      setActiveStep(index);
-                      document.getElementById(item.target)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    onClick={() => setActiveStep(index)}
                     className={`flex flex-col items-center p-6 rounded-2xl transition-all duration-300 ${
-                      activeStep === index 
-                        ? "bg-primary/10 border-2 border-primary shadow-lg scale-105" 
+                      activeStep === index
+                        ? "bg-primary/10 border-2 border-primary shadow-lg scale-105"
                         : "bg-card border border-border hover:border-primary/50"
                     }`}
                   >
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-3 ${
-                      activeStep === index ? "gradient-primary" : "bg-secondary"
-                    }`}>
-                      <item.icon className={`w-8 h-8 ${
-                        activeStep === index ? "text-primary-foreground" : "text-muted-foreground"
-                      }`} />
+                    <div
+                      className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-3 ${
+                        activeStep === index ? "gradient-primary" : "bg-secondary"
+                      }`}
+                    >
+                      <item.icon
+                        className={`w-8 h-8 ${
+                          activeStep === index ? "text-primary-foreground" : "text-muted-foreground"
+                        }`}
+                      />
                     </div>
                     <div className="text-xs font-bold text-primary mb-1">ÉTAPE {item.step}</div>
                     <div className="font-semibold text-foreground">{item.label}</div>
                     <div className="text-sm text-muted-foreground">{item.time}</div>
                   </button>
-                  
+
                   {index < 2 && (
                     <div className="hidden md:flex items-center px-4">
                       <div className="w-16 h-px bg-gradient-to-r from-border to-primary/50" />
@@ -473,7 +489,7 @@ jobs:
               <div>
                 <CodeBlock code={installCode} language="terminal" />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { icon: CheckCircle, text: "Python 3.11+ requis" },
@@ -481,8 +497,8 @@ jobs:
                   { icon: Shield, text: "Permissions IAM read-only suffisent" },
                   { icon: Users, text: "Support multi-comptes AWS" },
                 ].map((item, index) => (
-                  <div key={index} className="flex flex-col items-center justify-center gap-2 p-4 bg-card rounded-xl border border-border text-center">
-                    <item.icon className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                  <div key={index} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border">
+                    <item.icon className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-foreground">{item.text}</span>
                   </div>
                 ))}
@@ -529,7 +545,7 @@ jobs:
                     <span className="text-sm font-mono text-muted-foreground w-12">{item.time}</span>
                     <div className="flex-1">
                       <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                        <div 
+                        <div
                           className="h-full gradient-primary rounded-full transition-all duration-1000"
                           style={{ width: `${item.progress}%` }}
                         />
@@ -543,33 +559,31 @@ jobs:
 
             {/* What Compl.io Tests */}
             <div className="bg-card rounded-xl border border-border overflow-hidden">
-              <h3 className="font-semibold text-foreground p-6 border-b border-border">
-                Ce que Compl.io teste
-              </h3>
+              <h3 className="font-semibold text-foreground p-6 border-b border-border">Ce que Compl.io teste</h3>
               <Tabs defaultValue="encryption" className="w-full">
                 <TabsList className="w-full justify-start rounded-none border-b border-border bg-transparent p-0">
-                  <TabsTrigger 
-                    value="encryption" 
+                  <TabsTrigger
+                    value="encryption"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     <Lock className="w-4 h-4 mr-2" />
                     Chiffrement (A.8.24)
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="network"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     <Shield className="w-4 h-4 mr-2" />
                     Sécurité Réseau (A.13.1.1)
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="iam"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     <Users className="w-4 h-4 mr-2" />
                     Identité & Accès (A.9.4.3)
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="logging"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
@@ -577,10 +591,15 @@ jobs:
                     Logging (A.12.4.1)
                   </TabsTrigger>
                 </TabsList>
-                
+
                 <TabsContent value="encryption" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {["S3 buckets chiffrés (AES-256 ou KMS)", "EBS volumes chiffrés", "RDS databases chiffrés", "KMS key rotation activée"].map((item, i) => (
+                    {[
+                      "S3 buckets chiffrés (AES-256 ou KMS)",
+                      "EBS volumes chiffrés",
+                      "RDS databases chiffrés",
+                      "KMS key rotation activée",
+                    ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-emerald-500" />
                         {item}
@@ -588,10 +607,15 @@ jobs:
                     ))}
                   </ul>
                 </TabsContent>
-                
+
                 <TabsContent value="network" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {["Security Groups restrictions", "NACLs configuration", "VPC isolation", "Public access blocked"].map((item, i) => (
+                    {[
+                      "Security Groups restrictions",
+                      "NACLs configuration",
+                      "VPC isolation",
+                      "Public access blocked",
+                    ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-emerald-500" />
                         {item}
@@ -599,21 +623,28 @@ jobs:
                     ))}
                   </ul>
                 </TabsContent>
-                
+
                 <TabsContent value="iam" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {["IAM password policy", "MFA enforcement", "Least privilege", "Access key rotation"].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-muted-foreground">
-                        <CheckCircle className="w-4 h-4 text-emerald-500" />
-                        {item}
-                      </li>
-                    ))}
+                    {["IAM password policy", "MFA enforcement", "Least privilege", "Access key rotation"].map(
+                      (item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                          <CheckCircle className="w-4 h-4 text-emerald-500" />
+                          {item}
+                        </li>
+                      ),
+                    )}
                   </ul>
                 </TabsContent>
-                
+
                 <TabsContent value="logging" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {["CloudTrail multi-région activé", "Log file validation", "Logs stockés chiffrés", "Retention > 90 jours"].map((item, i) => (
+                    {[
+                      "CloudTrail multi-région activé",
+                      "Log file validation",
+                      "Logs stockés chiffrés",
+                      "Retention > 90 jours",
+                    ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-emerald-500" />
                         {item}
@@ -671,12 +702,12 @@ jobs:
                       </div>
                       <span className="text-xs text-muted-foreground">ISO 27001 Report</span>
                     </div>
-                    
+
                     <div className="space-y-2">
                       <div className="h-3 bg-secondary rounded w-3/4" />
                       <div className="h-3 bg-secondary rounded w-1/2" />
                     </div>
-                    
+
                     <div className="grid grid-cols-3 gap-4 py-4">
                       <div className="text-center p-3 bg-emerald-500/10 rounded-lg">
                         <div className="text-2xl font-bold text-emerald-500">75%</div>
@@ -691,7 +722,7 @@ jobs:
                         <div className="text-xs text-muted-foreground">Issue</div>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-emerald-500" />
@@ -741,34 +772,34 @@ jobs:
             <div className="bg-card rounded-xl border border-border overflow-hidden mb-8">
               <Tabs defaultValue="github" className="w-full">
                 <TabsList className="w-full justify-start rounded-none border-b border-border bg-transparent p-0">
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="github"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     GitHub Actions
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="gitlab"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     GitLab CI
                   </TabsTrigger>
-                  <TabsTrigger 
+                  <TabsTrigger
                     value="jenkins"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     Jenkins
                   </TabsTrigger>
                 </TabsList>
-                
+
                 <TabsContent value="github" className="p-6">
                   <CodeBlock code={githubActions} language="yaml" />
                 </TabsContent>
-                
+
                 <TabsContent value="gitlab" className="p-6">
                   <CodeBlock code={gitlabCI} language="yaml" />
                 </TabsContent>
-                
+
                 <TabsContent value="jenkins" className="p-6">
                   <CodeBlock code={jenkinsGroovy} language="groovy" />
                 </TabsContent>
@@ -814,22 +845,43 @@ jobs:
             {/* Timeline */}
             <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 mb-12">
               {[
-                { phase: "MAINTENANT", version: "v0.1.0", tests: "4 tests", coverage: "8% Annex A", price: "€99/mois", priceNote: "(locked)", highlight: true },
-                { phase: "SEMAINE 5", version: "", tests: "10 tests", coverage: "20% Annex A", price: "€99/mois", priceNote: "(locked)", highlight: false },
-                { phase: "SEMAINE 10", version: "", tests: "40 tests", coverage: "83% Annex A", price: "€99/mois", priceNote: "(locked)", highlight: false },
+                {
+                  phase: "MAINTENANT",
+                  version: "v0.1.0",
+                  tests: "4 tests",
+                  coverage: "8% Annex A",
+                  price: "€149/mois",
+                  highlight: true,
+                },
+                {
+                  phase: "BIENTOT DISPONIBLE",
+                  version: "v0.2.0",
+                  tests: "10 tests",
+                  coverage: "20% Annex A",
+                  price: "€299/mois",
+                  highlight: false,
+                },
+                {
+                  phase: "BIENTOT DISPONIBLE",
+                  version: "v0.3.0",
+                  tests: "40 tests",
+                  coverage: "83% Annex A",
+                  price: "€599/mois",
+                  highlight: false,
+                },
               ].map((item, index) => (
                 <div key={index} className="flex items-center">
-                  <div className={`flex-1 p-6 rounded-xl border ${
-                    item.highlight 
-                      ? "bg-primary/5 border-primary shadow-lg" 
-                      : "bg-card border-border"
-                  }`}>
-                    <div className={`text-sm font-bold mb-2 ${item.highlight ? "text-primary" : "text-muted-foreground"}`}>
+                  <div
+                    className={`flex-1 p-6 rounded-xl border ${
+                      item.highlight ? "bg-primary/5 border-primary shadow-lg" : "bg-card border-border"
+                    }`}
+                  >
+                    <div
+                      className={`text-sm font-bold mb-2 ${item.highlight ? "text-primary" : "text-muted-foreground"}`}
+                    >
                       {item.phase}
                     </div>
-                    {item.version && (
-                      <div className="text-xs text-muted-foreground mb-3">{item.version}</div>
-                    )}
+                    {item.version && <div className="text-xs text-muted-foreground mb-3">{item.version}</div>}
                     <div className="text-2xl font-bold text-foreground mb-1">{item.tests}</div>
                     <div className="text-sm text-muted-foreground mb-4">{item.coverage}</div>
                     <div className="pt-4 border-t border-border">
@@ -837,7 +889,7 @@ jobs:
                       <div className="text-xs text-muted-foreground">{item.priceNote}</div>
                     </div>
                   </div>
-                  
+
                   {index < 2 && (
                     <div className="hidden md:flex items-center px-2">
                       <ArrowRight className="w-6 h-6 text-muted-foreground" />
@@ -1001,17 +1053,15 @@ jobs:
 
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`faq-${index}`}
                   className="bg-card rounded-xl border border-border px-6"
                 >
                   <AccordionTrigger className="hover:no-underline py-5">
                     <span className="text-left font-semibold text-foreground">{faq.question}</span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
+                  <AccordionContent className="pb-5 text-muted-foreground">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -1029,7 +1079,7 @@ jobs:
                 <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-6">
                   Prêt à automatiser votre conformité ISO 27001 ?
                 </h2>
-                
+
                 <ul className="inline-flex flex-col items-start gap-3 mb-8 text-left">
                   {[
                     "Early Access : €99/mois locked forever",
@@ -1047,13 +1097,18 @@ jobs:
                   <Button size="xl" className="bg-background text-primary hover:bg-background/90 shadow-lg">
                     Commencer maintenant
                   </Button>
-                  <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg">
+                  <Button
+                    size="xl"
+                    variant="outline"
+                    className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  >
                     Voir la démo
                   </Button>
                 </div>
 
                 <p className="text-sm text-primary-foreground/70">
-                  Ou teste en local (FREE tier) : <code className="px-2 py-1 bg-primary-foreground/10 rounded">$ pip install complio</code>
+                  Ou teste en local (FREE tier) :{" "}
+                  <code className="px-2 py-1 bg-primary-foreground/10 rounded">$ pip install complio</code>
                 </p>
               </div>
             </div>
