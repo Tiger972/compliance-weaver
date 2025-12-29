@@ -11,7 +11,7 @@ const Navbar = () => {
   const navLinks = [
     { label: "Home", href: "/", isAnchor: false },
     { label: "Entreprise", href: "#", isAnchor: false },
-    { label: "Documentation", href: "/comment-ca-marche", isAnchor: false },
+    { label: "Documentation", href: "/Documentation", isAnchor: false },
   ];
 
   return (
