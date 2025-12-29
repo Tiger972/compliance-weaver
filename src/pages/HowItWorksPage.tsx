@@ -1185,7 +1185,7 @@ jobs:
             <div className="text-center mt-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full">
                 <TrendingUp className="w-5 h-5 text-emerald-500" />
-                <span className="text-emerald-500 font-semibold">Économisez €49,998/an</span>
+                <span className="text-emerald-500 font-semibold">Économisez €43,000/an</span>
               </div>
             </div>
           </AnimatedSection>
@@ -1231,7 +1231,7 @@ jobs:
 
                 <ul className="inline-flex flex-col items-start gap-3 mb-8 text-left">
                   {[
-                    "Disponible maintenant : €149/mois",
+                    "Disponible maintenant",
                     "Rejoignez-nous",
                     "Setup en 5 minutes",
                   ].map((item, i) => (
