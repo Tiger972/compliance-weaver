@@ -31,7 +31,7 @@ const DashboardMockup = () => {
         <div className="bg-secondary/50 rounded-xl p-4 mb-4">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-foreground">Score de conformité</span>
-            <span className="text-2xl font-bold text-cyber-green">94%</span>
+            <span className="text-2xl font-bold text-cyber-green">68%</span>
           </div>
           <div className="w-full bg-border rounded-full h-2">
             <div className="bg-cyber-green h-2 rounded-full" style={{ width: "94%" }} />
@@ -45,21 +45,21 @@ const DashboardMockup = () => {
               <CheckCircle className="w-4 h-4 text-cyber-green" />
               <span className="text-xs font-medium text-foreground">Contrôles OK</span>
             </div>
-            <span className="text-lg font-bold text-foreground">27</span>
+            <span className="text-lg font-bold text-foreground">127</span>
           </div>
           <div className="bg-background rounded-lg p-3 border border-border">
             <div className="flex items-center gap-2 mb-1">
               <AlertTriangle className="w-4 h-4 text-amber-500" />
               <span className="text-xs font-medium text-foreground">À corriger</span>
             </div>
-            <span className="text-lg font-bold text-foreground">9</span>
+            <span className="text-lg font-bold text-foreground">8</span>
           </div>
           <div className="bg-background rounded-lg p-3 border border-border">
             <div className="flex items-center gap-2 mb-1">
               <Activity className="w-4 h-4 text-accent" />
               <span className="text-xs font-medium text-foreground">En cours</span>
             </div>
-            <span className="text-lg font-bold text-foreground">4</span>
+            <span className="text-lg font-bold text-foreground">3</span>
           </div>
         </div>
 
