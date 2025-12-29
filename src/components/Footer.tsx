@@ -22,22 +22,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Product */}
+          {/* Navigation */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Produit</h4>
+            <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Fonctionnalités
+                <a href="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Home
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Tarifs
+                  Entreprise
                 </a>
               </li>
               <li>
-                <a href="/comment-ca-marche" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <a href="/Documentation" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Documentation
                 </a>
               </li>
