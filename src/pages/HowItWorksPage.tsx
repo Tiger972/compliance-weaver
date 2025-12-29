@@ -76,7 +76,7 @@ const CodeBlock = ({
 const formatCodeLine = (line: string) => {
   // Comments
   if (line.trim().startsWith("#") || line.trim().startsWith("//")) {
-    return <span className="text-muted-foreground">{line}</span>;
+    return <span className="text-gray-400">{line}</span>;
   }
   // Success messages
   if (line.includes("✅") || line.includes("PASS")) {
@@ -91,7 +91,7 @@ const formatCodeLine = (line: string) => {
     const [cmd, ...rest] = line.split(" ");
     return (
       <>
-        <span className="text-muted-foreground">{cmd}</span>
+        <span className="text-gray-400">{cmd}</span>
         <span className="text-cyan-400"> {rest.join(" ")}</span>
       </>
     );
@@ -102,12 +102,12 @@ const formatCodeLine = (line: string) => {
     return (
       <>
         <span className="text-purple-400">{key}</span>
-        <span className="text-foreground">:</span>
+        <span className="text-white">:</span>
         <span className="text-emerald-400">{value.join(":")}</span>
       </>
     );
   }
-  return <span className="text-foreground">{line}</span>;
+  return <span className="text-white">{line}</span>;
 };
 
 // Animated section wrapper
@@ -430,14 +430,17 @@ jobs:
           <AnimatedSection className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
               {[
-                { icon: Terminal, label: "Installation", time: "30 secondes", step: 1 },
-                { icon: Activity, label: "Scan", time: "5 minutes", step: 2 },
-                { icon: FileText, label: "Rapport", time: "Instantané", step: 3 },
+                { icon: Terminal, label: "Installation", time: "30 secondes", step: 1, targetId: "installation" },
+                { icon: Activity, label: "Scan", time: "5 minutes", step: 2, targetId: "scan" },
+                { icon: FileText, label: "Rapport", time: "Instantané", step: 3, targetId: "reports" },
               ].map((item, index) => (
                 <div key={index} className="flex items-center">
                   <button
-                    onClick={() => setActiveStep(index)}
-                    className={`flex flex-col items-center p-6 rounded-2xl transition-all duration-300 ${
+                    onClick={() => {
+                      setActiveStep(index);
+                      document.getElementById(item.targetId)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className={`flex flex-col items-center p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
                       activeStep === index
                         ? "bg-primary/10 border-2 border-primary shadow-lg scale-105"
                         : "bg-card border border-border hover:border-primary/50"
@@ -497,8 +500,8 @@ jobs:
                   { icon: Shield, text: "Permissions IAM read-only suffisent" },
                   { icon: Users, text: "Support multi-comptes AWS" },
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border">
-                    <item.icon className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <div key={index} className="flex flex-col items-center justify-center gap-2 p-4 bg-card rounded-xl border border-border text-center">
+                    <item.icon className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                     <span className="text-sm text-foreground">{item.text}</span>
                   </div>
                 ))}
@@ -1102,8 +1105,7 @@ jobs:
                   </Button>
                   <Button
                     size="xl"
-                    variant="outline"
-                    className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
                   >
                     Voir la démo
                   </Button>
