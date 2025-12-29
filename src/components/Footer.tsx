@@ -37,13 +37,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <a href="/comment-ca-marche" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Documentation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Changelog
                 </a>
               </li>
             </ul>

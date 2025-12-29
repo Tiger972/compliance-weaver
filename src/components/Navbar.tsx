@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Fonctionnalités", href: isHomePage ? "#features" : "/#features", isAnchor: true },
-    { label: "Comment ça marche", href: "/comment-ca-marche", isAnchor: false },
+    { label: "Documentation", href: "/comment-ca-marche", isAnchor: false },
     { label: "Tarifs", href: isHomePage ? "#pricing" : "/#pricing", isAnchor: true },
   ];
 
