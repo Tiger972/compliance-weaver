@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="w-9 h-9 gradient-primary rounded-xl flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">COMPLIO</span>
+            <span className="text-xl font-bold text-foreground">Compl.io</span>
           </a>
 
           {/* Desktop nav */}

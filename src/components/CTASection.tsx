@@ -18,7 +18,7 @@ const CTASection = () => {
 
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
             Rejoignez les équipes qui ont dit adieu aux audits stressants. 
-            Demandez une démo personnalisée et découvrez COMPLIO en action.
+            Demandez une démo personnalisée et découvrez Compl.io en action.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

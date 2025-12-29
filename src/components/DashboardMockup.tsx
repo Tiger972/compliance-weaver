@@ -15,7 +15,7 @@ const DashboardMockup = () => {
               <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">COMPLIO Dashboard</h3>
+              <h3 className="font-semibold text-foreground">Compl.io Dashboard</h3>
               <p className="text-xs text-muted-foreground">ISO 27001 Compliance</p>
             </div>
           </div>
