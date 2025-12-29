@@ -27,10 +27,25 @@ const HeroSection = () => {
               sur AWS
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl opacity-0 animate-fade-in-up animation-delay-100">
-              Conçu pour les équipes DevSecOps. Monitoring continu, zéro surcharge manuelle. 
-              Passez de l'audit annuel stressant à la sérénité quotidienne.
-            </p>
+            <div className="space-y-3 opacity-0 animate-fade-in-up animation-delay-100">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-xl">
+                Conformité ISO 27001 automatisée pour AWS
+              </p>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-cyber-green mt-1">✓</span>
+                  <span>Scannez 40 contrôles infrastructure (S3, EC2, IAM, CloudTrail...)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyber-green mt-1">✓</span>
+                  <span>Rapports prêts pour auditors (PDF, JSON, Markdown)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyber-green mt-1">✓</span>
+                  <span>Premier Compliance-as-Code français</span>
+                </li>
+              </ul>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up animation-delay-200">
               <Button variant="gradient" size="xl">
