@@ -1085,8 +1085,8 @@ jobs:
 
                 <ul className="inline-flex flex-col items-start gap-3 mb-8 text-left">
                   {[
-                    "Early Access : €99/mois locked forever",
-                    "Rejoins les 50 premiers founders",
+                    "Disponible maintenant : €149/mois",
+                    "Rejoignez-nous",
                     "Setup en 5 minutes",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-primary-foreground/90">
