@@ -1120,10 +1120,6 @@ jobs:
                 </ul>
                 <div className="mt-6 pt-6 border-t border-border space-y-3">
                   <div className="flex justify-between text-muted-foreground">
-                    <span>Coût apparent</span>
-                    <span>€0 (ton temps)</span>
-                  </div>
-                  <div className="flex justify-between text-muted-foreground">
                     <span>Temps CTO/an</span>
                     <span>500h</span>
                   </div>
@@ -1167,16 +1163,12 @@ jobs:
                 </ul>
                 <div className="mt-6 pt-6 border-t border-border space-y-3">
                   <div className="flex justify-between text-foreground">
-                    <span>Prix</span>
-                    <span className="font-semibold">€149/mois</span>
-                  </div>
-                  <div className="flex justify-between text-foreground">
                     <span>Temps/an</span>
                     <span>1h setup</span>
                   </div>
                   <div className="flex justify-between font-semibold text-emerald-500">
                     <span>Coût/an</span>
-                    <span>€1,788</span>
+                    <span>moins de €6,999</span>
                   </div>
                 </div>
                 <div className="mt-6 space-y-2">
