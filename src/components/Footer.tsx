@@ -2,7 +2,7 @@ import { Shield, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative py-16 backdrop-blur-xl bg-white/10 border-t border-white/20">
+    <footer className="relative py-16 backdrop-blur-2xl bg-slate-900/70 border-t border-white/20 text-white">
       <div className="container">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
