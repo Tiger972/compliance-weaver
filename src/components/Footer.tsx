@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
           {/* Brand - takes 5 columns */}
           <div className="md:col-span-5">
-            <div className="flex items-start mb-2 h-28">
+            <div className="flex items-start h-20">
               <img
                 src={complioLogo}
                 alt="Compl.io"
