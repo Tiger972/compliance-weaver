@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <img src={complioLogo} alt="Compl.io" className="h-10 w-auto" />
+              <img src={complioLogo} alt="Compl.io" className="h-14 w-auto" />
             </div>
             <p className="text-muted-foreground mb-6 max-w-sm">
               La plateforme de conformité automatisée pour les infrastructures AWS.
