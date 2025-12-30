@@ -8,15 +8,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
           {/* Brand - takes 5 columns */}
           <div className="md:col-span-5">
-            <div className="flex items-start mb-4 h-28">
+            <div className="flex items-start mb-2 h-28">
               <img
                 src={complioLogo}
                 alt="Compl.io"
                 className="h-28 w-auto object-contain object-left -ml-6 -mt-2"
               />
             </div>
-            <p className="text-muted-foreground mb-6 max-w-sm">
-              La plateforme de conformité automatisée pour les infrastructures AWS.
+            <p className="text-muted-foreground mb-4 max-w-sm">
+              La plateforme de conformité automatisée pour les infrastructures cloud.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
               <span className="w-2 h-2 bg-cyber-green rounded-full animate-pulse" />
