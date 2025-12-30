@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="hidden md:block md:col-span-2" />
 
           {/* Navigation - takes 2 columns */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 md:pt-6">
             <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-3">
               <li>
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
           {/* Company - takes 3 columns */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 md:pt-6">
             <h4 className="font-semibold text-foreground mb-4">Entreprise</h4>
             <ul className="space-y-3">
               <li>
