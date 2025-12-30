@@ -1,5 +1,5 @@
 import { Shield, CheckCircle, AlertTriangle, Activity, Cloud, Lock } from "lucide-react";
-import complioLogo from "@/assets/complio-logo.png";
+import complioIcon from "@/assets/complio-icon.png";
 
 const DashboardMockup = () => {
   return (
@@ -12,8 +12,8 @@ const DashboardMockup = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden bg-white">
-              <img src={complioLogo} alt="Compl.io" className="h-8 w-auto object-contain" />
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
+              <img src={complioIcon} alt="Compl.io" className="h-10 w-10 object-cover" />
             </div>
             <div>
               <h3 className="font-semibold text-foreground">Compl.io Dashboard</h3>
