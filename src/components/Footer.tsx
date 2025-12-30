@@ -1,4 +1,5 @@
-import { Shield, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
+import complioLogo from "@/assets/complio-logo.png";
 
 const Footer = () => {
   return (
@@ -7,11 +8,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center">
-                <Shield className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-foreground">Compl.io</span>
+            <div className="flex items-center mb-4">
+              <img src={complioLogo} alt="Compl.io" className="h-10 w-auto" />
             </div>
             <p className="text-muted-foreground mb-6 max-w-sm">
               La plateforme de conformité automatisée pour les infrastructures AWS.
