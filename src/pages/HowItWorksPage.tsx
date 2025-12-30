@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import {
   Terminal,
   Activity,
@@ -146,6 +146,11 @@ const AnimatedSection = ({ children, className = "" }: { children: React.ReactNo
 
 const HowItWorksPage = () => {
   const [activeStep, setActiveStep] = useState(0);
+
+  // Scroll to top on mount
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const installCode = `# Installation
 $ pip install complio
