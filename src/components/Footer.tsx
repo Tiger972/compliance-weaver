@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-blue-50/50 to-white py-16 border-t border-border/30">
       <div className="container">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
+          {/* Brand - takes 5 columns */}
+          <div className="md:col-span-5">
             <div className="flex items-center mb-4">
               <img src={complioLogo} alt="Compl.io" className="h-28 w-auto" />
             </div>
@@ -20,8 +20,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div>
+          {/* Spacer - takes 2 columns */}
+          <div className="hidden md:block md:col-span-2" />
+
+          {/* Navigation - takes 2 columns */}
+          <div className="md:col-span-2">
             <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-3">
               <li>
@@ -42,8 +45,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
+          {/* Company - takes 3 columns */}
+          <div className="md:col-span-3">
             <h4 className="font-semibold text-foreground mb-4">Entreprise</h4>
             <ul className="space-y-3">
               <li>
