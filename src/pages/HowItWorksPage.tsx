@@ -426,9 +426,9 @@ jobs:
         <div className="container">
           <AnimatedSection className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              <span className="gradient-text">Documentation</span>
+              <span className="gradient-text">Produit</span>
             </h1>
-            <p className="text-xl text-muted-foreground">De l'installation à la conformité ISO 27001 en 3 étapes</p>
+            <p className="text-xl text-muted-foreground">Découvrez comment Complio automatise votre conformité ISO 27001</p>
           </AnimatedSection>
 
           {/* Timeline Visual */}

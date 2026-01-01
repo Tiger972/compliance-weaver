@@ -10,9 +10,9 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/";
 
   const navLinks = [
-    { label: "Home", href: "/", isAnchor: false },
-    { label: "Entreprise", href: "#", isAnchor: false },
-    { label: "Documentation", href: "/Documentation", isAnchor: false },
+    { label: "Accueil", href: "/", isAnchor: false },
+    { label: "Produit", href: "/produit", isAnchor: false },
+    { label: "Contact", href: "/contact", isAnchor: false },
   ];
 
   return (
