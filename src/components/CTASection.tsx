@@ -21,13 +21,12 @@ const CTASection = () => {
             Demandez une démo personnalisée et découvrez Compl.io en action.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gradient" size="xl">
-              Planifier ma démo maintenant
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="xl">
-              Obtenir un devis
+          <div className="flex justify-center">
+            <Button variant="gradient" size="xl" asChild>
+              <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
+                Planifier ma démo maintenant
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
           </div>
 

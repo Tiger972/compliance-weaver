@@ -49,9 +49,11 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up animation-delay-200">
-              <Button variant="gradient" size="xl">
-                Demander une démo
-                <ArrowRight className="w-5 h-5" />
+              <Button variant="gradient" size="xl" asChild>
+                <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
+                  Demander une démo
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
               <Button variant="outline-subtle" size="xl" asChild>
                 <Link to="/produit">
