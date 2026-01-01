@@ -18,7 +18,7 @@ const CGU = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
               <span className="gradient-text">Conditions Générales d'Utilisation</span>
             </h1>
-            <p className="text-muted-foreground mb-12">Dernière mise à jour : 1er janvier 2025</p>
+            <p className="text-muted-foreground mb-12">Dernière mise à jour : 1er janvier 2026</p>
 
             <div className="space-y-12">
               {/* 1. Objet */}
