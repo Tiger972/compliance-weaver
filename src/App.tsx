@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import MentionsLegales from "./pages/MentionsLegales";
+import CGU from "./pages/CGU";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/produit" element={<HowItWorksPage />} />
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/cgu" element={<CGU />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
