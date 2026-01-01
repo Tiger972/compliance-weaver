@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import DashboardMockup from "@/components/DashboardMockup";
 import { ArrowRight, Play } from "lucide-react";
@@ -52,9 +53,11 @@ const HeroSection = () => {
                 Demander une démo
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="outline-subtle" size="xl">
-                <Play className="w-5 h-5" />
-                Voir les fonctionnalités
+              <Button variant="outline-subtle" size="xl" asChild>
+                <Link to="/produit">
+                  <Play className="w-5 h-5" />
+                  Voir les fonctionnalités
+                </Link>
               </Button>
             </div>
 
