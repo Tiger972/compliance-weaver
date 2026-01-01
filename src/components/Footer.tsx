@@ -1,4 +1,5 @@
 import { Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 import complioLogo from "@/assets/complio-logo.png";
 
 const Footer = () => {
@@ -32,19 +33,19 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Accueil
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/produit" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <Link to="/produit" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Produit
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -54,19 +55,19 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Légal</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/politique-de-confidentialite" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <Link to="/politique-de-confidentialite" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Politique de confidentialité
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/mentions-legales" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <Link to="/mentions-legales" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Mentions légales
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cgu" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <Link to="/cgu" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   CGU
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
