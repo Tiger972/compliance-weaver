@@ -33,44 +33,39 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a href="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Home
+                  Accueil
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Entreprise
+                <a href="/produit" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Produit
                 </a>
               </li>
               <li>
-                <a href="/Documentation" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Documentation
+                <a href="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Contact
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Company - takes 3 columns */}
+          {/* Légal - takes 3 columns */}
           <div className="md:col-span-3 md:pt-10">
-            <h4 className="font-semibold text-foreground mb-4">Entreprise</h4>
+            <h4 className="font-semibold text-foreground mb-4">Légal</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  À propos
+                <a href="/politique-de-confidentialite" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Politique de confidentialité
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                <a href="/mentions-legales" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Mentions légales
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Politique de confidentialité
+                  CGU
                 </a>
               </li>
             </ul>
