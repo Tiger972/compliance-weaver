@@ -240,7 +240,7 @@ const Contact = () => {
           {/* CTA Section */}
           <div className="max-w-4xl mx-auto text-center py-16 px-8 bg-card border border-border rounded-3xl">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Complio : Votre super-pouvoir de croissance
+              Complio : L'automatisation de votre conformité ISO 27001
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Automatisez votre conformité ISO 27001 et concentrez-vous sur ce qui compte vraiment
