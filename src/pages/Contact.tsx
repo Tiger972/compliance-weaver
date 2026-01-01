@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Calendar, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
+const useScrollToTop = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+};
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -18,6 +24,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({

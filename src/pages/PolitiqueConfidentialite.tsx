@@ -1,8 +1,12 @@
+import { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const PolitiqueConfidentialite = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen page-gradient">
       <Navbar />
