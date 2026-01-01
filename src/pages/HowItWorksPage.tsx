@@ -1254,8 +1254,11 @@ jobs:
                   <Button
                     size="xl"
                     className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
+                    asChild
                   >
-                    Voir la démo
+                    <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
+                      Voir la démo
+                    </a>
                   </Button>
                 </div>
 

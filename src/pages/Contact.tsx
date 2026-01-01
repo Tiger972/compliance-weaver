@@ -121,8 +121,10 @@ const Contact = () => {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">Réserver une démo</h3>
               <p className="text-muted-foreground mb-4">Planifier une démo personnalisée</p>
-              <Button variant="outline" size="sm">
-                Réserver un créneau
+              <Button variant="outline" size="sm" asChild>
+                <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
+                  Réserver un créneau
+                </a>
               </Button>
             </div>
           </div>
@@ -245,8 +247,10 @@ const Contact = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Automatisez votre conformité ISO 27001 et concentrez-vous sur ce qui compte vraiment
             </p>
-            <Button variant="gradient" size="lg">
-              Demander une démo
+            <Button variant="gradient" size="lg" asChild>
+              <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
+                Demander une démo
+              </a>
             </Button>
           </div>
         </div>

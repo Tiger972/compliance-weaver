@@ -49,8 +49,10 @@ const Navbar = () => {
 
           {/* CTA button */}
           <div className="hidden lg:flex items-center">
-            <Button variant="gradient" size="sm">
-              Demander une démo
+            <Button variant="gradient" size="sm" asChild>
+              <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
+                Demander une démo
+              </a>
             </Button>
           </div>
 
@@ -94,8 +96,10 @@ const Navbar = () => {
                 )
               ))}
               <div className="pt-4 border-t border-border">
-                <Button variant="gradient" size="sm" className="w-full">
-                  Demander une démo
+                <Button variant="gradient" size="sm" className="w-full" asChild>
+                  <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
+                    Demander une démo
+                  </a>
                 </Button>
               </div>
             </div>
