@@ -1,4 +1,4 @@
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import complioLogo from "@/assets/complio-logo.png";
 
@@ -76,20 +76,12 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">© 2024 Compl.io. Tous droits réservés.</p>
-          <div className="flex items-center gap-4">
-            <a
-              href="#"
-              className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors text-muted-foreground hover:text-foreground"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors text-muted-foreground hover:text-foreground"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
-          </div>
+          <a
+            href="#"
+            className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors text-muted-foreground hover:text-foreground"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
         </div>
       </div>
     </footer>
