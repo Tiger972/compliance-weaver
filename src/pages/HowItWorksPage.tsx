@@ -575,28 +575,28 @@ jobs:
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     <Lock className="w-4 h-4 mr-2" />
-                    Chiffrement (A.8.24)
+                    Chiffrement & Données (A.8.24)
                   </TabsTrigger>
                   <TabsTrigger
                     value="network"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     <Shield className="w-4 h-4 mr-2" />
-                    Sécurité Réseau (A.13.1.1)
+                    Sécurité Réseau (A.8.20)
                   </TabsTrigger>
                   <TabsTrigger
                     value="iam"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     <Users className="w-4 h-4 mr-2" />
-                    Identité & Accès (A.9.4.3)
+                    Identité & Accès (A.8.5)
                   </TabsTrigger>
                   <TabsTrigger
                     value="logging"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
                   >
                     <BarChart className="w-4 h-4 mr-2" />
-                    Logging (A.12.4.1)
+                    Logging & Monitoring (A.8.15)
                   </TabsTrigger>
                 </TabsList>
 
