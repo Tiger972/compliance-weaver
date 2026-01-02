@@ -249,7 +249,7 @@ const Contact = () => {
             </p>
             <Button variant="gradient" size="lg" asChild>
               <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
-                Demander une démo
+                Réserver une démo
               </a>
             </Button>
           </div>
