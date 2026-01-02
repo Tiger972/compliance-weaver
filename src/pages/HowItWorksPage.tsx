@@ -312,64 +312,64 @@ jobs:
       icon: Lock,
       title: "Chiffrement & Données",
       tests: [
-        "S3 bucket encryption (AES-256/KMS)",
-        "EBS volume encryption",
-        "RDS instance encryption",
-        "KMS key rotation",
-        "Secrets Manager encryption",
-        "DynamoDB encryption",
-        "ElastiCache encryption",
-        "Redshift encryption",
-        "EFS encryption",
-        "Backup encryption",
+        { name: "S3 bucket encryption (AES-256/KMS)", version: "v0.1.0", status: "available" },
+        { name: "EBS volume encryption", version: "v0.2.0", status: "in-progress" },
+        { name: "RDS instance encryption", version: "v0.2.0", status: "in-progress" },
+        { name: "KMS key rotation", version: "v0.2.0", status: "in-progress" },
+        { name: "Secrets Manager encryption", version: "v0.2.0", status: "in-progress" },
+        { name: "DynamoDB encryption", version: "v0.3.0", status: "planned" },
+        { name: "ElastiCache encryption", version: "v0.3.0", status: "planned" },
+        { name: "Redshift encryption", version: "v0.3.0", status: "planned" },
+        { name: "EFS encryption", version: "v0.3.0", status: "planned" },
+        { name: "Backup encryption", version: "v0.3.0", status: "planned" },
       ],
     },
     {
       icon: Shield,
       title: "Sécurité Réseau",
       tests: [
-        "Security Groups restrictions",
-        "NACLs configuration",
-        "VPC Flow Logs enabled",
-        "Public access blocked",
-        "ALB/NLB security",
-        "WAF rules configured",
-        "CloudFront HTTPS only",
-        "API Gateway security",
-        "VPN configuration",
-        "Transit Gateway security",
+        { name: "Security Groups restrictions", version: "v0.1.0", status: "available" },
+        { name: "NACLs configuration", version: "v0.2.0", status: "in-progress" },
+        { name: "VPC Flow Logs enabled", version: "v0.2.0", status: "in-progress" },
+        { name: "Public access blocked", version: "v0.2.0", status: "in-progress" },
+        { name: "ALB/NLB security", version: "v0.3.0", status: "planned" },
+        { name: "WAF rules configured", version: "v0.3.0", status: "planned" },
+        { name: "CloudFront HTTPS only", version: "v0.3.0", status: "planned" },
+        { name: "API Gateway security", version: "v0.3.0", status: "planned" },
+        { name: "VPN configuration", version: "v0.3.0", status: "planned" },
+        { name: "Transit Gateway security", version: "v0.3.0", status: "planned" },
       ],
     },
     {
       icon: Users,
       title: "Identité & Accès",
       tests: [
-        "IAM password policy",
-        "MFA enforcement",
-        "Root account protection",
-        "Access key rotation",
-        "IAM policies least privilege",
-        "Cross-account access",
-        "Service-linked roles",
-        "Permission boundaries",
-        "Identity federation",
-        "Session policies",
+        { name: "IAM password policy", version: "v0.1.0", status: "available" },
+        { name: "MFA enforcement", version: "v0.2.0", status: "in-progress" },
+        { name: "Root account protection", version: "v0.2.0", status: "in-progress" },
+        { name: "Access key rotation", version: "v0.2.0", status: "in-progress" },
+        { name: "IAM policies least privilege", version: "v0.3.0", status: "planned" },
+        { name: "Cross-account access", version: "v0.3.0", status: "planned" },
+        { name: "Service-linked roles", version: "v0.3.0", status: "planned" },
+        { name: "Permission boundaries", version: "v0.3.0", status: "planned" },
+        { name: "Identity federation", version: "v0.3.0", status: "planned" },
+        { name: "Session policies", version: "v0.3.0", status: "planned" },
       ],
     },
     {
       icon: BarChart,
       title: "Logging & Monitoring",
       tests: [
-        "CloudTrail multi-region",
-        "Log file validation",
-        "Logs stored encrypted",
-        "Retention > 90 days",
-        "CloudWatch alarms",
-        "Config rules enabled",
-        "GuardDuty enabled",
-        "Security Hub enabled",
-        "EventBridge rules",
-        "SNS notifications",
+        { name: "CloudTrail multi-region", version: "v0.1.0", status: "available" },
+        { name: "Log file validation", version: "v0.2.0", status: "in-progress" },
+        { name: "Logs stored encrypted", version: "v0.2.0", status: "in-progress" },
+        { name: "Retention > 90 days", version: "v0.3.0", status: "planned" },
+        { name: "CloudWatch alarms", version: "v0.3.0", status: "planned" },
+        { name: "Config rules enabled", version: "v0.3.0", status: "planned" },
+        { name: "GuardDuty enabled", version: "v0.3.0", status: "planned" },
+        { name: "Security Hub enabled", version: "v0.3.0", status: "planned" },
+        { name: "EventBridge rules", version: "v0.3.0", status: "planned" },
+        { name: "SNS notifications", version: "v0.3.0", status: "planned" },
       ],
     },
   ];
@@ -910,9 +910,25 @@ jobs:
             <Accordion type="single" collapsible className="bg-card rounded-xl border border-border">
               <AccordionItem value="full-tests" className="border-none">
                 <AccordionTrigger className="px-6 hover:no-underline">
-                  <span className="text-left font-semibold">Liste complète des 40 tests</span>
+                  <span className="text-left font-semibold">Liste complète des 40 tests ISO 27001</span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6">
+                  {/* Legend */}
+                  <div className="flex flex-wrap gap-4 mb-6 pb-4 border-b border-border">
+                    <div className="flex items-center gap-2">
+                      <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-500">✅ v0.1.0</span>
+                      <span className="text-sm text-muted-foreground">Disponible</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-amber-500/10 text-amber-500">🚧 v0.2.0</span>
+                      <span className="text-sm text-muted-foreground">En cours</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-blue-500/10 text-blue-500">📅 v0.3.0</span>
+                      <span className="text-sm text-muted-foreground">Planifié</span>
+                    </div>
+                  </div>
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     {testCategories.map((category, catIndex) => (
                       <div key={catIndex} className="space-y-3">
@@ -921,11 +937,22 @@ jobs:
                           <span className="font-semibold text-foreground">{category.title}</span>
                           <span className="text-xs text-muted-foreground">(10 tests)</span>
                         </div>
-                        <ul className="space-y-1 pl-7">
+                        <ul className="space-y-2 pl-7">
                           {category.tests.map((test, testIndex) => (
-                            <li key={testIndex} className="text-sm text-muted-foreground flex items-center gap-2">
-                              <div className="w-1 h-1 rounded-full bg-muted-foreground" />
-                              {test}
+                            <li key={testIndex} className="text-sm text-muted-foreground flex items-center justify-between gap-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-1 h-1 rounded-full bg-muted-foreground" />
+                                <span>{test.name}</span>
+                              </div>
+                              <span className={`px-2 py-0.5 text-xs font-medium rounded-full shrink-0 ${
+                                test.status === "available" 
+                                  ? "bg-emerald-500/10 text-emerald-500" 
+                                  : test.status === "in-progress" 
+                                    ? "bg-amber-500/10 text-amber-500" 
+                                    : "bg-blue-500/10 text-blue-500"
+                              }`}>
+                                {test.status === "available" ? "✅" : test.status === "in-progress" ? "🚧" : "📅"} {test.version}
+                              </span>
                             </li>
                           ))}
                         </ul>
