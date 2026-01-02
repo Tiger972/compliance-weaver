@@ -1247,17 +1247,14 @@ jobs:
                   ))}
                 </ul>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                  <Button size="xl" className="bg-background text-primary hover:bg-background/90 shadow-lg">
-                    Commencer maintenant
-                  </Button>
+                <div className="flex justify-center mb-6">
                   <Button
                     size="xl"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
+                    className="bg-background text-primary hover:bg-background/90 shadow-lg"
                     asChild
                   >
                     <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
-                      Voir la démo
+                      Réserver une démo
                     </a>
                   </Button>
                 </div>
