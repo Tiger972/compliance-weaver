@@ -22,10 +22,10 @@ const CTASection = () => {
           </p>
 
           <div className="flex justify-center px-2">
-            <Button variant="gradient" size="xl" className="w-full sm:w-auto" asChild>
-              <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
-                Planifier ma démo maintenant
-                <ArrowRight className="w-5 h-5" />
+            <Button variant="gradient" size="xl" className="w-full sm:w-auto text-sm sm:text-base" asChild>
+              <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap">
+                Planifier ma démo
+                <ArrowRight className="w-5 h-5 flex-shrink-0" />
               </a>
             </Button>
           </div>
