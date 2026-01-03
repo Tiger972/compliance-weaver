@@ -13,7 +13,7 @@ const CTASection = () => {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Prêt à simplifier votre{" "}
-            <span className="gradient-text">conformité AWS</span> ?
+            <span className="gradient-text">conformité</span> ?
           </h2>
 
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -21,8 +21,8 @@ const CTASection = () => {
             Demandez une démo personnalisée et découvrez Compl.io en action.
           </p>
 
-          <div className="flex justify-center">
-            <Button variant="gradient" size="xl" asChild>
+          <div className="flex justify-center px-2">
+            <Button variant="gradient" size="xl" className="w-full sm:w-auto" asChild>
               <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
                 Planifier ma démo maintenant
                 <ArrowRight className="w-5 h-5" />
