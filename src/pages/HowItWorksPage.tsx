@@ -494,11 +494,11 @@ jobs:
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 mb-8">
-              <div>
+              <div className="overflow-x-auto">
                 <CodeBlock code={installCode} language="terminal" />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { icon: CheckCircle, text: "Python 3.11+ requis" },
                   { icon: Lock, text: "Credentials chiffrés AES-256" },
