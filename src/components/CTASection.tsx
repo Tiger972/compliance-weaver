@@ -5,7 +5,7 @@ const CTASection = () => {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       <div className="container relative z-10">
-        <div className="max-w-4xl mx-auto text-center bg-background/70 backdrop-blur-md border border-border/50 rounded-3xl p-12 lg:p-16 shadow-xl">
+        <div className="max-w-4xl mx-auto text-center bg-background/70 backdrop-blur-md border border-border/50 rounded-3xl p-6 sm:p-12 lg:p-16 shadow-xl">
           {/* Icon */}
           <div className="inline-flex items-center justify-center w-20 h-20 gradient-primary rounded-3xl mb-8 shadow-glow">
             <Shield className="w-10 h-10 text-primary-foreground" />
