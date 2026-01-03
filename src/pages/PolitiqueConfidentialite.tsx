@@ -17,15 +17,15 @@ const PolitiqueConfidentialite = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
               <span className="gradient-text">Politique de confidentialité</span>
             </h1>
-            <p className="text-muted-foreground mb-12">Dernière mise à jour : 1er janvier 2025</p>
+            <p className="text-muted-foreground mb-12">Dernière mise à jour : 1er janvier 2026</p>
 
             <div className="space-y-12">
               {/* Introduction */}
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Chez Complio, nous prenons la protection de vos données personnelles très au sérieux. 
-                  Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations.
+                  Chez Complio, nous prenons la protection de vos données personnelles très au sérieux. Cette politique
+                  de confidentialité explique comment nous collectons, utilisons et protégeons vos informations.
                 </p>
               </section>
 
@@ -100,9 +100,9 @@ const PolitiqueConfidentialite = () => {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">7. Cookies</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Nous utilisons des cookies essentiels pour le fonctionnement du site et des cookies analytiques 
-                  (Google Analytics) pour améliorer nos services. Vous pouvez désactiver les cookies analytiques 
-                  dans les paramètres de votre navigateur.
+                  Nous utilisons des cookies essentiels pour le fonctionnement du site et des cookies analytiques
+                  (Google Analytics) pour améliorer nos services. Vous pouvez désactiver les cookies analytiques dans
+                  les paramètres de votre navigateur.
                 </p>
               </section>
 
