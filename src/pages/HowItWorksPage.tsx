@@ -569,36 +569,38 @@ jobs:
             <div className="bg-card rounded-xl border border-border overflow-hidden">
               <h3 className="font-semibold text-foreground p-6 border-b border-border">Ce que Compl.io teste</h3>
               <Tabs defaultValue="encryption" className="w-full">
-                <TabsList className="w-full justify-start rounded-none border-b border-border bg-transparent p-0">
-                  <TabsTrigger
-                    value="encryption"
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-                  >
-                    <Lock className="w-4 h-4 mr-2" />
-                    Chiffrement & Données (A.8.24)
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="network"
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-                  >
-                    <Shield className="w-4 h-4 mr-2" />
-                    Sécurité Réseau (A.8.20)
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="iam"
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-                  >
-                    <Users className="w-4 h-4 mr-2" />
-                    Identité & Accès (A.8.5)
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="logging"
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-                  >
-                    <BarChart className="w-4 h-4 mr-2" />
-                    Logging & Monitoring (A.8.15)
-                  </TabsTrigger>
-                </TabsList>
+                <div className="overflow-x-auto">
+                  <TabsList className="w-max min-w-full justify-start rounded-none border-b border-border bg-transparent p-0">
+                    <TabsTrigger
+                      value="encryption"
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
+                    >
+                      <Lock className="w-4 h-4 mr-2 shrink-0" />
+                      Chiffrement & Données (A.8.24)
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="network"
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
+                    >
+                      <Shield className="w-4 h-4 mr-2 shrink-0" />
+                      Sécurité Réseau (A.8.20)
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="iam"
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
+                    >
+                      <Users className="w-4 h-4 mr-2 shrink-0" />
+                      Identité & Accès (A.8.5)
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="logging"
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
+                    >
+                      <BarChart className="w-4 h-4 mr-2 shrink-0" />
+                      Logging & Monitoring (A.8.15)
+                    </TabsTrigger>
+                  </TabsList>
+                </div>
 
                 <TabsContent value="encryption" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
