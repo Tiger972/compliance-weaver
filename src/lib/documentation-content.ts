@@ -366,7 +366,7 @@ pip install git+https://github.com/Tiger972/Complio.git
           { id: "purchase-license", title: "Acheter une licence" },
           { id: "activate-cli", title: "Activer le CLI" },
           { id: "verify-status", title: "Vérifier le statut de la licence" },
-          { id: "tiers-comparison", title: "Comparaison des formules" },
+          { id: "troubleshooting-license", title: "Dépannage" },
           { id: "troubleshooting-license", title: "Dépannage" },
         ],
         content: `# Activer votre licence
@@ -408,21 +408,6 @@ cat ~/.complio/license.json
   "status": "active",
   "cached_at": "2026-01-10T15:30:00Z"
 }
-\`\`\`
-
-## Comparaison des formules
-
-| Fonctionnalité | Starter | Professional | Enterprise |
-|----------------|---------|--------------|------------|
-| 40 tests ISO 27001 | ✅ | ✅ | ✅ |
-| Scan multi-région | ✅ | ✅ | ✅ |
-| Rapports JSON/Markdown | ✅ | ✅ | ✅ |
-| Framework SOC2 | ❌ | ✅ | ✅ |
-| Framework RGPD | ❌ | ✅ | ✅ |
-| Multi-Cloud (Azure/GCP) | ❌ | ✅ | ✅ |
-| Accès API | ❌ | ❌ | ✅ |
-| Support prioritaire | ❌ | ❌ | ✅ |
-| Personnalisation marque | ❌ | ❌ | ✅ |
 
 ## Dépannage
 
