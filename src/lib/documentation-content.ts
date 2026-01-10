@@ -371,13 +371,13 @@ pip install git+https://github.com/Tiger972/Complio.git
         ],
         content: `# Activer votre licence
 
-## Acheter une licence
+## Acheter votre licence
 
-1. Visitez [complio.tech/pricing](https://complio.tech/pricing)
+1. Achetez votre licence via [Stripe](https://buy.stripe.com/bJe9AT25t3jH3oPewx5c400)
 2. Choisissez votre formule :
-   - **Starter** : 299€/mois
-   - **Professional** : 499€/mois
-   - **Enterprise** : 599€/mois
+   - **Starter** : 499€/mois
+   - **Professional** : 699€/mois
+   - **Enterprise** : 899€/mois
 3. Finalisez le paiement via Stripe
 4. Recevez votre clé de licence par email (format : \`COMPL-XXXX-XXXX-XXXX-XXXX\`)
 
