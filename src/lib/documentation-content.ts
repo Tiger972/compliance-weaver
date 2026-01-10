@@ -39,7 +39,7 @@ Avec Complio, vous pouvez :
 - **Scanner en quelques secondes** : Rapport de conformité ISO 27001 complet en 3-5 secondes
 - **40 tests automatisés** : Couverture complète du chiffrement, réseau, identité et journalisation
 - **Orienté développeur** : Outil CLI qui s'intègre parfaitement dans votre workflow DevOps
-- **Économique** : 299€/mois contre 25 000-40 000€/an pour les solutions traditionnelles
+- **Économique** : 499€/mois contre 25 000-40 000€/an pour les solutions traditionnelles
 
 Complio fonctionne comme un outil CLI installé sur votre machine locale, nécessitant uniquement des identifiants AWS pour scanner votre infrastructure. Pas d'agents, pas de modifications réseau, pas d'interruption.
 
