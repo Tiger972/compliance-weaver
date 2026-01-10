@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { Search, FileText, ArrowRight, Command } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
@@ -14,9 +14,9 @@ const DocSearch = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  const searchableContent = getSearchableContent();
+  const searchableContent = useMemo(() => getSearchableContent(), []);
   
-  const fuse = new Fuse(searchableContent, {
+  const fuse = useMemo(() => new Fuse(searchableContent, {
     keys: [
       { name: "sectionTitle", weight: 0.4 },
       { name: "categoryTitle", weight: 0.2 },
@@ -25,7 +25,7 @@ const DocSearch = () => {
     threshold: 0.4,
     includeScore: true,
     minMatchCharLength: 2,
-  });
+  }), [searchableContent]);
 
   const handleSearch = useCallback((searchQuery: string) => {
     if (searchQuery.length < 2) {
