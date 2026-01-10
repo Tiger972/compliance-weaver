@@ -9,6 +9,7 @@ import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import MentionsLegales from "./pages/MentionsLegales";
 import CGU from "./pages/CGU";
 import Contact from "./pages/Contact";
+import Documentation from "./pages/Documentation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/produit" element={<HowItWorksPage />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/documentation/:categoryId/:sectionId" element={<Documentation />} />
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgu" element={<CGU />} />

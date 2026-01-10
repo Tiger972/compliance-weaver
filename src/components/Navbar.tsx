@@ -12,6 +12,7 @@ const Navbar = () => {
   const navLinks = [
     { label: "Accueil", href: "/", isAnchor: false },
     { label: "Produit", href: "/produit", isAnchor: false },
+    { label: "Documentation", href: "/documentation", isAnchor: false },
     { label: "Contact", href: "/contact", isAnchor: false },
   ];
 
