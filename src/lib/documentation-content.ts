@@ -374,12 +374,7 @@ pip install git+https://github.com/Tiger972/Complio.git
 ## Acheter votre licence
 
 1. Achetez votre licence via [Stripe](https://buy.stripe.com/bJe9AT25t3jH3oPewx5c400)
-2. Choisissez votre formule :
-   - **Starter** : 499€/mois
-   - **Professional** : 699€/mois
-   - **Enterprise** : 899€/mois
-3. Finalisez le paiement via Stripe
-4. Recevez votre clé de licence par email (format : \`COMPL-XXXX-XXXX-XXXX-XXXX\`)
+2. Recevez votre clé de licence par email (format : \`COMPL-XXXX-XXXX-XXXX-XXXX\`)
 
 ## Activer le CLI
 \`\`\`bash
