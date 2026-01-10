@@ -50,7 +50,7 @@ Complio fonctionne comme un outil CLI installé sur votre machine locale, néces
 | Scan rapide | 3-5 secondes pour un scan complet |
 | 40 tests | Couverture complète ISO 27001:2022 |
 | Orienté développeur | Intégration CLI |
-| Économique | À partir de 299€/mois |
+| Économique | À partir de 499€/mois |
 
 ## Glossaire
 
