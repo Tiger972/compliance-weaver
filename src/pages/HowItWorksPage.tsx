@@ -311,12 +311,15 @@ jobs:
     {
       icon: Lock,
       title: "Chiffrement & Données",
+      count: 12,
       tests: [
         { name: "S3 bucket encryption (AES-256/KMS) - A.8.24", version: "v0.1.0", status: "available" },
+        { name: "S3 Versioning - A.8.13", version: "v0.2.0", status: "in-progress" },
         { name: "EBS volume encryption - A.8.24", version: "v0.2.0", status: "in-progress" },
         { name: "RDS instance encryption - A.8.24", version: "v0.2.0", status: "in-progress" },
         { name: "KMS key rotation - A.8.24", version: "v0.2.0", status: "in-progress" },
         { name: "Secrets Manager encryption - A.8.24", version: "v0.2.0", status: "in-progress" },
+        { name: "CloudWatch Logs encryption - A.8.15", version: "v0.2.0", status: "in-progress" },
         { name: "DynamoDB encryption - A.8.24", version: "v0.3.0", status: "planned" },
         { name: "ElastiCache encryption - A.8.24", version: "v0.3.0", status: "planned" },
         { name: "Redshift encryption - A.8.24", version: "v0.3.0", status: "planned" },
@@ -327,6 +330,7 @@ jobs:
     {
       icon: Shield,
       title: "Sécurité Réseau",
+      count: 11,
       tests: [
         { name: "Security Groups restrictions - A.8.20", version: "v0.1.0", status: "available" },
         { name: "NACLs configuration - A.8.20", version: "v0.2.0", status: "in-progress" },
@@ -338,11 +342,13 @@ jobs:
         { name: "API Gateway security - A.8.20", version: "v0.3.0", status: "planned" },
         { name: "VPN configuration - A.8.24", version: "v0.3.0", status: "planned" },
         { name: "Transit Gateway security - A.8.31", version: "v0.3.0", status: "planned" },
+        { name: "VPC Endpoints security - A.8.31", version: "v0.3.0", status: "planned" },
       ],
     },
     {
       icon: Users,
       title: "Identité & Accès",
+      count: 7,
       tests: [
         { name: "IAM password policy - A.8.5", version: "v0.1.0", status: "available" },
         { name: "MFA enforcement - A.8.5", version: "v0.2.0", status: "in-progress" },
@@ -351,18 +357,16 @@ jobs:
         { name: "IAM policies least privilege - A.8.2", version: "v0.3.0", status: "planned" },
         { name: "Cross-account access - A.8.31", version: "v0.3.0", status: "planned" },
         { name: "Service-linked roles - A.8.31", version: "v0.3.0", status: "planned" },
-        { name: "Permission boundaries - A.8.2", version: "v0.3.0", status: "planned" },
-        { name: "Identity federation - A.8.2", version: "v0.3.0", status: "planned" },
-        { name: "Session policies - A.8.2", version: "v0.3.0", status: "planned" },
       ],
     },
     {
       icon: BarChart,
       title: "Logging & Monitoring",
+      count: 10,
       tests: [
         { name: "CloudTrail multi-region - A.8.15", version: "v0.1.0", status: "available" },
         { name: "Log file validation - A.8.15", version: "v0.2.0", status: "in-progress" },
-        { name: "Logs stored encrypted - A.8.15", version: "v0.2.0", status: "in-progress" },
+        { name: "CloudTrail encryption - A.8.15", version: "v0.2.0", status: "in-progress" },
         { name: "Retention > 90 days - A.8.15", version: "v0.3.0", status: "planned" },
         { name: "CloudWatch alarms - A.8.16", version: "v0.3.0", status: "planned" },
         { name: "Config rules enabled - A.8.16", version: "v0.3.0", status: "planned" },
@@ -861,34 +865,25 @@ jobs:
                   tests: "4 tests",
                   coverage: "8% Annex A",
                   framework: "ISO 27001",
-                  highlight: true,
                 },
                 {
-                  phase: "BIENTOT DISPONIBLE",
+                  phase: "MAINTENANT",
                   version: "v0.2.0",
                   tests: "10 tests",
                   coverage: "20% Annex A",
                   framework: "ISO 27001",
-                  highlight: false,
                 },
                 {
-                  phase: "BIENTOT DISPONIBLE",
+                  phase: "MAINTENANT",
                   version: "v0.3.0",
                   tests: "40 tests",
                   coverage: "83% Annex A",
                   framework: "ISO 27001",
-                  highlight: false,
                 },
               ].map((item, index) => (
                 <div key={index} className="flex items-center">
-                  <div
-                    className={`flex-1 p-6 rounded-xl border ${
-                      item.highlight ? "bg-primary/5 border-primary shadow-lg" : "bg-card border-border"
-                    }`}
-                  >
-                    <div
-                      className={`text-sm font-bold mb-2 ${item.highlight ? "text-primary" : "text-muted-foreground"}`}
-                    >
+                  <div className="flex-1 p-6 rounded-xl border bg-primary/5 border-primary shadow-lg">
+                    <div className="text-sm font-bold mb-2 text-primary">
                       {item.phase}
                     </div>
                     {item.version && <div className="text-xs text-muted-foreground mb-3">{item.version}</div>}
@@ -937,7 +932,7 @@ jobs:
                         <div className="flex items-center gap-2">
                           <category.icon className="w-5 h-5 text-primary" />
                           <span className="font-semibold text-foreground">{category.title}</span>
-                          <span className="text-xs text-muted-foreground">(10 tests)</span>
+                          <span className="text-xs text-muted-foreground">({category.count} tests)</span>
                         </div>
                         <ul className="space-y-2 pl-7">
                           {category.tests.map((test, testIndex) => (
