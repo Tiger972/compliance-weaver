@@ -17,92 +17,92 @@ export interface DocCategory {
 export const documentationContent: DocCategory[] = [
   {
     id: "getting-started",
-    title: "Getting Started",
+    title: "Démarrage",
     icon: "Rocket",
     sections: [
       {
         id: "introduction",
         title: "Introduction",
         subsections: [
-          { id: "what-is-complio", title: "What is Complio?" },
-          { id: "key-features", title: "Key Features" },
-          { id: "glossary", title: "Glossary" },
+          { id: "what-is-complio", title: "Qu'est-ce que Complio ?" },
+          { id: "key-features", title: "Fonctionnalités clés" },
+          { id: "glossary", title: "Glossaire" },
           { id: "index", title: "Index" },
         ],
-        content: `# Getting Started with Complio
+        content: `# Démarrer avec Complio
 
-Complio helps DevSecOps teams automate ISO 27001 compliance testing for AWS infrastructure. No more manual checks, no more 3-month audit preparation cycles.
+Complio aide les équipes DevSecOps à automatiser les tests de conformité ISO 27001 pour l'infrastructure AWS. Plus de vérifications manuelles, plus de cycles de préparation d'audit de 3 mois.
 
-## What is Complio?
+## Qu'est-ce que Complio ?
 
-With Complio, you can:
-- **Scan in Seconds**: Complete ISO 27001 compliance report in 3-5 seconds
-- **40 Automated Tests**: Full coverage across Encryption, Network, Identity, and Logging
-- **Developer-First**: CLI tool that integrates seamlessly into your DevOps workflow
-- **Cost-Effective**: €299/month vs €25,000-40,000/year for traditional solutions
+Avec Complio, vous pouvez :
+- **Scanner en quelques secondes** : Rapport de conformité ISO 27001 complet en 3-5 secondes
+- **40 tests automatisés** : Couverture complète du chiffrement, réseau, identité et journalisation
+- **Orienté développeur** : Outil CLI qui s'intègre parfaitement dans votre workflow DevOps
+- **Économique** : 299€/mois contre 25 000-40 000€/an pour les solutions traditionnelles
 
-Complio operates as a CLI tool installed on your local machine, requiring only AWS credentials to scan your infrastructure. No agents, no network changes, no downtime.
+Complio fonctionne comme un outil CLI installé sur votre machine locale, nécessitant uniquement des identifiants AWS pour scanner votre infrastructure. Pas d'agents, pas de modifications réseau, pas d'interruption.
 
-## Key Features
+## Fonctionnalités clés
 
-| Feature | Description |
-|---------|-------------|
-| Fast Scanning | 3-5 seconds for complete scan |
-| 40 Tests | Full ISO 27001:2022 coverage |
-| Developer-First | CLI integration |
-| Cost-Effective | Starting at €299/month |
+| Fonctionnalité | Description |
+|----------------|-------------|
+| Scan rapide | 3-5 secondes pour un scan complet |
+| 40 tests | Couverture complète ISO 27001:2022 |
+| Orienté développeur | Intégration CLI |
+| Économique | À partir de 299€/mois |
 
-## Glossary
+## Glossaire
 
-### Compliance Test
-A **Compliance Test** is an automated check that validates a specific security control against ISO 27001:2022 requirements. Each test examines AWS resources and generates findings with severity levels and remediation guidance.
+### Test de conformité
+Un **Test de conformité** est une vérification automatisée qui valide un contrôle de sécurité spécifique selon les exigences ISO 27001:2022. Chaque test examine les ressources AWS et génère des résultats avec des niveaux de sévérité et des conseils de remédiation.
 
-### Finding
-A **Finding** is a non-compliant resource discovered during a scan. Findings include severity level (Critical, High, Medium, Low), affected resource ID, description, and actionable remediation steps.
+### Découverte
+Une **Découverte** est une ressource non conforme identifiée lors d'un scan. Les découvertes incluent le niveau de sévérité (Critique, Élevé, Moyen, Faible), l'ID de la ressource affectée, une description et des étapes de remédiation actionnables.
 
 ### Scan
-A **Scan** is a complete execution of all enabled compliance tests for a specific AWS region. Each scan generates a unique Scan ID, timestamp, and compliance score (0-100%).
+Un **Scan** est une exécution complète de tous les tests de conformité activés pour une région AWS spécifique. Chaque scan génère un ID de scan unique, un horodatage et un score de conformité (0-100%).
 
-### License
-A **License** is your Complio activation key (format: \`COMPL-XXXX-XXXX-XXXX-XXXX\`) that unlocks the CLI functionality. Licenses are tied to subscription tiers (Starter, Professional, Enterprise).
+### Licence
+Une **Licence** est votre clé d'activation Complio (format : \`COMPL-XXXX-XXXX-XXXX-XXXX\`) qui déverrouille les fonctionnalités CLI. Les licences sont liées aux niveaux d'abonnement (Starter, Professional, Enterprise).
 
-### Compliance Score
-The **Compliance Score** is calculated as the average of all test scores, weighted by test criticality. A score of 90%+ indicates readiness for ISO 27001 certification audit.
+### Score de conformité
+Le **Score de conformité** est calculé comme la moyenne de tous les scores de tests, pondérée par la criticité du test. Un score de 90%+ indique une préparation à l'audit de certification ISO 27001.
 
 ### Framework
-A **Framework** is a compliance standard (ISO 27001, SOC2, GDPR) that defines security requirements. Complio currently supports ISO 27001:2022 with plans for additional frameworks.
+Un **Framework** est une norme de conformité (ISO 27001, SOC2, RGPD) qui définit les exigences de sécurité. Complio prend actuellement en charge ISO 27001:2022 avec des plans pour des frameworks supplémentaires.
 
 ## Index
 
 ### Installation
-- [System Requirements](/documentation/installation/system-requirements)
-- [Install via pip](/documentation/installation/install-pip)
-- [Verify Installation](/documentation/installation/verify)
-- [Upgrade Complio](/documentation/installation/upgrade)
+- [Prérequis système](/documentation/installation/system-requirements)
+- [Installation via pip](/documentation/installation/install-pip)
+- [Vérifier l'installation](/documentation/installation/verify)
+- [Mettre à jour Complio](/documentation/installation/upgrade)
 
-### Getting Started
-- [Activate License](/documentation/getting-started/activate-license)
-- [Configure AWS Credentials](/documentation/getting-started/aws-credentials)
-- [Run Your First Scan](/documentation/getting-started/first-scan)
-- [Understanding Results](/documentation/getting-started/understanding-results)
+### Démarrage
+- [Activer la licence](/documentation/getting-started/activate-license)
+- [Configurer les identifiants AWS](/documentation/getting-started/aws-credentials)
+- [Lancer votre premier scan](/documentation/getting-started/first-scan)
+- [Comprendre les résultats](/documentation/getting-started/understanding-results)
 
-### Core Features
-- [40 Compliance Tests](/documentation/core-features/compliance-tests)
-- [Multi-Region Scanning](/documentation/core-features/multi-region)
-- [Output Formats](/documentation/core-features/output-formats)
-- [CI/CD Integration](/documentation/core-features/cicd)
+### Fonctionnalités principales
+- [40 tests de conformité](/documentation/core-features/compliance-tests)
+- [Scan multi-région](/documentation/core-features/multi-region)
+- [Formats de sortie](/documentation/core-features/output-formats)
+- [Intégration CI/CD](/documentation/core-features/cicd)
 
-### Advanced Usage
-- [Custom Scan Profiles](/documentation/advanced/custom-profiles)
-- [Scheduled Scans](/documentation/advanced/scheduled-scans)
-- [Historical Trending](/documentation/advanced/historical-trending)
-- [Team Collaboration](/documentation/advanced/team-collaboration)
+### Utilisation avancée
+- [Profils de scan personnalisés](/documentation/advanced/custom-profiles)
+- [Scans programmés](/documentation/advanced/scheduled-scans)
+- [Tendances historiques](/documentation/advanced/historical-trending)
+- [Collaboration d'équipe](/documentation/advanced/team-collaboration)
 
-### Enterprise Features
-- [Multi-Cloud Support](/documentation/enterprise/multi-cloud)
-- [API Access](/documentation/enterprise/api-access)
-- [White-Label Reports](/documentation/enterprise/white-label)
-- [Priority Support](/documentation/enterprise/priority-support)`,
+### Fonctionnalités Enterprise
+- [Support multi-cloud](/documentation/enterprise/multi-cloud)
+- [Accès API](/documentation/enterprise/api-access)
+- [Rapports en marque blanche](/documentation/enterprise/white-label)
+- [Support prioritaire](/documentation/enterprise/priority-support)`,
       },
     ],
   },
@@ -113,45 +113,45 @@ A **Framework** is a compliance standard (ISO 27001, SOC2, GDPR) that defines se
     sections: [
       {
         id: "system-requirements",
-        title: "System Requirements",
+        title: "Prérequis système",
         subsections: [
-          { id: "supported-os", title: "Supported Operating Systems" },
-          { id: "software-requirements", title: "Software Requirements" },
-          { id: "aws-permissions", title: "AWS Permissions Required" },
-          { id: "troubleshooting-requirements", title: "Troubleshooting" },
+          { id: "supported-os", title: "Systèmes d'exploitation supportés" },
+          { id: "software-requirements", title: "Logiciels requis" },
+          { id: "aws-permissions", title: "Permissions AWS requises" },
+          { id: "troubleshooting-requirements", title: "Dépannage" },
         ],
-        content: `# System Requirements
+        content: `# Prérequis système
 
-## Supported Operating Systems
-- **Linux**: Ubuntu 20.04+, Debian 11+, RHEL 8+, CentOS 8+
-- **macOS**: 12.0 (Monterey) or higher
-- **Windows**: Windows 10/11 with WSL2
+## Systèmes d'exploitation supportés
+- **Linux** : Ubuntu 20.04+, Debian 11+, RHEL 8+, CentOS 8+
+- **macOS** : 12.0 (Monterey) ou supérieur
+- **Windows** : Windows 10/11 avec WSL2
 
-## Software Requirements
+## Logiciels requis
 
 ### Python
-- **Version**: Python 3.11 or higher
-- **Check version**: \`python3 --version\`
-- **Install**: See [Python installation guide](https://www.python.org/downloads/)
+- **Version** : Python 3.11 ou supérieur
+- **Vérifier la version** : \`python3 --version\`
+- **Installer** : Voir [guide d'installation Python](https://www.python.org/downloads/)
 
 ### AWS CLI
-- **Version**: AWS CLI 2.0 or higher
-- **Purpose**: Required for AWS credentials configuration
-- **Check version**: \`aws --version\`
-- **Install**: [AWS CLI installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- **Version** : AWS CLI 2.0 ou supérieur
+- **Objectif** : Requis pour la configuration des identifiants AWS
+- **Vérifier la version** : \`aws --version\`
+- **Installer** : [Installation AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
-### Disk Space
-- **Minimum**: 50 MB for Complio CLI
-- **Recommended**: 200 MB for logs and reports
+### Espace disque
+- **Minimum** : 50 Mo pour Complio CLI
+- **Recommandé** : 200 Mo pour les logs et rapports
 
-### Network Requirements
-- **Internet access** for license validation
-- **AWS API access** (HTTPS port 443)
-- **Complio backend**: https://complio-backend.vercel.app
+### Prérequis réseau
+- **Accès internet** pour la validation de licence
+- **Accès API AWS** (HTTPS port 443)
+- **Backend Complio** : https://complio-backend.vercel.app
 
-## AWS Permissions Required
+## Permissions AWS requises
 
-Complio needs **SecurityAudit** policy (AWS managed, read-only):
+Complio nécessite la politique **SecurityAudit** (gérée par AWS, lecture seule) :
 
 \`\`\`json
 {
@@ -186,9 +186,9 @@ Complio needs **SecurityAudit** policy (AWS managed, read-only):
 }
 \`\`\`
 
-## Troubleshooting
+## Dépannage
 
-### Python version too old
+### Version Python trop ancienne
 \`\`\`bash
 # Ubuntu/Debian
 sudo apt update
@@ -197,158 +197,158 @@ sudo apt install python3.11
 # macOS
 brew install python@3.11
 
-# Verify
+# Vérifier
 python3.11 --version
 \`\`\`
 
-### AWS CLI not found
+### AWS CLI non trouvé
 \`\`\`bash
 # Linux/macOS
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 
-# Verify
+# Vérifier
 aws --version
 \`\`\``,
       },
       {
         id: "install-pip",
-        title: "Install via pip",
+        title: "Installation via pip",
         subsections: [
-          { id: "quick-install", title: "Quick Installation" },
-          { id: "install-methods", title: "Installation Methods" },
-          { id: "verify-install", title: "Verify Installation" },
-          { id: "upgrade", title: "Upgrade Complio" },
-          { id: "uninstall", title: "Uninstall" },
-          { id: "troubleshooting-install", title: "Troubleshooting" },
+          { id: "quick-install", title: "Installation rapide" },
+          { id: "install-methods", title: "Méthodes d'installation" },
+          { id: "verify-install", title: "Vérifier l'installation" },
+          { id: "upgrade", title: "Mettre à jour Complio" },
+          { id: "uninstall", title: "Désinstaller" },
+          { id: "troubleshooting-install", title: "Dépannage" },
         ],
-        content: `# Install Complio
+        content: `# Installer Complio
 
-## Quick Installation
+## Installation rapide
 \`\`\`bash
-# Install from PyPI
+# Installer depuis PyPI
 pip install complio
 
-# Verify installation
+# Vérifier l'installation
 complio --version
-# Output: Complio version 1.0.0
+# Sortie : Complio version 1.0.0
 \`\`\`
 
-## Installation Methods
+## Méthodes d'installation
 
-### Method 1: User Installation (Recommended)
+### Méthode 1 : Installation utilisateur (Recommandée)
 \`\`\`bash
-# Install for current user only (no sudo required)
+# Installer uniquement pour l'utilisateur actuel (sudo non requis)
 pip install --user complio
 
-# Add to PATH if needed
+# Ajouter au PATH si nécessaire
 export PATH="$HOME/.local/bin:$PATH"
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 \`\`\`
 
-### Method 2: Virtual Environment
+### Méthode 2 : Environnement virtuel
 \`\`\`bash
-# Create virtual environment
+# Créer un environnement virtuel
 python3 -m venv complio-env
 source complio-env/bin/activate  # Windows: complio-env\\Scripts\\activate
 
-# Install in venv
+# Installer dans venv
 pip install complio
 
-# Use Complio (venv must be activated)
+# Utiliser Complio (venv doit être activé)
 complio --version
 \`\`\`
 
-### Method 3: System-Wide Installation
+### Méthode 3 : Installation système
 \`\`\`bash
-# Install globally (requires sudo)
+# Installer globalement (nécessite sudo)
 sudo pip install complio
 
-# Verify
+# Vérifier
 complio --version
 \`\`\`
 
-### Method 4: Install with pipx (Isolated)
+### Méthode 4 : Installation avec pipx (Isolée)
 \`\`\`bash
-# Install pipx
+# Installer pipx
 pip install pipx
 pipx ensurepath
 
-# Install Complio
+# Installer Complio
 pipx install complio
 
-# Verify
+# Vérifier
 complio --version
 \`\`\`
 
-## Verify Installation
+## Vérifier l'installation
 \`\`\`bash
-# Check Complio is accessible
+# Vérifier que Complio est accessible
 complio --help
 
-# Expected output:
+# Sortie attendue :
 # Usage: complio [OPTIONS] COMMAND [ARGS]...
 # 
-# Complio - Compliance-as-Code Platform
+# Complio - Plateforme Compliance-as-Code
 # 
-# Commands:
-#   activate  Activate Complio license
-#   scan      Run compliance scan
+# Commandes:
+#   activate  Activer la licence Complio
+#   scan      Lancer un scan de conformité
 \`\`\`
 
-## Upgrade Complio
+## Mettre à jour Complio
 \`\`\`bash
-# Upgrade to latest version
+# Mettre à jour vers la dernière version
 pip install --upgrade complio
 
-# Check new version
+# Vérifier la nouvelle version
 complio --version
 \`\`\`
 
-## Uninstall
+## Désinstaller
 \`\`\`bash
-# Remove Complio
+# Supprimer Complio
 pip uninstall complio
 
-# Clean cache
+# Nettoyer le cache
 rm -rf ~/.complio/
 \`\`\`
 
-## Troubleshooting
+## Dépannage
 
-### Issue: "complio: command not found"
-**Solution:**
+### Problème : "complio: command not found"
+**Solution :**
 \`\`\`bash
-# Check if installed
+# Vérifier si installé
 pip show complio
 
-# Add to PATH
+# Ajouter au PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-# Or use full path
+# Ou utiliser le chemin complet
 ~/.local/bin/complio --version
 \`\`\`
 
-### Issue: "Permission denied"
-**Solution:**
+### Problème : "Permission denied"
+**Solution :**
 \`\`\`bash
-# Don't use sudo with pip
+# Ne pas utiliser sudo avec pip
 pip install --user complio
 
-# Or use pipx
+# Ou utiliser pipx
 pipx install complio
 \`\`\`
 
-### Issue: "No module named 'complio'"
-**Solution:**
+### Problème : "No module named 'complio'"
+**Solution :**
 \`\`\`bash
-# Reinstall
+# Réinstaller
 pip uninstall complio
 pip install complio
 
-# Or install from source
+# Ou installer depuis les sources
 pip install git+https://github.com/Tiger972/Complio.git
 \`\`\``,
       },
@@ -361,351 +361,351 @@ pip install git+https://github.com/Tiger972/Complio.git
     sections: [
       {
         id: "activate-license",
-        title: "Activate License",
+        title: "Activer la licence",
         subsections: [
-          { id: "purchase-license", title: "Purchase License" },
-          { id: "activate-cli", title: "Activate CLI" },
-          { id: "verify-status", title: "Verify License Status" },
-          { id: "tiers-comparison", title: "License Tiers Comparison" },
-          { id: "troubleshooting-license", title: "Troubleshooting" },
+          { id: "purchase-license", title: "Acheter une licence" },
+          { id: "activate-cli", title: "Activer le CLI" },
+          { id: "verify-status", title: "Vérifier le statut de la licence" },
+          { id: "tiers-comparison", title: "Comparaison des formules" },
+          { id: "troubleshooting-license", title: "Dépannage" },
         ],
-        content: `# Activate Your License
+        content: `# Activer votre licence
 
-## Purchase License
+## Acheter une licence
 
-1. Visit [complio.tech/pricing](https://complio.tech/pricing)
-2. Choose your plan:
-   - **Starter**: €299/month
-   - **Professional**: €499/month
-   - **Enterprise**: €599/month
-3. Complete payment via Stripe
-4. Receive license key via email (format: \`COMPL-XXXX-XXXX-XXXX-XXXX\`)
+1. Visitez [complio.tech/pricing](https://complio.tech/pricing)
+2. Choisissez votre formule :
+   - **Starter** : 299€/mois
+   - **Professional** : 499€/mois
+   - **Enterprise** : 599€/mois
+3. Finalisez le paiement via Stripe
+4. Recevez votre clé de licence par email (format : \`COMPL-XXXX-XXXX-XXXX-XXXX\`)
 
-## Activate CLI
+## Activer le CLI
 \`\`\`bash
-# Activate with your license key
+# Activer avec votre clé de licence
 complio activate --license-key COMPL-XXXX-XXXX-XXXX-XXXX
 
-# Expected output:
-🔐 Validating license key...
-✅ License activated successfully!
+# Sortie attendue :
+🔐 Validation de la clé de licence...
+✅ Licence activée avec succès !
 
 ╭─────────────────────────────────────────╮
-│ LICENSE ACTIVATED                       │
+│ LICENCE ACTIVÉE                         │
 │                                         │
-│ Tier: PROFESSIONAL                      │
-│ Email: your-email@example.com           │
-│ Status: ACTIVE                          │
-│ Expires: 2027-01-10                     │
+│ Formule : PROFESSIONAL                  │
+│ Email : votre-email@exemple.com         │
+│ Statut : ACTIVE                         │
+│ Expire : 2027-01-10                     │
 ╰─────────────────────────────────────────╯
 \`\`\`
 
-## Verify License Status
+## Vérifier le statut de la licence
 \`\`\`bash
-# Check license file
+# Vérifier le fichier de licence
 cat ~/.complio/license.json
 
-# Output:
+# Sortie :
 {
   "license_key": "COMPL-XXXX-XXXX-XXXX-XXXX",
   "tier": "professional",
-  "email": "your-email@example.com",
+  "email": "votre-email@exemple.com",
   "status": "active",
   "cached_at": "2026-01-10T15:30:00Z"
 }
 \`\`\`
 
-## License Tiers Comparison
+## Comparaison des formules
 
-| Feature | Starter | Professional | Enterprise |
-|---------|---------|-------------|-----------|
-| 40 ISO 27001 Tests | ✅ | ✅ | ✅ |
-| Multi-Region Scanning | ✅ | ✅ | ✅ |
-| JSON/Markdown Reports | ✅ | ✅ | ✅ |
-| SOC2 Framework | ❌ | ✅ | ✅ |
-| GDPR Framework | ❌ | ✅ | ✅ |
+| Fonctionnalité | Starter | Professional | Enterprise |
+|----------------|---------|--------------|------------|
+| 40 tests ISO 27001 | ✅ | ✅ | ✅ |
+| Scan multi-région | ✅ | ✅ | ✅ |
+| Rapports JSON/Markdown | ✅ | ✅ | ✅ |
+| Framework SOC2 | ❌ | ✅ | ✅ |
+| Framework RGPD | ❌ | ✅ | ✅ |
 | Multi-Cloud (Azure/GCP) | ❌ | ✅ | ✅ |
-| API Access | ❌ | ❌ | ✅ |
-| Priority Support | ❌ | ❌ | ✅ |
-| Custom Branding | ❌ | ❌ | ✅ |
+| Accès API | ❌ | ❌ | ✅ |
+| Support prioritaire | ❌ | ❌ | ✅ |
+| Personnalisation marque | ❌ | ❌ | ✅ |
 
-## Troubleshooting
+## Dépannage
 
-### Invalid License Key
-**Error:** \`License validation failed: Invalid key format\`
+### Clé de licence invalide
+**Erreur :** \`Échec de validation de la licence : Format de clé invalide\`
 
-**Solution:**
-- Verify format: \`COMPL-XXXX-XXXX-XXXX-XXXX\` (4 groups of 4 characters)
-- Check for typos
-- Copy-paste from email to avoid errors
+**Solution :**
+- Vérifiez le format : \`COMPL-XXXX-XXXX-XXXX-XXXX\` (4 groupes de 4 caractères)
+- Vérifiez les fautes de frappe
+- Copiez-collez depuis l'email pour éviter les erreurs
 
-### License Already Used
-**Error:** \`License key already activated on another machine\`
+### Licence déjà utilisée
+**Erreur :** \`Clé de licence déjà activée sur une autre machine\`
 
-**Solution:**
-- One license = one machine
-- Purchase additional licenses for multiple machines
-- Or deactivate on old machine: contact support@complio.tech
+**Solution :**
+- Une licence = une machine
+- Achetez des licences supplémentaires pour plusieurs machines
+- Ou désactivez sur l'ancienne machine : contactez support@complio.tech
 
-### Network Error
-**Error:** \`Cannot connect to license server\`
+### Erreur réseau
+**Erreur :** \`Impossible de se connecter au serveur de licence\`
 
-**Solution:**
+**Solution :**
 \`\`\`bash
-# Check internet connection
+# Vérifier la connexion internet
 ping complio-backend.vercel.app
 
-# Check firewall allows HTTPS (port 443)
+# Vérifier que le pare-feu autorise HTTPS (port 443)
 curl https://complio-backend.vercel.app/health
 
-# Try again
-complio activate --license-key YOUR-KEY
+# Réessayer
+complio activate --license-key VOTRE-CLE
 \`\`\`
 
-### Expired License
-**Error:** \`License expired\`
+### Licence expirée
+**Erreur :** \`Licence expirée\`
 
-**Solution:**
-- Renew subscription at complio.tech
-- Update payment method if card expired
-- Contact billing@complio.tech for assistance`,
+**Solution :**
+- Renouvelez l'abonnement sur complio.tech
+- Mettez à jour le moyen de paiement si la carte a expiré
+- Contactez billing@complio.tech pour assistance`,
       },
       {
         id: "aws-credentials",
-        title: "Configure AWS Credentials",
+        title: "Configurer les identifiants AWS",
         subsections: [
-          { id: "create-iam-user", title: "Create IAM User" },
-          { id: "generate-keys", title: "Generate Access Keys" },
-          { id: "configure-cli", title: "Configure AWS CLI" },
-          { id: "verify-config", title: "Verify Configuration" },
-          { id: "multiple-accounts", title: "Multiple AWS Accounts" },
-          { id: "security-best-practices", title: "Security Best Practices" },
+          { id: "create-iam-user", title: "Créer un utilisateur IAM" },
+          { id: "generate-keys", title: "Générer les clés d'accès" },
+          { id: "configure-cli", title: "Configurer AWS CLI" },
+          { id: "verify-config", title: "Vérifier la configuration" },
+          { id: "multiple-accounts", title: "Comptes AWS multiples" },
+          { id: "security-best-practices", title: "Bonnes pratiques de sécurité" },
         ],
-        content: `# Configure AWS Credentials
+        content: `# Configurer les identifiants AWS
 
-Complio uses AWS CLI credentials to scan your infrastructure. Follow this guide to create secure, read-only credentials.
+Complio utilise les identifiants AWS CLI pour scanner votre infrastructure. Suivez ce guide pour créer des identifiants sécurisés en lecture seule.
 
-## Step 1: Create IAM User
+## Étape 1 : Créer un utilisateur IAM
 
-### 1. Access AWS Console
-- Go to [console.aws.amazon.com](https://console.aws.amazon.com)
-- Sign in with root or IAM admin credentials
+### 1. Accéder à la console AWS
+- Allez sur [console.aws.amazon.com](https://console.aws.amazon.com)
+- Connectez-vous avec les identifiants root ou admin IAM
 
-### 2. Navigate to IAM
-- Search for "IAM" in top search bar
-- Click **IAM** service
+### 2. Naviguer vers IAM
+- Recherchez "IAM" dans la barre de recherche
+- Cliquez sur le service **IAM**
 
-### 3. Create User
-1. Left sidebar → **Users**
-2. Click **Create user** (orange button, top right)
-3. User name: \`complio-scanner\`
-4. ☐ **Uncheck** "Provide user access to AWS Management Console"
-5. Click **Next**
+### 3. Créer l'utilisateur
+1. Barre latérale gauche → **Utilisateurs**
+2. Cliquez sur **Créer un utilisateur** (bouton orange, en haut à droite)
+3. Nom d'utilisateur : \`complio-scanner\`
+4. ☐ **Décochez** "Fournir un accès à la console AWS"
+5. Cliquez sur **Suivant**
 
-### 4. Attach Permissions
-1. Select: **Attach policies directly**
-2. Search: \`SecurityAudit\`
-3. ✅ Check **SecurityAudit** (AWS managed policy)
-4. Click **Next**
+### 4. Attacher les permissions
+1. Sélectionnez : **Attacher directement des politiques**
+2. Recherchez : \`SecurityAudit\`
+3. ✅ Cochez **SecurityAudit** (politique gérée par AWS)
+4. Cliquez sur **Suivant**
 
-### 5. Review & Create
-- Verify: User name = \`complio-scanner\`, Permissions = SecurityAudit
-- Click **Create user**
+### 5. Vérifier et créer
+- Vérifiez : Nom d'utilisateur = \`complio-scanner\`, Permissions = SecurityAudit
+- Cliquez sur **Créer l'utilisateur**
 
-## Step 2: Generate Access Keys
+## Étape 2 : Générer les clés d'accès
 
-### 1. Select User
-- Click on \`complio-scanner\` user
+### 1. Sélectionner l'utilisateur
+- Cliquez sur l'utilisateur \`complio-scanner\`
 
-### 2. Security Credentials Tab
-- Click **Security credentials** tab
-- Scroll to **Access keys** section
+### 2. Onglet Informations d'identification de sécurité
+- Cliquez sur l'onglet **Informations d'identification de sécurité**
+- Faites défiler jusqu'à la section **Clés d'accès**
 
-### 3. Create Access Key
-1. Click **Create access key**
-2. Use case: Select **Command Line Interface (CLI)**
-3. ✅ Check "I understand the recommendation"
-4. Click **Next**
+### 3. Créer une clé d'accès
+1. Cliquez sur **Créer une clé d'accès**
+2. Cas d'utilisation : Sélectionnez **Interface de ligne de commande (CLI)**
+3. ✅ Cochez "Je comprends la recommandation"
+4. Cliquez sur **Suivant**
 
-### 4. Add Description (Optional)
-- Description tag: \`Complio compliance scanner\`
-- Click **Create access key**
+### 4. Ajouter une description (Optionnel)
+- Tag de description : \`Scanner de conformité Complio\`
+- Cliquez sur **Créer une clé d'accès**
 
-### 5. **CRITICAL: Save Keys Now**
+### 5. **CRITIQUE : Sauvegardez les clés maintenant**
 
-⚠️ **This is the ONLY time you can view the secret access key!**
+⚠️ **C'est la SEULE fois où vous pouvez voir la clé d'accès secrète !**
 
 \`\`\`
 ┌─────────────────────────────────────────────────────┐
-│ Access key ID: AKIAIOSFODNN7EXAMPLE                 │
-│ Secret access key: wJalrXUtnFEMI/K7MDENG/EXAMPLE    │
+│ ID de clé d'accès : AKIAIOSFODNN7EXAMPLE            │
+│ Clé d'accès secrète : wJalrXUtnFEMI/K7MDENG/EXAMPLE │
 │                                                     │
-│ ⚠️  Save these credentials immediately!             │
+│ ⚠️  Sauvegardez ces identifiants immédiatement !    │
 └─────────────────────────────────────────────────────┘
 \`\`\`
 
-**Save options:**
-- **Download .csv file** (recommended)
-- **Copy to secure password manager**
-- **Write in secure location**
+**Options de sauvegarde :**
+- **Télécharger le fichier .csv** (recommandé)
+- **Copier dans un gestionnaire de mots de passe sécurisé**
+- **Noter dans un endroit sécurisé**
 
-❌ **NEVER:**
-- Commit to Git
-- Share via email/Slack
-- Store in plain text files
+❌ **NE JAMAIS :**
+- Commit dans Git
+- Partager par email/Slack
+- Stocker dans des fichiers texte non chiffrés
 
-## Step 3: Configure AWS CLI
+## Étape 3 : Configurer AWS CLI
 \`\`\`bash
-# Run AWS configure
+# Lancer la configuration AWS
 aws configure
 
-# Prompts:
+# Invites :
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-# ↑ Paste your Access Key from Step 2
+# ↑ Collez votre clé d'accès de l'étape 2
 
 AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/EXAMPLE
-# ↑ Paste your Secret Access Key from Step 2
+# ↑ Collez votre clé d'accès secrète de l'étape 2
 
 Default region name [None]: eu-west-3
-# ↑ Enter your primary AWS region
-# Common: us-east-1, eu-west-1, eu-west-3, ap-southeast-1
+# ↑ Entrez votre région AWS principale
+# Courantes : us-east-1, eu-west-1, eu-west-3, ap-southeast-1
 
 Default output format [None]: json
-# ↑ Press Enter (json recommended)
+# ↑ Appuyez sur Entrée (json recommandé)
 \`\`\`
 
-## Step 4: Verify Configuration
+## Étape 4 : Vérifier la configuration
 \`\`\`bash
-# Test 1: Verify identity
+# Test 1 : Vérifier l'identité
 aws sts get-caller-identity
 
-# Expected output:
+# Sortie attendue :
 {
     "UserId": "AIDAJQABLZS4A3QDU576Q",
     "Account": "123456789012",
     "Arn": "arn:aws:iam::123456789012:user/complio-scanner"
 }
 
-# ✅ If you see your Account ID → Credentials working!
+# ✅ Si vous voyez votre Account ID → Les identifiants fonctionnent !
 
-# Test 2: Verify permissions
+# Test 2 : Vérifier les permissions
 aws s3 ls
 
-# Expected: List of your S3 buckets (or empty list)
-# ✅ If command succeeds → Permissions correct!
+# Attendu : Liste de vos buckets S3 (ou liste vide)
+# ✅ Si la commande réussit → Permissions correctes !
 \`\`\`
 
-## Multiple AWS Accounts
+## Comptes AWS multiples
 
-If you have multiple AWS accounts:
+Si vous avez plusieurs comptes AWS :
 \`\`\`bash
-# Configure additional profile
+# Configurer un profil supplémentaire
 aws configure --profile production
-# Enter production account credentials
+# Entrez les identifiants du compte production
 
 aws configure --profile staging
-# Enter staging account credentials
+# Entrez les identifiants du compte staging
 
-# Use specific profile with Complio
+# Utiliser un profil spécifique avec Complio
 complio scan --profile production --region eu-west-3
 complio scan --profile staging --region us-east-1
 \`\`\`
 
-## Security Best Practices
+## Bonnes pratiques de sécurité
 
-✅ **DO:**
-- Use IAM user with **SecurityAudit** policy (read-only)
-- Rotate access keys every 90 days
-- Store credentials in \`~/.aws/credentials\` (secure)
-- Use different credentials per environment (dev/prod)
-- Enable MFA on IAM user (optional but recommended)
+✅ **À FAIRE :**
+- Utiliser un utilisateur IAM avec la politique **SecurityAudit** (lecture seule)
+- Faire tourner les clés d'accès tous les 90 jours
+- Stocker les identifiants dans \`~/.aws/credentials\` (sécurisé)
+- Utiliser des identifiants différents par environnement (dev/prod)
+- Activer la MFA sur l'utilisateur IAM (optionnel mais recommandé)
 
-❌ **DON'T:**
-- Use root account credentials
-- Grant write permissions
-- Share credentials between team members
-- Commit credentials to version control
-- Use overly permissive policies (like AdministratorAccess)`,
+❌ **À NE PAS FAIRE :**
+- Utiliser les identifiants du compte root
+- Accorder des permissions d'écriture
+- Partager les identifiants entre les membres de l'équipe
+- Commit les identifiants dans le contrôle de version
+- Utiliser des politiques trop permissives (comme AdministratorAccess)`,
       },
     ],
   },
   {
     id: "usage",
-    title: "Usage",
+    title: "Utilisation",
     icon: "Terminal",
     sections: [
       {
         id: "first-scan",
-        title: "Run Your First Scan",
+        title: "Lancer votre premier scan",
         subsections: [
-          { id: "basic-scan", title: "Basic Scan" },
-          { id: "scan-region", title: "Scan Specific Region" },
-          { id: "generate-reports", title: "Generate Reports" },
-          { id: "understanding-results", title: "Understanding Results" },
-          { id: "next-steps", title: "Next Steps" },
+          { id: "basic-scan", title: "Scan basique" },
+          { id: "scan-region", title: "Scanner une région spécifique" },
+          { id: "generate-reports", title: "Générer des rapports" },
+          { id: "understanding-results", title: "Comprendre les résultats" },
+          { id: "next-steps", title: "Prochaines étapes" },
         ],
-        content: `# Run Your First Scan
+        content: `# Lancer votre premier scan
 
-## Basic Scan
+## Scan basique
 \`\`\`bash
-# Scan default region
+# Scanner la région par défaut
 complio scan
 
-# Output:
-✓ Connecting to AWS region: us-east-1
-ℹ Connected to AWS Account: 123456789012
-ℹ Running 40 compliance tests
+# Sortie :
+✓ Connexion à la région AWS : us-east-1
+ℹ Connecté au compte AWS : 123456789012
+ℹ Exécution de 40 tests de conformité
 
-Running compliance tests... ━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03
+Exécution des tests de conformité... ━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03
 
-   Scan Results Summary
-┏━━━━━━━━━━━━━━━━┳━━━━━━━━┓
-┃ Metric         ┃ Value  ┃
-┡━━━━━━━━━━━━━━━━╇━━━━━━━━┩
-│ Total Tests    │ 40     │
-│ Passed         │ ✅ 35  │
-│ Failed         │ ❌ 5   │
-│ Errors         │ ⚠️ 0    │
-│ Overall Score  │ 87.5%  │
-│ Execution Time │ 3.42s  │
-└────────────────┴────────┘
+   Résumé des résultats du scan
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃ Métrique         ┃ Valeur ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ Tests totaux     │ 40     │
+│ Réussis          │ ✅ 35  │
+│ Échoués          │ ❌ 5   │
+│ Erreurs          │ ⚠️ 0   │
+│ Score global     │ 87.5%  │
+│ Temps d'exécution│ 3.42s  │
+└──────────────────┴────────┘
 
-🚨 Critical & High Severity Findings:
+🚨 Découvertes de sévérité Critique & Élevée :
 
-● high: Passwords never expire
-  Test: IAM Password Policy
-  Resource: aws-account
+● élevé : Les mots de passe n'expirent jamais
+  Test : Politique de mot de passe IAM
+  Ressource : aws-account
 
-● high: Unencrypted EBS volumes found
-  Test: EBS Volume Encryption
-  Resource: vol-0123456789abcdef
+● élevé : Volumes EBS non chiffrés détectés
+  Test : Chiffrement des volumes EBS
+  Ressource : vol-0123456789abcdef
 
-✓ Compliance score: 87.5% - NEEDS IMPROVEMENT
+✓ Score de conformité : 87.5% - AMÉLIORATION NÉCESSAIRE
 \`\`\`
 
-## Scan Specific Region
+## Scanner une région spécifique
 \`\`\`bash
-# Scan Paris region
+# Scanner la région Paris
 complio scan --region eu-west-3
 
-# Scan multiple regions (run separately)
+# Scanner plusieurs régions (exécuter séparément)
 complio scan --region eu-west-1
 complio scan --region us-east-1
 complio scan --region ap-southeast-1
 \`\`\`
 
-## Generate Reports
+## Générer des rapports
 
-### JSON Report
+### Rapport JSON
 \`\`\`bash
-# Generate JSON output
-complio scan --region eu-west-3 --output json > compliance-report.json
+# Générer une sortie JSON
+complio scan --region eu-west-3 --output json > rapport-conformite.json
 
-# View report
-cat compliance-report.json | jq '.'
+# Voir le rapport
+cat rapport-conformite.json | jq '.'
 \`\`\`
 
-**JSON Structure:**
+**Structure JSON :**
 \`\`\`json
 {
   "scan_metadata": {
@@ -727,7 +727,7 @@ cat compliance-report.json | jq '.'
   "tests": [
     {
       "test_id": "s3_encryption",
-      "name": "S3 Bucket Encryption",
+      "name": "Chiffrement des buckets S3",
       "status": "passed",
       "score": 100.0,
       "findings": []
@@ -736,7 +736,7 @@ cat compliance-report.json | jq '.'
   "findings": [
     {
       "severity": "high",
-      "title": "Unencrypted EBS volume",
+      "title": "Volume EBS non chiffré",
       "resource_id": "vol-0123456789abcdef",
       "resource_type": "ebs_volume",
       "description": "...",
@@ -746,202 +746,202 @@ cat compliance-report.json | jq '.'
 }
 \`\`\`
 
-### Markdown Report
+### Rapport Markdown
 \`\`\`bash
-# Generate Markdown report
-complio scan --region eu-west-3 --output markdown > compliance-report.md
+# Générer un rapport Markdown
+complio scan --region eu-west-3 --output markdown > rapport-conformite.md
 
-# View report
-cat compliance-report.md
+# Voir le rapport
+cat rapport-conformite.md
 \`\`\`
 
-**Markdown includes:**
-- Executive summary
-- Test-by-test breakdown
-- Findings with severity
-- Remediation steps
-- Compliance score
+**Le Markdown inclut :**
+- Résumé exécutif
+- Détail test par test
+- Découvertes avec sévérité
+- Étapes de remédiation
+- Score de conformité
 
-## Understanding Results
+## Comprendre les résultats
 
-### Compliance Score
+### Score de conformité
 \`\`\`
-90-100% ✅ COMPLIANT      - Ready for audit
-70-89%  ⚠️  NEEDS WORK     - Some issues to fix
-50-69%  ⚠️  PARTIAL        - Multiple issues
-0-49%   ❌ NON-COMPLIANT  - Major gaps
-\`\`\`
-
-### Severity Levels
-\`\`\`
-🔴 CRITICAL - Immediate security risk (fix within 24h)
-🟠 HIGH     - Significant risk (fix within 1 week)
-🟡 MEDIUM   - Moderate concern (fix within 1 month)
-🔵 LOW      - Minor improvement (consider fixing)
-ℹ️  INFO     - Informational only
+90-100% ✅ CONFORME         - Prêt pour l'audit
+70-89%  ⚠️  À AMÉLIORER     - Quelques problèmes à corriger
+50-69%  ⚠️  PARTIEL         - Problèmes multiples
+0-49%   ❌ NON CONFORME     - Lacunes majeures
 \`\`\`
 
-### Test Categories
+### Niveaux de sévérité
+\`\`\`
+🔴 CRITIQUE - Risque de sécurité immédiat (corriger sous 24h)
+🟠 ÉLEVÉ    - Risque significatif (corriger sous 1 semaine)
+🟡 MOYEN    - Préoccupation modérée (corriger sous 1 mois)
+🔵 FAIBLE   - Amélioration mineure (à considérer)
+ℹ️  INFO     - Informationnel uniquement
+\`\`\`
 
-**40 tests across 4 categories:**
+### Catégories de tests
 
-1. **Encryption & Data (12 tests)**
+**40 tests répartis en 4 catégories :**
+
+1. **Chiffrement & Données (12 tests)**
    - S3, EBS, RDS, KMS, Secrets Manager, etc.
 
-2. **Network Security (11 tests)**
+2. **Sécurité Réseau (11 tests)**
    - Security Groups, VPC, CloudFront, WAF, etc.
 
-3. **Identity & Access (7 tests)**
-   - IAM policies, MFA, key rotation, etc.
+3. **Identité & Accès (7 tests)**
+   - Politiques IAM, MFA, rotation des clés, etc.
 
-4. **Logging & Monitoring (10 tests)**
+4. **Journalisation & Monitoring (10 tests)**
    - CloudTrail, CloudWatch, GuardDuty, Config, etc.
 
-## Next Steps
+## Prochaines étapes
 
-### If score ≥ 90%
-1. Export report for auditors
-2. Schedule regular scans (weekly/monthly)
-3. Monitor for drift
+### Si score ≥ 90%
+1. Exporter le rapport pour les auditeurs
+2. Programmer des scans réguliers (hebdomadaire/mensuel)
+3. Surveiller les dérives
 
-### If score < 90%
-1. Review critical/high findings
-2. Follow remediation steps
-3. Re-scan after fixes
-4. Iterate until 90%+`,
+### Si score < 90%
+1. Examiner les découvertes critiques/élevées
+2. Suivre les étapes de remédiation
+3. Re-scanner après les corrections
+4. Itérer jusqu'à 90%+`,
       },
     ],
   },
   {
     id: "core-features",
-    title: "Core Features",
+    title: "Fonctionnalités",
     icon: "Layers",
     sections: [
       {
         id: "compliance-tests",
-        title: "40 Compliance Tests",
+        title: "40 tests de conformité",
         subsections: [
-          { id: "encryption-tests", title: "Encryption & Data Security" },
-          { id: "network-tests", title: "Network Security" },
-          { id: "iam-tests", title: "Identity & Access Management" },
-          { id: "logging-tests", title: "Logging & Monitoring" },
-          { id: "test-details", title: "Test Details" },
-          { id: "roadmap", title: "Roadmap" },
+          { id: "encryption-tests", title: "Chiffrement & Sécurité des données" },
+          { id: "network-tests", title: "Sécurité Réseau" },
+          { id: "iam-tests", title: "Identité & Gestion des accès" },
+          { id: "logging-tests", title: "Journalisation & Monitoring" },
+          { id: "test-details", title: "Détails des tests" },
+          { id: "roadmap", title: "Feuille de route" },
         ],
-        content: `# 40 ISO 27001:2022 Compliance Tests
+        content: `# 40 tests de conformité ISO 27001:2022
 
-Complio performs 40 automated security tests mapped to ISO 27001:2022 controls.
+Complio effectue 40 tests de sécurité automatisés mappés aux contrôles ISO 27001:2022.
 
-## Encryption & Data Security (12 tests)
+## Chiffrement & Sécurité des données (12 tests)
 
-| # | Test Name | Control | Checks |
-|---|-----------|---------|--------|
-| 1 | S3 Bucket Encryption | A.8.24 | AES-256/KMS encryption enabled |
-| 2 | EBS Volume Encryption | A.8.24 | All volumes encrypted |
-| 3 | RDS Instance Encryption | A.8.24 | Database encryption at rest |
-| 4 | Secrets Manager Encryption | A.8.24 | Customer managed KMS keys |
-| 5 | DynamoDB Encryption | A.8.24 | Table encryption enabled |
-| 6 | ElastiCache Encryption | A.8.24 | At-rest & in-transit |
-| 7 | Redshift Encryption | A.8.24 | Cluster encryption |
-| 8 | EFS Encryption | A.8.24 | File system encryption |
-| 9 | Backup Encryption | A.8.13 | Backup vault KMS encryption |
-| 10 | KMS Key Rotation | A.8.24 | Automatic key rotation |
-| 11 | SNS Topic Encryption | A.8.24 | KMS encrypted topics |
-| 12 | CloudWatch Logs Encryption | A.8.15 | Log group encryption |
+| # | Nom du test | Contrôle | Vérifie |
+|---|-------------|----------|---------|
+| 1 | Chiffrement des buckets S3 | A.8.24 | Chiffrement AES-256/KMS activé |
+| 2 | Chiffrement des volumes EBS | A.8.24 | Tous les volumes chiffrés |
+| 3 | Chiffrement des instances RDS | A.8.24 | Chiffrement de la base au repos |
+| 4 | Chiffrement Secrets Manager | A.8.24 | Clés KMS gérées par le client |
+| 5 | Chiffrement DynamoDB | A.8.24 | Chiffrement des tables activé |
+| 6 | Chiffrement ElastiCache | A.8.24 | Au repos & en transit |
+| 7 | Chiffrement Redshift | A.8.24 | Chiffrement du cluster |
+| 8 | Chiffrement EFS | A.8.24 | Chiffrement du système de fichiers |
+| 9 | Chiffrement des sauvegardes | A.8.13 | Chiffrement KMS du coffre de sauvegarde |
+| 10 | Rotation des clés KMS | A.8.24 | Rotation automatique des clés |
+| 11 | Chiffrement des topics SNS | A.8.24 | Topics chiffrés avec KMS |
+| 12 | Chiffrement CloudWatch Logs | A.8.15 | Chiffrement des groupes de logs |
 
-## Network Security (11 tests)
+## Sécurité Réseau (11 tests)
 
-| # | Test Name | Control | Checks |
-|---|-----------|---------|--------|
-| 13 | Security Group Restrictions | A.8.20 | No 0.0.0.0/0 on sensitive ports |
-| 14 | Network ACL Configuration | A.8.20 | Restrictive NACL rules |
-| 15 | VPC Flow Logs | A.8.16 | Flow logs enabled per VPC |
-| 16 | S3 Public Access Block | A.8.11 | All 4 block settings enabled |
-| 17 | Load Balancer Security | A.8.20 | HTTPS listeners, security groups |
-| 18 | WAF Configuration | A.8.20 | Web ACLs with active rules |
-| 19 | CloudFront HTTPS | A.8.24 | HTTPS-only, TLS 1.2+ |
-| 20 | API Gateway Security | A.8.20 | Authorization configured |
-| 21 | VPN Configuration | A.8.24 | Strong encryption (AES256) |
-| 22 | Transit Gateway Security | A.8.31 | Route table isolation |
-| 23 | VPC Endpoints | A.8.31 | Security groups attached |
+| # | Nom du test | Contrôle | Vérifie |
+|---|-------------|----------|---------|
+| 13 | Restrictions Security Groups | A.8.20 | Pas de 0.0.0.0/0 sur ports sensibles |
+| 14 | Configuration Network ACL | A.8.20 | Règles NACL restrictives |
+| 15 | VPC Flow Logs | A.8.16 | Flow logs activés par VPC |
+| 16 | Blocage accès public S3 | A.8.11 | Les 4 paramètres de blocage activés |
+| 17 | Sécurité Load Balancer | A.8.20 | Listeners HTTPS, security groups |
+| 18 | Configuration WAF | A.8.20 | Web ACLs avec règles actives |
+| 19 | CloudFront HTTPS | A.8.24 | HTTPS uniquement, TLS 1.2+ |
+| 20 | Sécurité API Gateway | A.8.20 | Autorisation configurée |
+| 21 | Configuration VPN | A.8.24 | Chiffrement fort (AES256) |
+| 22 | Sécurité Transit Gateway | A.8.31 | Isolation des tables de routage |
+| 23 | VPC Endpoints | A.8.31 | Security groups attachés |
 
-## Identity & Access Management (7 tests)
+## Identité & Gestion des accès (7 tests)
 
-| # | Test Name | Control | Checks |
-|---|-----------|---------|--------|
-| 24 | IAM Password Policy | A.8.5 | 14+ chars, complexity, 90-day expiry |
-| 25 | MFA Enforcement | A.8.5 | All users have MFA |
-| 26 | Root Account Protection | A.8.2 | MFA enabled, no access keys |
-| 27 | Access Key Rotation | A.8.5 | Keys < 90 days old |
-| 28 | IAM Least Privilege | A.8.2 | No overly permissive policies |
-| 29 | Cross-Account Access | A.8.31 | Secure trust relationships |
-| 30 | Service-Linked Roles | A.8.31 | Proper role usage |
+| # | Nom du test | Contrôle | Vérifie |
+|---|-------------|----------|---------|
+| 24 | Politique de mot de passe IAM | A.8.5 | 14+ caractères, complexité, expiration 90 jours |
+| 25 | Exigence MFA | A.8.5 | Tous les utilisateurs ont la MFA |
+| 26 | Protection compte root | A.8.2 | MFA activée, pas de clés d'accès |
+| 27 | Rotation des clés d'accès | A.8.5 | Clés < 90 jours |
+| 28 | Principe du moindre privilège IAM | A.8.2 | Pas de politiques trop permissives |
+| 29 | Accès inter-comptes | A.8.31 | Relations de confiance sécurisées |
+| 30 | Rôles liés aux services | A.8.31 | Utilisation correcte des rôles |
 
-## Logging & Monitoring (10 tests)
+## Journalisation & Monitoring (10 tests)
 
-| # | Test Name | Control | Checks |
-|---|-----------|---------|--------|
-| 31 | CloudTrail Multi-Region | A.8.15 | Multi-region logging enabled |
-| 32 | CloudTrail Log Validation | A.8.15 | File validation enabled |
-| 33 | CloudTrail Encryption | A.8.15 | KMS encryption for logs |
-| 34 | CloudWatch Log Retention | A.8.15 | Retention ≥ 90 days |
-| 35 | CloudWatch Alarms | A.8.16 | Critical alarms configured |
-| 36 | AWS Config Enabled | A.8.16 | Config recorder active |
-| 37 | GuardDuty Enabled | A.8.16 | Threat detection enabled |
-| 38 | Security Hub Enabled | A.8.16 | Standards enabled |
-| 39 | EventBridge Rules | A.8.16 | Security event rules |
-| 40 | S3 Versioning | A.8.13 | Bucket versioning enabled |
+| # | Nom du test | Contrôle | Vérifie |
+|---|-------------|----------|---------|
+| 31 | CloudTrail Multi-Région | A.8.15 | Journalisation multi-région activée |
+| 32 | Validation des logs CloudTrail | A.8.15 | Validation des fichiers activée |
+| 33 | Chiffrement CloudTrail | A.8.15 | Chiffrement KMS pour les logs |
+| 34 | Rétention CloudWatch Logs | A.8.15 | Rétention ≥ 90 jours |
+| 35 | Alarmes CloudWatch | A.8.16 | Alarmes critiques configurées |
+| 36 | AWS Config activé | A.8.16 | Enregistreur Config actif |
+| 37 | GuardDuty activé | A.8.16 | Détection des menaces activée |
+| 38 | Security Hub activé | A.8.16 | Standards activés |
+| 39 | Règles EventBridge | A.8.16 | Règles d'événements de sécurité |
+| 40 | Versioning S3 | A.8.13 | Versioning des buckets activé |
 
-## Test Details
+## Détails des tests
 
-### Example: S3 Bucket Encryption (Test #1)
+### Exemple : Chiffrement des buckets S3 (Test #1)
 
-**What it checks:**
-- All S3 buckets have server-side encryption enabled
-- Encryption type: AES-256 (SSE-S3) or KMS (SSE-KMS)
+**Ce qu'il vérifie :**
+- Tous les buckets S3 ont le chiffrement côté serveur activé
+- Type de chiffrement : AES-256 (SSE-S3) ou KMS (SSE-KMS)
 
-**Pass criteria:**
-- 100% of buckets are encrypted
+**Critères de réussite :**
+- 100% des buckets sont chiffrés
 
-**Failure severity:**
-- HIGH - Unencrypted buckets expose data at rest
+**Sévérité en cas d'échec :**
+- ÉLEVÉ - Les buckets non chiffrés exposent les données au repos
 
-**Remediation:**
+**Remédiation :**
 \`\`\`bash
-# Enable encryption on bucket
+# Activer le chiffrement sur le bucket
 aws s3api put-bucket-encryption \\
-  --bucket my-bucket \\
+  --bucket mon-bucket \\
   --server-side-encryption-configuration \\
   '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"}}]}'
 \`\`\`
 
-**ISO 27001 Control:**
-- A.8.24: Use of cryptography
+**Contrôle ISO 27001 :**
+- A.8.24 : Utilisation de la cryptographie
 
-### Example: IAM Password Policy (Test #24)
+### Exemple : Politique de mot de passe IAM (Test #24)
 
-**What it checks:**
-- Minimum length ≥ 14 characters
-- Requires uppercase letters
-- Requires lowercase letters
-- Requires numbers
-- Requires symbols
-- Password expiration ≤ 90 days
-- Password reuse prevention (5+ passwords)
-- Hard expiry enabled
+**Ce qu'il vérifie :**
+- Longueur minimale ≥ 14 caractères
+- Exige des majuscules
+- Exige des minuscules
+- Exige des chiffres
+- Exige des symboles
+- Expiration du mot de passe ≤ 90 jours
+- Prévention de réutilisation (5+ mots de passe)
+- Expiration stricte activée
 
-**Pass criteria:**
-- All 8 requirements met = 100%
-- 7/8 met = 87.5%
+**Critères de réussite :**
+- Les 8 exigences satisfaites = 100%
+- 7/8 satisfaites = 87.5%
 - etc.
 
-**Failure severity:**
-- HIGH if password expiration or reuse not configured
-- MEDIUM if complexity requirements missing
+**Sévérité en cas d'échec :**
+- ÉLEVÉ si l'expiration ou la réutilisation n'est pas configurée
+- MOYEN si les exigences de complexité manquent
 
-**Remediation:**
+**Remédiation :**
 \`\`\`bash
-# Set password policy
+# Définir la politique de mot de passe
 aws iam update-account-password-policy \\
   --minimum-password-length 14 \\
   --require-uppercase-characters \\
@@ -953,17 +953,17 @@ aws iam update-account-password-policy \\
   --hard-expiry
 \`\`\`
 
-**ISO 27001 Control:**
-- A.8.5: User authentication
+**Contrôle ISO 27001 :**
+- A.8.5 : Authentification des utilisateurs
 
-## Roadmap: Future Tests
+## Feuille de route : Tests futurs
 
-**Coming in v2.0:**
-- Azure & GCP support (multi-cloud)
-- SOC2 framework (80 tests)
-- GDPR framework (50 tests)
-- Custom test creation
-- Policy-as-code integration`,
+**À venir dans la v2.0 :**
+- Support Azure & GCP (multi-cloud)
+- Framework SOC2 (80 tests)
+- Framework RGPD (50 tests)
+- Création de tests personnalisés
+- Intégration policy-as-code`,
       },
     ],
   },

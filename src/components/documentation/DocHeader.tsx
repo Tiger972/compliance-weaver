@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, Github, LayoutDashboard, Menu } from "lucide-react";
+import { Home, Linkedin, Calendar, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DocSearch from "./DocSearch";
 import complioLogo from "@/assets/complio-logo.png";
@@ -24,7 +24,7 @@ const DocHeader = ({ onToggleSidebar }: DocHeaderProps) => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
-          <img src={complioLogo} alt="Complio" className="h-8 w-auto" />
+          <img src={complioLogo} alt="Complio" className="h-12 w-auto" />
         </Link>
 
         {/* Search - centered */}
@@ -37,17 +37,17 @@ const DocHeader = ({ onToggleSidebar }: DocHeaderProps) => {
           <Button variant="ghost" size="sm" asChild className="hidden sm:flex">
             <Link to="/">
               <Home className="h-4 w-4 mr-2" />
-              Home
+              Accueil
             </Link>
           </Button>
           <Button variant="ghost" size="sm" asChild className="hidden sm:flex">
             <a
-              href="https://github.com/Tiger972/Complio"
+              href="https://www.linkedin.com/company/compl-io/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="h-4 w-4 mr-2" />
-              GitHub
+              <Linkedin className="h-4 w-4 mr-2" />
+              LinkedIn
             </a>
           </Button>
           <Button variant="gradient" size="sm" asChild>
@@ -56,8 +56,8 @@ const DocHeader = ({ onToggleSidebar }: DocHeaderProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LayoutDashboard className="h-4 w-4 mr-2" />
-              <span className="hidden sm:inline">Dashboard</span>
+              <Calendar className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Réserver une démo</span>
             </a>
           </Button>
         </div>
