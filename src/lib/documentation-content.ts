@@ -197,7 +197,7 @@ sudo apt install python3.11
 # macOS
 brew install python@3.11
 
-# Vérifier
+# Verify
 python3.11 --version
 \`\`\`
 
@@ -208,7 +208,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
-# Vérifier
+# Verify
 aws --version
 \`\`\``,
       },
@@ -227,22 +227,22 @@ aws --version
 
 ## Installation rapide
 \`\`\`bash
-# Installer depuis PyPI
+# Install from PyPI
 pip install complio
 
-# Vérifier l'installation
+# Verify installation
 complio --version
-# Sortie : Complio version 1.0.0
+# Output: Complio version 1.0.0
 \`\`\`
 
 ## Méthodes d'installation
 
 ### Méthode 1 : Installation utilisateur (Recommandée)
 \`\`\`bash
-# Installer uniquement pour l'utilisateur actuel (sudo non requis)
+# Install for current user only (no sudo required)
 pip install --user complio
 
-# Ajouter au PATH si nécessaire
+# Add to PATH if needed
 export PATH="$HOME/.local/bin:$PATH"
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
@@ -250,69 +250,69 @@ source ~/.bashrc
 
 ### Méthode 2 : Environnement virtuel
 \`\`\`bash
-# Créer un environnement virtuel
+# Create virtual environment
 python3 -m venv complio-env
 source complio-env/bin/activate  # Windows: complio-env\\Scripts\\activate
 
-# Installer dans venv
+# Install in venv
 pip install complio
 
-# Utiliser Complio (venv doit être activé)
+# Use Complio (venv must be activated)
 complio --version
 \`\`\`
 
 ### Méthode 3 : Installation système
 \`\`\`bash
-# Installer globalement (nécessite sudo)
+# Install globally (requires sudo)
 sudo pip install complio
 
-# Vérifier
+# Verify
 complio --version
 \`\`\`
 
 ### Méthode 4 : Installation avec pipx (Isolée)
 \`\`\`bash
-# Installer pipx
+# Install pipx
 pip install pipx
 pipx ensurepath
 
-# Installer Complio
+# Install Complio
 pipx install complio
 
-# Vérifier
+# Verify
 complio --version
 \`\`\`
 
 ## Vérifier l'installation
 \`\`\`bash
-# Vérifier que Complio est accessible
+# Check that Complio is accessible
 complio --help
 
-# Sortie attendue :
+# Expected output:
 # Usage: complio [OPTIONS] COMMAND [ARGS]...
 # 
-# Complio - Plateforme Compliance-as-Code
+# Complio - Compliance-as-Code Platform
 # 
-# Commandes:
-#   activate  Activer la licence Complio
-#   scan      Lancer un scan de conformité
+# Commands:
+#   activate  Activate Complio license
+#   scan      Run compliance scan
 \`\`\`
 
 ## Mettre à jour Complio
 \`\`\`bash
-# Mettre à jour vers la dernière version
+# Update to latest version
 pip install --upgrade complio
 
-# Vérifier la nouvelle version
+# Check new version
 complio --version
 \`\`\`
 
 ## Désinstaller
 \`\`\`bash
-# Supprimer Complio
+# Remove Complio
 pip uninstall complio
 
-# Nettoyer le cache
+# Clean cache
 rm -rf ~/.complio/
 \`\`\`
 
@@ -321,34 +321,34 @@ rm -rf ~/.complio/
 ### Problème : "complio: command not found"
 **Solution :**
 \`\`\`bash
-# Vérifier si installé
+# Check if installed
 pip show complio
 
-# Ajouter au PATH
+# Add to PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-# Ou utiliser le chemin complet
+# Or use full path
 ~/.local/bin/complio --version
 \`\`\`
 
 ### Problème : "Permission denied"
 **Solution :**
 \`\`\`bash
-# Ne pas utiliser sudo avec pip
+# Don't use sudo with pip
 pip install --user complio
 
-# Ou utiliser pipx
+# Or use pipx
 pipx install complio
 \`\`\`
 
 ### Problème : "No module named 'complio'"
 **Solution :**
 \`\`\`bash
-# Réinstaller
+# Reinstall
 pip uninstall complio
 pip install complio
 
-# Ou installer depuis les sources
+# Or install from source
 pip install git+https://github.com/Tiger972/Complio.git
 \`\`\``,
       },
@@ -378,33 +378,33 @@ pip install git+https://github.com/Tiger972/Complio.git
 
 ## Activer le CLI
 \`\`\`bash
-# Activer avec votre clé de licence
+# Activate with your license key
 complio activate --license-key COMPL-XXXX-XXXX-XXXX-XXXX
 
-# Sortie attendue :
-🔐 Validation de la clé de licence...
-✅ Licence activée avec succès !
+# Expected output:
+🔐 Validating license key...
+✅ License activated successfully!
 
 ╭─────────────────────────────────────────╮
-│ LICENCE ACTIVÉE                         │
+│ LICENSE ACTIVATED                       │
 │                                         │
-│ Formule : PROFESSIONAL                  │
-│ Email : votre-email@exemple.com         │
-│ Statut : ACTIVE                         │
-│ Expire : 2027-01-10                     │
+│ Tier: PROFESSIONAL                      │
+│ Email: your-email@example.com           │
+│ Status: ACTIVE                          │
+│ Expires: 2027-01-10                     │
 ╰─────────────────────────────────────────╯
 \`\`\`
 
 ## Vérifier le statut de la licence
 \`\`\`bash
-# Vérifier le fichier de licence
+# Check license file
 cat ~/.complio/license.json
 
-# Sortie :
+# Output:
 {
   "license_key": "COMPL-XXXX-XXXX-XXXX-XXXX",
   "tier": "professional",
-  "email": "votre-email@exemple.com",
+  "email": "your-email@example.com",
   "status": "active",
   "cached_at": "2026-01-10T15:30:00Z"
 }
@@ -432,14 +432,14 @@ cat ~/.complio/license.json
 
 **Solution :**
 \`\`\`bash
-# Vérifier la connexion internet
+# Check internet connection
 ping complio-backend.vercel.app
 
-# Vérifier que le pare-feu autorise HTTPS (port 443)
+# Check firewall allows HTTPS (port 443)
 curl https://complio-backend.vercel.app/health
 
-# Réessayer
-complio activate --license-key VOTRE-CLE
+# Retry
+complio activate --license-key YOUR-KEY
 \`\`\`
 
 ### Licence expirée
@@ -536,57 +536,57 @@ Complio utilise les identifiants AWS CLI pour scanner votre infrastructure. Suiv
 
 ## Étape 3 : Configurer AWS CLI
 \`\`\`bash
-# Lancer la configuration AWS
+# Launch AWS configuration
 aws configure
 
-# Invites :
+# Prompts:
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-# ↑ Collez votre clé d'accès de l'étape 2
+# ↑ Paste your access key from step 2
 
 AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/EXAMPLE
-# ↑ Collez votre clé d'accès secrète de l'étape 2
+# ↑ Paste your secret access key from step 2
 
 Default region name [None]: eu-west-3
-# ↑ Entrez votre région AWS principale
-# Courantes : us-east-1, eu-west-1, eu-west-3, ap-southeast-1
+# ↑ Enter your main AWS region
+# Common: us-east-1, eu-west-1, eu-west-3, ap-southeast-1
 
 Default output format [None]: json
-# ↑ Appuyez sur Entrée (json recommandé)
+# ↑ Press Enter (json recommended)
 \`\`\`
 
 ## Étape 4 : Vérifier la configuration
 \`\`\`bash
-# Test 1 : Vérifier l'identité
+# Test 1: Verify identity
 aws sts get-caller-identity
 
-# Sortie attendue :
+# Expected output:
 {
     "UserId": "AIDAJQABLZS4A3QDU576Q",
     "Account": "123456789012",
     "Arn": "arn:aws:iam::123456789012:user/complio-scanner"
 }
 
-# ✅ Si vous voyez votre Account ID → Les identifiants fonctionnent !
+# ✅ If you see your Account ID → Credentials are working!
 
-# Test 2 : Vérifier les permissions
+# Test 2: Verify permissions
 aws s3 ls
 
-# Attendu : Liste de vos buckets S3 (ou liste vide)
-# ✅ Si la commande réussit → Permissions correctes !
+# Expected: List of your S3 buckets (or empty list)
+# ✅ If command succeeds → Permissions are correct!
 \`\`\`
 
 ## Comptes AWS multiples
 
 Si vous avez plusieurs comptes AWS :
 \`\`\`bash
-# Configurer un profil supplémentaire
+# Configure additional profile
 aws configure --profile production
-# Entrez les identifiants du compte production
+# Enter production account credentials
 
 aws configure --profile staging
-# Entrez les identifiants du compte staging
+# Enter staging account credentials
 
-# Utiliser un profil spécifique avec Complio
+# Use specific profile with Complio
 complio scan --profile production --region eu-west-3
 complio scan --profile staging --region us-east-1
 \`\`\`
@@ -628,47 +628,47 @@ complio scan --profile staging --region us-east-1
 
 ## Scan basique
 \`\`\`bash
-# Scanner la région par défaut
+# Scan default region
 complio scan
 
-# Sortie :
-✓ Connexion à la région AWS : us-east-1
-ℹ Connecté au compte AWS : 123456789012
-ℹ Exécution de 40 tests de conformité
+# Output:
+✓ Connected to AWS region: us-east-1
+ℹ Connected to AWS account: 123456789012
+ℹ Running 40 compliance tests
 
-Exécution des tests de conformité... ━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03
+Running compliance tests... ━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03
 
-   Résumé des résultats du scan
+   Scan Results Summary
 ┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
-┃ Métrique         ┃ Valeur ┃
+┃ Metric           ┃ Value  ┃
 ┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
-│ Tests totaux     │ 40     │
-│ Réussis          │ ✅ 35  │
-│ Échoués          │ ❌ 5   │
-│ Erreurs          │ ⚠️ 0   │
-│ Score global     │ 87.5%  │
-│ Temps d'exécution│ 3.42s  │
+│ Total Tests      │ 40     │
+│ Passed           │ ✅ 35  │
+│ Failed           │ ❌ 5   │
+│ Errors           │ ⚠️ 0   │
+│ Overall Score    │ 87.5%  │
+│ Execution Time   │ 3.42s  │
 └──────────────────┴────────┘
 
-🚨 Découvertes de sévérité Critique & Élevée :
+🚨 Critical & High Severity Findings:
 
-● élevé : Les mots de passe n'expirent jamais
-  Test : Politique de mot de passe IAM
-  Ressource : aws-account
+● high: Passwords never expire
+  Test: IAM Password Policy
+  Resource: aws-account
 
-● élevé : Volumes EBS non chiffrés détectés
-  Test : Chiffrement des volumes EBS
-  Ressource : vol-0123456789abcdef
+● high: Unencrypted EBS volumes detected
+  Test: EBS Volume Encryption
+  Resource: vol-0123456789abcdef
 
-✓ Score de conformité : 87.5% - AMÉLIORATION NÉCESSAIRE
+✓ Compliance Score: 87.5% - IMPROVEMENT NEEDED
 \`\`\`
 
 ## Scanner une région spécifique
 \`\`\`bash
-# Scanner la région Paris
+# Scan Paris region
 complio scan --region eu-west-3
 
-# Scanner plusieurs régions (exécuter séparément)
+# Scan multiple regions (run separately)
 complio scan --region eu-west-1
 complio scan --region us-east-1
 complio scan --region ap-southeast-1
@@ -678,11 +678,11 @@ complio scan --region ap-southeast-1
 
 ### Rapport JSON
 \`\`\`bash
-# Générer une sortie JSON
-complio scan --region eu-west-3 --output json > rapport-conformite.json
+# Generate JSON output
+complio scan --region eu-west-3 --output json > compliance-report.json
 
-# Voir le rapport
-cat rapport-conformite.json | jq '.'
+# View report
+cat compliance-report.json | jq '.'
 \`\`\`
 
 **Structure JSON :**
@@ -728,11 +728,11 @@ cat rapport-conformite.json | jq '.'
 
 ### Rapport Markdown
 \`\`\`bash
-# Générer un rapport Markdown
-complio scan --region eu-west-3 --output markdown > rapport-conformite.md
+# Generate Markdown report
+complio scan --region eu-west-3 --output markdown > compliance-report.md
 
-# Voir le rapport
-cat rapport-conformite.md
+# View report
+cat compliance-report.md
 \`\`\`
 
 **Le Markdown inclut :**
@@ -746,19 +746,19 @@ cat rapport-conformite.md
 
 ### Score de conformité
 \`\`\`
-90-100% ✅ CONFORME         - Prêt pour l'audit
-70-89%  ⚠️  À AMÉLIORER     - Quelques problèmes à corriger
-50-69%  ⚠️  PARTIEL         - Problèmes multiples
-0-49%   ❌ NON CONFORME     - Lacunes majeures
+90-100% ✅ COMPLIANT        - Audit ready
+70-89%  ⚠️  NEEDS IMPROVEMENT - Some issues to fix
+50-69%  ⚠️  PARTIAL         - Multiple issues
+0-49%   ❌ NON-COMPLIANT    - Major gaps
 \`\`\`
 
 ### Niveaux de sévérité
 \`\`\`
-🔴 CRITIQUE - Risque de sécurité immédiat (corriger sous 24h)
-🟠 ÉLEVÉ    - Risque significatif (corriger sous 1 semaine)
-🟡 MOYEN    - Préoccupation modérée (corriger sous 1 mois)
-🔵 FAIBLE   - Amélioration mineure (à considérer)
-ℹ️  INFO     - Informationnel uniquement
+🔴 CRITICAL - Immediate security risk (fix within 24h)
+🟠 HIGH     - Significant risk (fix within 1 week)
+🟡 MEDIUM   - Moderate concern (fix within 1 month)
+🔵 LOW      - Minor improvement (consider)
+ℹ️  INFO     - Informational only
 \`\`\`
 
 ### Catégories de tests
@@ -888,9 +888,9 @@ Complio effectue 40 tests de sécurité automatisés mappés aux contrôles ISO 
 
 **Remédiation :**
 \`\`\`bash
-# Activer le chiffrement sur le bucket
+# Enable encryption on bucket
 aws s3api put-bucket-encryption \\
-  --bucket mon-bucket \\
+  --bucket my-bucket \\
   --server-side-encryption-configuration \\
   '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"}}]}'
 \`\`\`
@@ -921,7 +921,7 @@ aws s3api put-bucket-encryption \\
 
 **Remédiation :**
 \`\`\`bash
-# Définir la politique de mot de passe
+# Set password policy
 aws iam update-account-password-policy \\
   --minimum-password-length 14 \\
   --require-uppercase-characters \\
