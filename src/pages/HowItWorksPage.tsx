@@ -314,17 +314,17 @@ jobs:
       count: 12,
       tests: [
         { name: "S3 bucket encryption (AES-256/KMS) - A.8.24", version: "v0.1.0", status: "available" },
-        { name: "S3 Versioning - A.8.13", version: "v0.2.0", status: "in-progress" },
-        { name: "EBS volume encryption - A.8.24", version: "v0.2.0", status: "in-progress" },
-        { name: "RDS instance encryption - A.8.24", version: "v0.2.0", status: "in-progress" },
-        { name: "KMS key rotation - A.8.24", version: "v0.2.0", status: "in-progress" },
-        { name: "Secrets Manager encryption - A.8.24", version: "v0.2.0", status: "in-progress" },
-        { name: "CloudWatch Logs encryption - A.8.15", version: "v0.2.0", status: "in-progress" },
-        { name: "DynamoDB encryption - A.8.24", version: "v0.3.0", status: "planned" },
-        { name: "ElastiCache encryption - A.8.24", version: "v0.3.0", status: "planned" },
-        { name: "Redshift encryption - A.8.24", version: "v0.3.0", status: "planned" },
-        { name: "EFS encryption - A.8.24", version: "v0.3.0", status: "planned" },
-        { name: "Backup encryption - A.8.13", version: "v0.3.0", status: "planned" },
+        { name: "S3 Versioning - A.8.13", version: "v0.2.0", status: "available" },
+        { name: "EBS volume encryption - A.8.24", version: "v0.2.0", status: "available" },
+        { name: "RDS instance encryption - A.8.24", version: "v0.2.0", status: "available" },
+        { name: "KMS key rotation - A.8.24", version: "v0.2.0", status: "available" },
+        { name: "Secrets Manager encryption - A.8.24", version: "v0.2.0", status: "available" },
+        { name: "CloudWatch Logs encryption - A.8.15", version: "v0.2.0", status: "available" },
+        { name: "DynamoDB encryption - A.8.24", version: "v0.3.0", status: "available" },
+        { name: "ElastiCache encryption - A.8.24", version: "v0.3.0", status: "available" },
+        { name: "Redshift encryption - A.8.24", version: "v0.3.0", status: "available" },
+        { name: "EFS encryption - A.8.24", version: "v0.3.0", status: "available" },
+        { name: "Backup encryption - A.8.13", version: "v0.3.0", status: "available" },
       ],
     },
     {
@@ -333,16 +333,16 @@ jobs:
       count: 11,
       tests: [
         { name: "Security Groups restrictions - A.8.20", version: "v0.1.0", status: "available" },
-        { name: "NACLs configuration - A.8.20", version: "v0.2.0", status: "in-progress" },
-        { name: "VPC Flow Logs enabled - A.8.16", version: "v0.2.0", status: "in-progress" },
-        { name: "Public access blocked - A.8.11", version: "v0.2.0", status: "in-progress" },
-        { name: "ALB/NLB security - A.8.20", version: "v0.3.0", status: "planned" },
-        { name: "WAF rules configured - A.8.20", version: "v0.3.0", status: "planned" },
-        { name: "CloudFront HTTPS only - A.8.24", version: "v0.3.0", status: "planned" },
-        { name: "API Gateway security - A.8.20", version: "v0.3.0", status: "planned" },
-        { name: "VPN configuration - A.8.24", version: "v0.3.0", status: "planned" },
-        { name: "Transit Gateway security - A.8.31", version: "v0.3.0", status: "planned" },
-        { name: "VPC Endpoints security - A.8.31", version: "v0.3.0", status: "planned" },
+        { name: "NACLs configuration - A.8.20", version: "v0.2.0", status: "available" },
+        { name: "VPC Flow Logs enabled - A.8.16", version: "v0.2.0", status: "available" },
+        { name: "Public access blocked - A.8.11", version: "v0.2.0", status: "available" },
+        { name: "ALB/NLB security - A.8.20", version: "v0.3.0", status: "available" },
+        { name: "WAF rules configured - A.8.20", version: "v0.3.0", status: "available" },
+        { name: "CloudFront HTTPS only - A.8.24", version: "v0.3.0", status: "available" },
+        { name: "API Gateway security - A.8.20", version: "v0.3.0", status: "available" },
+        { name: "VPN configuration - A.8.24", version: "v0.3.0", status: "available" },
+        { name: "Transit Gateway security - A.8.31", version: "v0.3.0", status: "available" },
+        { name: "VPC Endpoints security - A.8.31", version: "v0.3.0", status: "available" },
       ],
     },
     {
@@ -351,12 +351,12 @@ jobs:
       count: 7,
       tests: [
         { name: "IAM password policy - A.8.5", version: "v0.1.0", status: "available" },
-        { name: "MFA enforcement - A.8.5", version: "v0.2.0", status: "in-progress" },
-        { name: "Root account protection - A.8.2", version: "v0.2.0", status: "in-progress" },
-        { name: "Access key rotation - A.8.5", version: "v0.2.0", status: "in-progress" },
-        { name: "IAM policies least privilege - A.8.2", version: "v0.3.0", status: "planned" },
-        { name: "Cross-account access - A.8.31", version: "v0.3.0", status: "planned" },
-        { name: "Service-linked roles - A.8.31", version: "v0.3.0", status: "planned" },
+        { name: "MFA enforcement - A.8.5", version: "v0.2.0", status: "available" },
+        { name: "Root account protection - A.8.2", version: "v0.2.0", status: "available" },
+        { name: "Access key rotation - A.8.5", version: "v0.2.0", status: "available" },
+        { name: "IAM policies least privilege - A.8.2", version: "v0.3.0", status: "available" },
+        { name: "Cross-account access - A.8.31", version: "v0.3.0", status: "available" },
+        { name: "Service-linked roles - A.8.31", version: "v0.3.0", status: "available" },
       ],
     },
     {
@@ -365,15 +365,15 @@ jobs:
       count: 10,
       tests: [
         { name: "CloudTrail multi-region - A.8.15", version: "v0.1.0", status: "available" },
-        { name: "Log file validation - A.8.15", version: "v0.2.0", status: "in-progress" },
-        { name: "CloudTrail encryption - A.8.15", version: "v0.2.0", status: "in-progress" },
-        { name: "Retention > 90 days - A.8.15", version: "v0.3.0", status: "planned" },
-        { name: "CloudWatch alarms - A.8.16", version: "v0.3.0", status: "planned" },
-        { name: "Config rules enabled - A.8.16", version: "v0.3.0", status: "planned" },
-        { name: "GuardDuty enabled - A.8.16", version: "v0.3.0", status: "planned" },
-        { name: "Security Hub enabled - A.8.16", version: "v0.3.0", status: "planned" },
-        { name: "EventBridge rules - A.8.16", version: "v0.3.0", status: "planned" },
-        { name: "SNS notifications - A.8.16", version: "v0.3.0", status: "planned" },
+        { name: "Log file validation - A.8.15", version: "v0.2.0", status: "available" },
+        { name: "CloudTrail encryption - A.8.15", version: "v0.2.0", status: "available" },
+        { name: "Retention > 90 days - A.8.15", version: "v0.3.0", status: "available" },
+        { name: "CloudWatch alarms - A.8.16", version: "v0.3.0", status: "available" },
+        { name: "Config rules enabled - A.8.16", version: "v0.3.0", status: "available" },
+        { name: "GuardDuty enabled - A.8.16", version: "v0.3.0", status: "available" },
+        { name: "Security Hub enabled - A.8.16", version: "v0.3.0", status: "available" },
+        { name: "EventBridge rules - A.8.16", version: "v0.3.0", status: "available" },
+        { name: "SNS notifications - A.8.16", version: "v0.3.0", status: "available" },
       ],
     },
   ];
@@ -917,12 +917,12 @@ jobs:
                       <span className="text-sm text-muted-foreground">Disponible</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-amber-500/10 text-amber-500">🚧 v0.2.0</span>
-                      <span className="text-sm text-muted-foreground">En cours</span>
+                      <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-500">✅ v0.2.0</span>
+                      <span className="text-sm text-muted-foreground">Disponible</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-blue-500/10 text-blue-500">📅 v0.3.0</span>
-                      <span className="text-sm text-muted-foreground">Planifié</span>
+                      <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-500">✅ v0.3.0</span>
+                      <span className="text-sm text-muted-foreground">Disponible</span>
                     </div>
                   </div>
                   
@@ -941,14 +941,8 @@ jobs:
                                 <div className="w-1 h-1 rounded-full bg-muted-foreground" />
                                 <span>{test.name}</span>
                               </div>
-                              <span className={`px-2 py-0.5 text-xs font-medium rounded-full shrink-0 ${
-                                test.status === "available" 
-                                  ? "bg-emerald-500/10 text-emerald-500" 
-                                  : test.status === "in-progress" 
-                                    ? "bg-amber-500/10 text-amber-500" 
-                                    : "bg-blue-500/10 text-blue-500"
-                              }`}>
-                                {test.status === "available" ? "✅" : test.status === "in-progress" ? "🚧" : "📅"} {test.version}
+                              <span className="px-2 py-0.5 text-xs font-medium rounded-full shrink-0 bg-emerald-500/10 text-emerald-500">
+                                ✅ {test.version}
                               </span>
                             </li>
                           ))}
