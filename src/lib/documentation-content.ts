@@ -423,12 +423,6 @@ cat ~/.complio/license.json
 
 **Solution :**
 \`\`\`bash
-# Check internet connection
-ping complio-backend.vercel.app
-
-# Check firewall allows HTTPS (port 443)
-curl https://complio-backend.vercel.app/health
-
 # Retry
 complio activate --license-key YOUR-KEY
 \`\`\`
