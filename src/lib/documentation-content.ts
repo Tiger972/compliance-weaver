@@ -341,16 +341,7 @@ pip install --user complio
 pipx install complio
 \`\`\`
 
-### Problème : "No module named 'complio'"
-**Solution :**
-\`\`\`bash
-# Reinstall
-pip uninstall complio
-pip install complio
-
-# Or install from source
-pip install git+https://github.com/Tiger972/Complio.git
-\`\`\``,
+`,
       },
     ],
   },
