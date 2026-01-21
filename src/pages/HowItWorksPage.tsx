@@ -1066,7 +1066,7 @@ jobs:
               {[
                 {
                   phase: "MAINTENANT",
-                  version: "v0.1.0",
+                  version: "v0.1.0 | open-source",
                   tests: "40 tests",
                   coverage: "60% Annexe A.8",
                   framework: "ISO 27001",
