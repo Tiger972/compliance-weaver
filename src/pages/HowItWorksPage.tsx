@@ -1373,7 +1373,7 @@ jobs:
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "1. pip install (30s)",
+                    "1. pipx install (30s)",
                     "2. complio scan (5m)",
                     "3. Report auto",
                     "PDF audit-ready",
