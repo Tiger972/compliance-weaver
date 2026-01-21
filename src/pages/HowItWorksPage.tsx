@@ -1,23 +1,5 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
-import {
-  Terminal,
-  Activity,
-  FileText,
-  Lock,
-  Shield,
-  Users,
-  BarChart,
-  CheckCircle,
-  AlertTriangle,
-  GitBranch,
-  Copy,
-  Check,
-  ChevronRight,
-  Zap,
-  Clock,
-  TrendingUp,
-  ArrowRight,
-} from "lucide-react";
+import { Terminal, Activity, FileText, Lock, Shield, Users, BarChart, CheckCircle, AlertTriangle, GitBranch, Copy, Check, ChevronRight, Zap, Clock, TrendingUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -28,48 +10,36 @@ import Footer from "@/components/Footer";
 const CodeBlock = ({
   code,
   language = "bash",
-  showLineNumbers = true,
+  showLineNumbers = true
 }: {
   code: string;
   language?: string;
   showLineNumbers?: boolean;
 }) => {
   const [copied, setCopied] = useState(false);
-
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-
   const lines = code.split("\n");
-
-  return (
-    <div className="relative group rounded-xl overflow-hidden border border-border bg-[#1a1b26]">
+  return <div className="relative group rounded-xl overflow-hidden border border-border bg-[#1a1b26]">
       <div className="flex items-center justify-between px-4 py-2 bg-[#16171f] border-b border-border/50">
         <span className="text-xs text-muted-foreground font-mono">{language}</span>
-        <button
-          onClick={handleCopy}
-          className="flex items-center gap-1.5 px-2 py-1 rounded text-xs text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
-        >
+        <button onClick={handleCopy} className="flex items-center gap-1.5 px-2 py-1 rounded text-xs text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors">
           {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
           {copied ? "Copié!" : "Copier"}
         </button>
       </div>
       <pre className="p-4 overflow-x-auto text-sm font-mono">
         <code>
-          {lines.map((line, i) => (
-            <div key={i} className="flex">
-              {showLineNumbers && (
-                <span className="w-8 text-muted-foreground/50 select-none text-right mr-4">{i + 1}</span>
-              )}
+          {lines.map((line, i) => <div key={i} className="flex">
+              {showLineNumbers && <span className="w-8 text-muted-foreground/50 select-none text-right mr-4">{i + 1}</span>}
               <span className="flex-1">{formatCodeLine(line)}</span>
-            </div>
-          ))}
+            </div>)}
         </code>
       </pre>
-    </div>
-  );
+    </div>;
 };
 
 // Syntax highlighting helper
@@ -89,61 +59,50 @@ const formatCodeLine = (line: string) => {
   // Commands
   if (line.trim().startsWith("$")) {
     const [cmd, ...rest] = line.split(" ");
-    return (
-      <>
+    return <>
         <span className="text-gray-400">{cmd}</span>
         <span className="text-cyan-400"> {rest.join(" ")}</span>
-      </>
-    );
+      </>;
   }
   // Keys in YAML/JSON
   if (line.includes(":")) {
     const [key, ...value] = line.split(":");
-    return (
-      <>
+    return <>
         <span className="text-purple-400">{key}</span>
         <span className="text-white">:</span>
         <span className="text-emerald-400">{value.join(":")}</span>
-      </>
-    );
+      </>;
   }
   return <span className="text-white">{line}</span>;
 };
 
 // Animated section wrapper
-const AnimatedSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+const AnimatedSection = ({
+  children,
+  className = ""
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 },
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    }, {
+      threshold: 0.1
+    });
     if (ref.current) {
       observer.observe(ref.current);
     }
-
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      } ${className}`}
-    >
+  return <div ref={ref} className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${className}`}>
       {children}
-    </div>
-  );
+    </div>;
 };
-
 const HowItWorksPage = () => {
   const [activeStep, setActiveStep] = useState(0);
 
@@ -151,28 +110,7 @@ const HowItWorksPage = () => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const installCode = [
-    "# Installation",
-    "$ pipx install complio",
-    "",
-    "# Configuration AWS credentials",
-    "$ aws configure",
-    "",
-    "# Prompts:",
-    "AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE",
-    "# ↑ Paste your access key from step 2",
-    "",
-    "AWS Secret Access Key [None]: ********",
-    "# ↑ Paste your secret access key from step 2",
-    "",
-    "Default region name [None]: eu-west-3",
-    "# ↑ Your AWS region",
-    "",
-    "Default output format [None]: json",
-    "# ↑ Press Enter (json recommended)"
-  ].join("\n");
-
+  const installCode = ["# Installation", "$ pipx install complio", "", "# Configuration AWS credentials", "$ aws configure", "", "# Prompts:", "AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE", "# ↑ Paste your access key from step 2", "", "AWS Secret Access Key [None]: ********", "# ↑ Paste your secret access key from step 2", "", "Default region name [None]: eu-west-3", "# ↑ Your AWS region", "", "Default output format [None]: json", "# ↑ Press Enter (json recommended)"].join("\n");
   const scanCode = `$ complio scan --framework iso27001 --region eu-west-1
 
 ✅ License validated: EARLY ACCESS (Founder)
@@ -189,7 +127,6 @@ const HowItWorksPage = () => {
 
 📊 Compliance Score: 75%
 ⏱️  Duration: 2m 34s`;
-
   const iamPolicy = `{
   "Version": "2012-10-17",
   "Statement": [
@@ -209,7 +146,6 @@ const HowItWorksPage = () => {
     }
   ]
 }`;
-
   const markdownReport = `# ISO 27001 Compliance Report
 ## Executive Summary
 
@@ -237,7 +173,6 @@ aws ec2 revoke-security-group-ingress \\
   --protocol tcp --port 22 \\
   --cidr 0.0.0.0/0
 \`\`\``;
-
   const githubActions = `name: ISO 27001 Compliance Check
 on: 
   push:
@@ -262,7 +197,6 @@ jobs:
         run: |
           SCORE=$(complio report --format json | jq '.score')
           if [ "$SCORE" -lt 80 ]; then exit 1; fi`;
-
   const gitlabCI = `compliance_check:
   stage: security
   image: python:3.11
@@ -276,7 +210,6 @@ jobs:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_COMMIT_BRANCH == "main"`;
-
   const jenkinsGroovy = `pipeline {
     agent any
     
@@ -306,132 +239,238 @@ jobs:
         }
     }
 }`;
-
-  const scanTimeline = [
-    { time: "00:00", label: "Connexion AWS", progress: 0 },
-    { time: "00:15", label: "Test S3 Encryption", progress: 25 },
-    { time: "00:45", label: "Test EC2 Security Groups", progress: 50 },
-    { time: "01:30", label: "Test IAM Password Policy", progress: 75 },
-    { time: "02:00", label: "Test CloudTrail", progress: 90 },
-    { time: "02:34", label: "Génération rapports ✅", progress: 100 },
-  ];
-
-  const testCategories = [
-    {
-      icon: Lock,
-      title: "Chiffrement & Données",
-      count: 12,
-      tests: [
-        { name: "S3 bucket encryption (AES-256/KMS) - A.8.24", version: "v0.1.0", status: "available" },
-        { name: "S3 Versioning - A.8.13", version: "v0.2.0", status: "available" },
-        { name: "EBS volume encryption - A.8.24", version: "v0.2.0", status: "available" },
-        { name: "RDS instance encryption - A.8.24", version: "v0.2.0", status: "available" },
-        { name: "KMS key rotation - A.8.24", version: "v0.2.0", status: "available" },
-        { name: "Secrets Manager encryption - A.8.24", version: "v0.2.0", status: "available" },
-        { name: "CloudWatch Logs encryption - A.8.15", version: "v0.2.0", status: "available" },
-        { name: "DynamoDB encryption - A.8.24", version: "v0.3.0", status: "available" },
-        { name: "ElastiCache encryption - A.8.24", version: "v0.3.0", status: "available" },
-        { name: "Redshift encryption - A.8.24", version: "v0.3.0", status: "available" },
-        { name: "EFS encryption - A.8.24", version: "v0.3.0", status: "available" },
-        { name: "Backup encryption - A.8.13", version: "v0.3.0", status: "available" },
-      ],
-    },
-    {
-      icon: Shield,
-      title: "Sécurité Réseau",
-      count: 11,
-      tests: [
-        { name: "Security Groups restrictions - A.8.20", version: "v0.1.0", status: "available" },
-        { name: "NACLs configuration - A.8.20", version: "v0.2.0", status: "available" },
-        { name: "VPC Flow Logs enabled - A.8.16", version: "v0.2.0", status: "available" },
-        { name: "Public access blocked - A.8.11", version: "v0.2.0", status: "available" },
-        { name: "ALB/NLB security - A.8.20", version: "v0.3.0", status: "available" },
-        { name: "WAF rules configured - A.8.20", version: "v0.3.0", status: "available" },
-        { name: "CloudFront HTTPS only - A.8.24", version: "v0.3.0", status: "available" },
-        { name: "API Gateway security - A.8.20", version: "v0.3.0", status: "available" },
-        { name: "VPN configuration - A.8.24", version: "v0.3.0", status: "available" },
-        { name: "Transit Gateway security - A.8.31", version: "v0.3.0", status: "available" },
-        { name: "VPC Endpoints security - A.8.31", version: "v0.3.0", status: "available" },
-      ],
-    },
-    {
-      icon: Users,
-      title: "Identité & Accès",
-      count: 7,
-      tests: [
-        { name: "IAM password policy - A.8.5", version: "v0.1.0", status: "available" },
-        { name: "MFA enforcement - A.8.5", version: "v0.2.0", status: "available" },
-        { name: "Root account protection - A.8.2", version: "v0.2.0", status: "available" },
-        { name: "Access key rotation - A.8.5", version: "v0.2.0", status: "available" },
-        { name: "IAM policies least privilege - A.8.2", version: "v0.3.0", status: "available" },
-        { name: "Cross-account access - A.8.31", version: "v0.3.0", status: "available" },
-        { name: "Service-linked roles - A.8.31", version: "v0.3.0", status: "available" },
-      ],
-    },
-    {
-      icon: BarChart,
-      title: "Logging & Monitoring",
-      count: 10,
-      tests: [
-        { name: "CloudTrail multi-region - A.8.15", version: "v0.1.0", status: "available" },
-        { name: "Log file validation - A.8.15", version: "v0.2.0", status: "available" },
-        { name: "CloudTrail encryption - A.8.15", version: "v0.2.0", status: "available" },
-        { name: "Retention > 90 days - A.8.15", version: "v0.3.0", status: "available" },
-        { name: "CloudWatch alarms - A.8.16", version: "v0.3.0", status: "available" },
-        { name: "Config rules enabled - A.8.16", version: "v0.3.0", status: "available" },
-        { name: "GuardDuty enabled - A.8.16", version: "v0.3.0", status: "available" },
-        { name: "Security Hub enabled - A.8.16", version: "v0.3.0", status: "available" },
-        { name: "EventBridge rules - A.8.16", version: "v0.3.0", status: "available" },
-        { name: "SNS notifications - A.8.16", version: "v0.3.0", status: "available" },
-      ],
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Quelles permissions AWS sont nécessaires ?",
-      answer:
-        "Read-only IAM permissions suffisent. Compl.io ne modifie JAMAIS votre infrastructure. Nous utilisons uniquement des actions Describe* et Get* pour analyser votre configuration.",
-    },
-    {
-      question: "Mes credentials AWS sont-elles sécurisées ?",
-      answer:
-        "Oui. Vos credentials sont chiffrées AES-256 localement sur votre machine (~/.complio/credentials.enc). Elles ne sont jamais envoyées à nos serveurs.",
-    },
-    {
-      question: "Compl.io modifie-t-il mon infrastructure ?",
-      answer:
-        "Non. Compl.io est 100% read-only. Nous ne créons, modifions ou supprimons aucune ressource AWS. L'outil se contente de lire les configurations existantes.",
-    },
-    {
-      question: "Puis-je scanner plusieurs comptes AWS ?",
-      answer:
-        "Oui. Vous pouvez configurer plusieurs profiles AWS avec 'complio configure' et spécifier le profile lors du scan avec --profile.",
-    },
-    {
-      question: "Les rapports sont-ils acceptés par les auditeurs ?",
-      answer:
-        "Oui. Les rapports PDF sont formatés selon les exigences des auditeurs ISO 27001, avec preuves horodatées et hash cryptographique pour garantir l'intégrité.",
-    },
-    {
-      question: "Combien de temps prend un scan ?",
-      answer:
-        "2 à 5 minutes selon la taille de votre infrastructure. Un compte avec 50 ressources prend environ 2 minutes, 500+ ressources environ 5 minutes.",
-    },
-    {
-      question: "Puis-je automatiser les scans ?",
-      answer:
-        "Oui. Compl.io s'intègre facilement dans vos pipelines CI/CD (GitHub Actions, GitLab CI, Jenkins). Voir la section Intégration CI/CD ci-dessus.",
-    },
-    {
-      question: "Que se passe-t-il en cas d'échec de test ?",
-      answer:
-        "Le rapport détaille chaque échec avec: la description du problème, la ressource concernée, le risque associé et la commande AWS CLI exacte pour corriger.",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen page-gradient">
+  const scanTimeline = [{
+    time: "00:00",
+    label: "Connexion AWS",
+    progress: 0
+  }, {
+    time: "00:15",
+    label: "Test S3 Encryption",
+    progress: 25
+  }, {
+    time: "00:45",
+    label: "Test EC2 Security Groups",
+    progress: 50
+  }, {
+    time: "01:30",
+    label: "Test IAM Password Policy",
+    progress: 75
+  }, {
+    time: "02:00",
+    label: "Test CloudTrail",
+    progress: 90
+  }, {
+    time: "02:34",
+    label: "Génération rapports ✅",
+    progress: 100
+  }];
+  const testCategories = [{
+    icon: Lock,
+    title: "Chiffrement & Données",
+    count: 12,
+    tests: [{
+      name: "S3 bucket encryption (AES-256/KMS) - A.8.24",
+      version: "v0.1.0",
+      status: "available"
+    }, {
+      name: "S3 Versioning - A.8.13",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "EBS volume encryption - A.8.24",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "RDS instance encryption - A.8.24",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "KMS key rotation - A.8.24",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "Secrets Manager encryption - A.8.24",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "CloudWatch Logs encryption - A.8.15",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "DynamoDB encryption - A.8.24",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "ElastiCache encryption - A.8.24",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "Redshift encryption - A.8.24",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "EFS encryption - A.8.24",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "Backup encryption - A.8.13",
+      version: "v0.3.0",
+      status: "available"
+    }]
+  }, {
+    icon: Shield,
+    title: "Sécurité Réseau",
+    count: 11,
+    tests: [{
+      name: "Security Groups restrictions - A.8.20",
+      version: "v0.1.0",
+      status: "available"
+    }, {
+      name: "NACLs configuration - A.8.20",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "VPC Flow Logs enabled - A.8.16",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "Public access blocked - A.8.11",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "ALB/NLB security - A.8.20",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "WAF rules configured - A.8.20",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "CloudFront HTTPS only - A.8.24",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "API Gateway security - A.8.20",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "VPN configuration - A.8.24",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "Transit Gateway security - A.8.31",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "VPC Endpoints security - A.8.31",
+      version: "v0.3.0",
+      status: "available"
+    }]
+  }, {
+    icon: Users,
+    title: "Identité & Accès",
+    count: 7,
+    tests: [{
+      name: "IAM password policy - A.8.5",
+      version: "v0.1.0",
+      status: "available"
+    }, {
+      name: "MFA enforcement - A.8.5",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "Root account protection - A.8.2",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "Access key rotation - A.8.5",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "IAM policies least privilege - A.8.2",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "Cross-account access - A.8.31",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "Service-linked roles - A.8.31",
+      version: "v0.3.0",
+      status: "available"
+    }]
+  }, {
+    icon: BarChart,
+    title: "Logging & Monitoring",
+    count: 10,
+    tests: [{
+      name: "CloudTrail multi-region - A.8.15",
+      version: "v0.1.0",
+      status: "available"
+    }, {
+      name: "Log file validation - A.8.15",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "CloudTrail encryption - A.8.15",
+      version: "v0.2.0",
+      status: "available"
+    }, {
+      name: "Retention > 90 days - A.8.15",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "CloudWatch alarms - A.8.16",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "Config rules enabled - A.8.16",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "GuardDuty enabled - A.8.16",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "Security Hub enabled - A.8.16",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "EventBridge rules - A.8.16",
+      version: "v0.3.0",
+      status: "available"
+    }, {
+      name: "SNS notifications - A.8.16",
+      version: "v0.3.0",
+      status: "available"
+    }]
+  }];
+  const faqs = [{
+    question: "Quelles permissions AWS sont nécessaires ?",
+    answer: "Read-only IAM permissions suffisent. Compl.io ne modifie JAMAIS votre infrastructure. Nous utilisons uniquement des actions Describe* et Get* pour analyser votre configuration."
+  }, {
+    question: "Mes credentials AWS sont-elles sécurisées ?",
+    answer: "Oui. Vos credentials sont chiffrées AES-256 localement sur votre machine (~/.complio/credentials.enc). Elles ne sont jamais envoyées à nos serveurs."
+  }, {
+    question: "Compl.io modifie-t-il mon infrastructure ?",
+    answer: "Non. Compl.io est 100% read-only. Nous ne créons, modifions ou supprimons aucune ressource AWS. L'outil se contente de lire les configurations existantes."
+  }, {
+    question: "Puis-je scanner plusieurs comptes AWS ?",
+    answer: "Oui. Vous pouvez configurer plusieurs profiles AWS avec 'complio configure' et spécifier le profile lors du scan avec --profile."
+  }, {
+    question: "Les rapports sont-ils acceptés par les auditeurs ?",
+    answer: "Oui. Les rapports PDF sont formatés selon les exigences des auditeurs ISO 27001, avec preuves horodatées et hash cryptographique pour garantir l'intégrité."
+  }, {
+    question: "Combien de temps prend un scan ?",
+    answer: "2 à 5 minutes selon la taille de votre infrastructure. Un compte avec 50 ressources prend environ 2 minutes, 500+ ressources environ 5 minutes."
+  }, {
+    question: "Puis-je automatiser les scans ?",
+    answer: "Oui. Compl.io s'intègre facilement dans vos pipelines CI/CD (GitHub Actions, GitLab CI, Jenkins). Voir la section Intégration CI/CD ci-dessus."
+  }, {
+    question: "Que se passe-t-il en cas d'échec de test ?",
+    answer: "Le rapport détaille chaque échec avec: la description du problème, la ressource concernée, le risque associé et la commande AWS CLI exacte pour corriger."
+  }];
+  return <div className="min-h-screen page-gradient">
       <Navbar />
 
       {/* Hero Section */}
@@ -447,47 +486,44 @@ jobs:
           {/* Timeline Visual */}
           <AnimatedSection className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
-              {[
-                { icon: Terminal, label: "Installation", time: "30 secondes", step: 1, targetId: "installation" },
-                { icon: Activity, label: "Scan", time: "5 minutes", step: 2, targetId: "scan" },
-                { icon: FileText, label: "Rapport", time: "Instantané", step: 3, targetId: "reports" },
-              ].map((item, index) => (
-                <div key={index} className="flex items-center">
-                  <button
-                    onClick={() => {
-                      setActiveStep(index);
-                      document.getElementById(item.targetId)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className={`flex flex-col items-center p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
-                      activeStep === index
-                        ? "bg-primary/10 border-2 border-primary shadow-lg scale-105"
-                        : "bg-card border border-border hover:border-primary/50"
-                    }`}
-                  >
-                    <div
-                      className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-3 ${
-                        activeStep === index ? "gradient-primary" : "bg-secondary"
-                      }`}
-                    >
-                      <item.icon
-                        className={`w-8 h-8 ${
-                          activeStep === index ? "text-primary-foreground" : "text-muted-foreground"
-                        }`}
-                      />
+              {[{
+              icon: Terminal,
+              label: "Installation",
+              time: "30 secondes",
+              step: 1,
+              targetId: "installation"
+            }, {
+              icon: Activity,
+              label: "Scan",
+              time: "5 minutes",
+              step: 2,
+              targetId: "scan"
+            }, {
+              icon: FileText,
+              label: "Rapport",
+              time: "Instantané",
+              step: 3,
+              targetId: "reports"
+            }].map((item, index) => <div key={index} className="flex items-center">
+                  <button onClick={() => {
+                setActiveStep(index);
+                document.getElementById(item.targetId)?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }} className={`flex flex-col items-center p-6 rounded-2xl transition-all duration-300 cursor-pointer ${activeStep === index ? "bg-primary/10 border-2 border-primary shadow-lg scale-105" : "bg-card border border-border hover:border-primary/50"}`}>
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-3 ${activeStep === index ? "gradient-primary" : "bg-secondary"}`}>
+                      <item.icon className={`w-8 h-8 ${activeStep === index ? "text-primary-foreground" : "text-muted-foreground"}`} />
                     </div>
                     <div className="text-xs font-bold text-primary mb-1">ÉTAPE {item.step}</div>
                     <div className="font-semibold text-foreground">{item.label}</div>
                     <div className="text-sm text-muted-foreground">{item.time}</div>
                   </button>
 
-                  {index < 2 && (
-                    <div className="hidden md:flex items-center px-4">
+                  {index < 2 && <div className="hidden md:flex items-center px-4">
                       <div className="w-16 h-px bg-gradient-to-r from-border to-primary/50" />
                       <ChevronRight className="w-5 h-5 text-primary" />
-                    </div>
-                  )}
-                </div>
-              ))}
+                    </div>}
+                </div>)}
             </div>
           </AnimatedSection>
         </div>
@@ -512,17 +548,22 @@ jobs:
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { icon: CheckCircle, text: "Python 3.11+ requis" },
-                  { icon: Lock, text: "Credentials chiffrés AES-256" },
-                  { icon: Shield, text: "Permissions IAM read-only suffisent" },
-                  { icon: Users, text: "Support multi-comptes AWS" },
-                ].map((item, index) => (
-                  <div key={index} className="flex flex-col items-center justify-center gap-2 p-4 bg-card rounded-xl border border-border text-center">
+                {[{
+                icon: CheckCircle,
+                text: "Python 3.11+ requis"
+              }, {
+                icon: Lock,
+                text: "Credentials chiffrés AES-256"
+              }, {
+                icon: Shield,
+                text: "Permissions IAM read-only suffisent"
+              }, {
+                icon: Users,
+                text: "Support multi-comptes AWS"
+              }].map((item, index) => <div key={index} className="flex flex-col items-center justify-center gap-2 p-4 bg-card rounded-xl border border-border text-center">
                     <item.icon className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                     <span className="text-sm text-foreground">{item.text}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
@@ -561,20 +602,17 @@ jobs:
             <div className="mb-12 bg-card rounded-xl border border-border p-6">
               <h3 className="font-semibold text-foreground mb-6">Timeline du scan</h3>
               <div className="space-y-4">
-                {scanTimeline.map((item, index) => (
-                  <div key={index} className="flex items-center gap-4">
+                {scanTimeline.map((item, index) => <div key={index} className="flex items-center gap-4">
                     <span className="text-sm font-mono text-muted-foreground w-12">{item.time}</span>
                     <div className="flex-1">
                       <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                        <div
-                          className="h-full gradient-primary rounded-full transition-all duration-1000"
-                          style={{ width: `${item.progress}%` }}
-                        />
+                        <div className="h-full gradient-primary rounded-full transition-all duration-1000" style={{
+                      width: `${item.progress}%`
+                    }} />
                       </div>
                     </div>
                     <span className="text-sm text-foreground w-48">{item.label}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
@@ -584,31 +622,19 @@ jobs:
               <Tabs defaultValue="encryption" className="w-full">
                 <div className="overflow-x-auto">
                   <TabsList className="w-max min-w-full justify-start rounded-none border-b border-border bg-transparent p-0">
-                    <TabsTrigger
-                      value="encryption"
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
-                    >
+                    <TabsTrigger value="encryption" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap">
                       <Lock className="w-4 h-4 mr-2 shrink-0" />
                       Chiffrement & Données (A.8.24)
                     </TabsTrigger>
-                    <TabsTrigger
-                      value="network"
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
-                    >
+                    <TabsTrigger value="network" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap">
                       <Shield className="w-4 h-4 mr-2 shrink-0" />
                       Sécurité Réseau (A.8.20)
                     </TabsTrigger>
-                    <TabsTrigger
-                      value="iam"
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
-                    >
+                    <TabsTrigger value="iam" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap">
                       <Users className="w-4 h-4 mr-2 shrink-0" />
                       Identité & Accès (A.8.5)
                     </TabsTrigger>
-                    <TabsTrigger
-                      value="logging"
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap"
-                    >
+                    <TabsTrigger value="logging" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent whitespace-nowrap">
                       <BarChart className="w-4 h-4 mr-2 shrink-0" />
                       Logging & Monitoring (A.8.15)
                     </TabsTrigger>
@@ -617,62 +643,37 @@ jobs:
 
                 <TabsContent value="encryption" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {[
-                      "S3 buckets chiffrés (AES-256 ou KMS)",
-                      "EBS volumes chiffrés",
-                      "RDS databases chiffrés",
-                      "KMS key rotation activée",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                    {["S3 buckets chiffrés (AES-256 ou KMS)", "EBS volumes chiffrés", "RDS databases chiffrés", "KMS key rotation activée"].map((item, i) => <li key={i} className="flex items-center gap-2 text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-emerald-500" />
                         {item}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </TabsContent>
 
                 <TabsContent value="network" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {[
-                      "Security Groups restrictions",
-                      "NACLs configuration",
-                      "VPC isolation",
-                      "Public access blocked",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                    {["Security Groups restrictions", "NACLs configuration", "VPC isolation", "Public access blocked"].map((item, i) => <li key={i} className="flex items-center gap-2 text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-emerald-500" />
                         {item}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </TabsContent>
 
                 <TabsContent value="iam" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {["IAM password policy", "MFA enforcement", "Least privilege", "Access key rotation"].map(
-                      (item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                    {["IAM password policy", "MFA enforcement", "Least privilege", "Access key rotation"].map((item, i) => <li key={i} className="flex items-center gap-2 text-muted-foreground">
                           <CheckCircle className="w-4 h-4 text-emerald-500" />
                           {item}
-                        </li>
-                      ),
-                    )}
+                        </li>)}
                   </ul>
                 </TabsContent>
 
                 <TabsContent value="logging" className="p-6">
                   <ul className="grid md:grid-cols-2 gap-2">
-                    {[
-                      "CloudTrail multi-région activé",
-                      "Log file validation",
-                      "Logs stockés chiffrés",
-                      "Retention > 90 jours",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                    {["CloudTrail multi-région activé", "Log file validation", "Logs stockés chiffrés", "Retention > 90 jours"].map((item, i) => <li key={i} className="flex items-center gap-2 text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-emerald-500" />
                         {item}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </TabsContent>
               </Tabs>
@@ -795,22 +796,13 @@ jobs:
             <div className="bg-card rounded-xl border border-border overflow-hidden mb-8">
               <Tabs defaultValue="github" className="w-full">
                 <TabsList className="w-full justify-start rounded-none border-b border-border bg-transparent p-0">
-                  <TabsTrigger
-                    value="github"
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-                  >
+                  <TabsTrigger value="github" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent">
                     GitHub Actions
                   </TabsTrigger>
-                  <TabsTrigger
-                    value="gitlab"
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-                  >
+                  <TabsTrigger value="gitlab" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent">
                     GitLab CI
                   </TabsTrigger>
-                  <TabsTrigger
-                    value="jenkins"
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-                  >
+                  <TabsTrigger value="jenkins" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent">
                     Jenkins
                   </TabsTrigger>
                 </TabsList>
@@ -861,36 +853,30 @@ jobs:
       <section id="roadmap" className="py-20 lg:py-28">
         <div className="container">
           <AnimatedSection className="max-w-5xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-center mb-12">
-              40 Tests ISO 27001 - <span className="gradient-text">Roadmap Complète</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-center mb-12">Roadmap Complète<span className="gradient-text">Roadmap Complète</span>
             </h2>
 
             {/* Timeline */}
             <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 mb-12">
-              {[
-                {
-                  phase: "MAINTENANT",
-                  version: "v0.1.0",
-                  tests: "4 tests",
-                  coverage: "8% Annex A",
-                  framework: "ISO 27001",
-                },
-                {
-                  phase: "MAINTENANT",
-                  version: "v0.2.0",
-                  tests: "10 tests",
-                  coverage: "20% Annex A",
-                  framework: "ISO 27001",
-                },
-                {
-                  phase: "MAINTENANT",
-                  version: "v0.3.0",
-                  tests: "40 tests",
-                  coverage: "83% Annex A",
-                  framework: "ISO 27001",
-                },
-              ].map((item, index) => (
-                <div key={index} className="flex items-center">
+              {[{
+              phase: "MAINTENANT",
+              version: "v0.1.0",
+              tests: "4 tests",
+              coverage: "8% Annex A",
+              framework: "ISO 27001"
+            }, {
+              phase: "MAINTENANT",
+              version: "v0.2.0",
+              tests: "10 tests",
+              coverage: "20% Annex A",
+              framework: "ISO 27001"
+            }, {
+              phase: "MAINTENANT",
+              version: "v0.3.0",
+              tests: "40 tests",
+              coverage: "83% Annex A",
+              framework: "ISO 27001"
+            }].map((item, index) => <div key={index} className="flex items-center">
                   <div className="flex-1 p-6 rounded-xl border bg-primary/5 border-primary shadow-lg">
                     <div className="text-sm font-bold mb-2 text-primary">
                       {item.phase}
@@ -903,13 +889,10 @@ jobs:
                     </div>
                   </div>
 
-                  {index < 2 && (
-                    <div className="hidden md:flex items-center px-2">
+                  {index < 2 && <div className="hidden md:flex items-center px-2">
                       <ArrowRight className="w-6 h-6 text-muted-foreground" />
-                    </div>
-                  )}
-                </div>
-              ))}
+                    </div>}
+                </div>)}
             </div>
 
             {/* Full Test List */}
@@ -936,16 +919,14 @@ jobs:
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    {testCategories.map((category, catIndex) => (
-                      <div key={catIndex} className="space-y-3">
+                    {testCategories.map((category, catIndex) => <div key={catIndex} className="space-y-3">
                         <div className="flex items-center gap-2">
                           <category.icon className="w-5 h-5 text-primary" />
                           <span className="font-semibold text-foreground">{category.title}</span>
                           <span className="text-xs text-muted-foreground">({category.count} tests)</span>
                         </div>
                         <ul className="space-y-2 pl-7">
-                          {category.tests.map((test, testIndex) => (
-                            <li key={testIndex} className="text-sm text-muted-foreground flex items-center justify-between gap-2">
+                          {category.tests.map((test, testIndex) => <li key={testIndex} className="text-sm text-muted-foreground flex items-center justify-between gap-2">
                               <div className="flex items-center gap-2">
                                 <div className="w-1 h-1 rounded-full bg-muted-foreground" />
                                 <span>{test.name}</span>
@@ -953,11 +934,9 @@ jobs:
                               <span className="px-2 py-0.5 text-xs font-medium rounded-full shrink-0 bg-emerald-500/10 text-emerald-500">
                                 ✅ {test.version}
                               </span>
-                            </li>
-                          ))}
+                            </li>)}
                         </ul>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -986,99 +965,67 @@ jobs:
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 relative z-10">
-                    {[
-                      {
-                        framework: "ISO 27001",
-                        date: "Disponible",
-                        description: "Sécurité de l'information",
-                        status: "active",
-                        icon: Shield,
-                      },
-                      {
-                        framework: "HDS",
-                        date: "Q2 2026",
-                        description: "Hébergement données de santé",
-                        status: "upcoming",
-                        icon: Activity,
-                      },
-                      {
-                        framework: "PCI DSS",
-                        date: "Q4 2026",
-                        description: "Sécurité des paiements",
-                        status: "upcoming",
-                        icon: Lock,
-                      },
-                      {
-                        framework: "SOC 2",
-                        date: "Q2 2027",
-                        description: "Contrôles organisationnels",
-                        status: "planned",
-                        icon: BarChart,
-                      },
-                      {
-                        framework: "NIST CSF",
-                        date: "Q4 2027",
-                        description: "Framework cybersécurité",
-                        status: "planned",
-                        icon: GitBranch,
-                      },
-                    ].map((item, index) => (
-                      <div key={index} className="flex flex-col items-center group">
+                    {[{
+                    framework: "ISO 27001",
+                    date: "Disponible",
+                    description: "Sécurité de l'information",
+                    status: "active",
+                    icon: Shield
+                  }, {
+                    framework: "HDS",
+                    date: "Q2 2026",
+                    description: "Hébergement données de santé",
+                    status: "upcoming",
+                    icon: Activity
+                  }, {
+                    framework: "PCI DSS",
+                    date: "Q4 2026",
+                    description: "Sécurité des paiements",
+                    status: "upcoming",
+                    icon: Lock
+                  }, {
+                    framework: "SOC 2",
+                    date: "Q2 2027",
+                    description: "Contrôles organisationnels",
+                    status: "planned",
+                    icon: BarChart
+                  }, {
+                    framework: "NIST CSF",
+                    date: "Q4 2027",
+                    description: "Framework cybersécurité",
+                    status: "planned",
+                    icon: GitBranch
+                  }].map((item, index) => <div key={index} className="flex flex-col items-center group">
                         {/* Connector dot */}
                         <div className={`
                           w-5 h-5 rounded-full border-4 mb-4 transition-all duration-500 relative
-                          ${item.status === 'active' 
-                            ? 'bg-primary border-primary shadow-[0_0_20px_rgba(59,130,246,0.5)]' 
-                            : item.status === 'upcoming'
-                              ? 'bg-secondary border-primary/50 group-hover:border-primary group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]'
-                              : 'bg-secondary border-border group-hover:border-primary/30'
-                          }
+                          ${item.status === 'active' ? 'bg-primary border-primary shadow-[0_0_20px_rgba(59,130,246,0.5)]' : item.status === 'upcoming' ? 'bg-secondary border-primary/50 group-hover:border-primary group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]' : 'bg-secondary border-border group-hover:border-primary/30'}
                         `}>
-                          {item.status === 'active' && (
-                            <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-30" />
-                          )}
+                          {item.status === 'active' && <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-30" />}
                         </div>
 
                         {/* Card */}
                         <div className={`
                           w-full p-5 rounded-xl border transition-all duration-500 text-center
-                          ${item.status === 'active'
-                            ? 'bg-primary/10 border-primary shadow-lg shadow-primary/20'
-                            : item.status === 'upcoming'
-                              ? 'bg-card border-border hover:border-primary/50 hover:shadow-md hover:shadow-primary/10'
-                              : 'bg-card/50 border-border/50 hover:bg-card hover:border-border'
-                          }
+                          ${item.status === 'active' ? 'bg-primary/10 border-primary shadow-lg shadow-primary/20' : item.status === 'upcoming' ? 'bg-card border-border hover:border-primary/50 hover:shadow-md hover:shadow-primary/10' : 'bg-card/50 border-border/50 hover:bg-card hover:border-border'}
                         `}>
                           {/* Status Badge */}
                           <div className={`
                             inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-3
-                            ${item.status === 'active'
-                              ? 'bg-primary/20 text-primary'
-                              : item.status === 'upcoming'
-                                ? 'bg-accent/20 text-accent'
-                                : 'bg-secondary text-muted-foreground'
-                            }
+                            ${item.status === 'active' ? 'bg-primary/20 text-primary' : item.status === 'upcoming' ? 'bg-accent/20 text-accent' : 'bg-secondary text-muted-foreground'}
                           `}>
-                            {item.status === 'active' && (
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                            )}
+                            {item.status === 'active' && <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />}
                             {item.date}
                           </div>
 
                           {/* Icon */}
                           <div className={`
                             w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors
-                            ${item.status === 'active'
-                              ? 'gradient-primary'
-                              : 'bg-secondary group-hover:bg-primary/10'
-                            }
+                            ${item.status === 'active' ? 'gradient-primary' : 'bg-secondary group-hover:bg-primary/10'}
                           `}>
                             <item.icon className={`
                               w-6 h-6 transition-colors
-                              ${item.status === 'active'
-                                ? 'text-primary-foreground'
-                                : 'text-muted-foreground group-hover:text-primary'
-                              }
+                              ${item.status === 'active' ? 'text-primary-foreground' : 'text-muted-foreground group-hover:text-primary'}
                             `} />
                           </div>
 
@@ -1095,8 +1042,7 @@ jobs:
                             {item.description}
                           </p>
                         </div>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
 
@@ -1137,18 +1083,10 @@ jobs:
                   <div className="text-4xl font-bold text-muted-foreground">3 mois</div>
                 </div>
                 <ul className="space-y-3">
-                  {[
-                    "1. Inventaire (2 semaines)",
-                    "2. Check AWS (4 semaines)",
-                    "3. Excel (2 semaines)",
-                    "4. Format audit (3 semaines)",
-                    "5. Updates manuels",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                  {["1. Inventaire (2 semaines)", "2. Check AWS (4 semaines)", "3. Excel (2 semaines)", "4. Format audit (3 semaines)", "5. Updates manuels"].map((item, i) => <li key={i} className="flex items-center gap-2 text-muted-foreground">
                       <Clock className="w-4 h-4" />
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
                 <div className="mt-6 pt-6 border-t border-border space-y-3">
                   <div className="flex justify-between text-muted-foreground">
@@ -1161,12 +1099,10 @@ jobs:
                   </div>
                 </div>
                 <div className="mt-6 space-y-2">
-                  {["Erreurs humaines", "Vite obsolète", "Pas répétable"].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-destructive text-sm">
+                  {["Erreurs humaines", "Vite obsolète", "Pas répétable"].map((item, i) => <div key={i} className="flex items-center gap-2 text-destructive text-sm">
                       <AlertTriangle className="w-4 h-4" />
                       {item}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
@@ -1180,18 +1116,10 @@ jobs:
                   <div className="text-4xl font-bold gradient-text">5 minutes</div>
                 </div>
                 <ul className="space-y-3">
-                  {[
-                    "1. pip install (30s)",
-                    "2. complio scan (5m)",
-                    "3. Report auto",
-                    "PDF audit-ready",
-                    "Scan automatique",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-foreground">
+                  {["1. pip install (30s)", "2. complio scan (5m)", "3. Report auto", "PDF audit-ready", "Scan automatique"].map((item, i) => <li key={i} className="flex items-center gap-2 text-foreground">
                       <Zap className="w-4 h-4 text-primary" />
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
                 <div className="mt-6 pt-6 border-t border-border space-y-3">
                   <div className="flex justify-between text-foreground">
@@ -1204,12 +1132,10 @@ jobs:
                   </div>
                 </div>
                 <div className="mt-6 space-y-2">
-                  {["Tests automatisés", "Toujours à jour", "Répétable"].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-emerald-500 text-sm">
+                  {["Tests automatisés", "Toujours à jour", "Répétable"].map((item, i) => <div key={i} className="flex items-center gap-2 text-emerald-500 text-sm">
                       <CheckCircle className="w-4 h-4" />
                       {item}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -1233,18 +1159,12 @@ jobs:
             </h2>
 
             <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`faq-${index}`}
-                  className="bg-card rounded-xl border border-border px-6"
-                >
+              {faqs.map((faq, index) => <AccordionItem key={index} value={`faq-${index}`} className="bg-card rounded-xl border border-border px-6">
                   <AccordionTrigger className="hover:no-underline py-5">
                     <span className="text-left font-semibold text-foreground">{faq.question}</span>
                   </AccordionTrigger>
                   <AccordionContent className="pb-5 text-muted-foreground">{faq.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
+                </AccordionItem>)}
             </Accordion>
           </AnimatedSection>
         </div>
@@ -1262,24 +1182,14 @@ jobs:
                 </h2>
 
                 <ul className="inline-flex flex-col items-start gap-3 mb-8 text-left">
-                  {[
-                    "Disponible maintenant",
-                    "Rejoignez-nous",
-                    "Setup en 5 minutes",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-primary-foreground/90">
+                  {["Disponible maintenant", "Rejoignez-nous", "Setup en 5 minutes"].map((item, i) => <li key={i} className="flex items-center gap-2 text-primary-foreground/90">
                       <CheckCircle className="w-5 h-5" />
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
 
                 <div className="flex justify-center mb-6">
-                  <Button
-                    size="xl"
-                    className="bg-background text-primary hover:bg-background/90 shadow-lg"
-                    asChild
-                  >
+                  <Button size="xl" className="bg-background text-primary hover:bg-background/90 shadow-lg" asChild>
                     <a href="https://calendar.app.google/UEGbiWjVN4niVoE37" target="_blank" rel="noopener noreferrer">
                       Réserver une démo
                     </a>
@@ -1297,8 +1207,6 @@ jobs:
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default HowItWorksPage;
