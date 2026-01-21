@@ -152,25 +152,27 @@ const HowItWorksPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const installCode = `# Installation
-$ pipx install complio
-
-# Configuration AWS credentials
-$ aws configure
-
-# Prompts:
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-# ↑ Paste your access key from step 2
-
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/EXAMPLE
-# ↑ Paste your secret access key from step 2
-
-Default region name [None]: eu-west-3
-# ↑ Enter your main AWS region
-# Common: us-east-1, eu-west-1, eu-west-3, ap-southeast-1
-
-Default output format [None]: json
-# ↑ Press Enter (json recommended)`;
+  const installCode = [
+    "# Installation",
+    "$ pipx install complio",
+    "",
+    "# Configuration AWS credentials",
+    "$ aws configure",
+    "",
+    "# Prompts:",
+    "AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE",
+    "# ↑ Paste your access key from step 2",
+    "",
+    "AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/EXAMPLE",
+    "# ↑ Paste your secret access key from step 2",
+    "",
+    "Default region name [None]: eu-west-3",
+    "# ↑ Enter your main AWS region",
+    "# Common: us-east-1, eu-west-1, eu-west-3, ap-southeast-1",
+    "",
+    "Default output format [None]: json",
+    "# ↑ Press Enter (json recommended)"
+  ].join("\n");
 
   const scanCode = `$ complio scan --framework iso27001 --region eu-west-1
 
