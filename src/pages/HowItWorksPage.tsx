@@ -153,16 +153,24 @@ const HowItWorksPage = () => {
   }, []);
 
   const installCode = `# Installation
-$ pip install complio
+$ pipx install complio
 
 # Configuration AWS credentials
-$ complio configure
-Profile name: default
-AWS Access Key ID: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key: ********
-Encryption password: ********
+$ aws configure
 
-✅ Configuration saved securely (~/.complio/credentials.enc)`;
+# Prompts:
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+# ↑ Paste your access key from step 2
+
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/EXAMPLE
+# ↑ Paste your secret access key from step 2
+
+Default region name [None]: eu-west-3
+# ↑ Enter your main AWS region
+# Common: us-east-1, eu-west-1, eu-west-3, ap-southeast-1
+
+Default output format [None]: json
+# ↑ Press Enter (json recommended)`;
 
   const scanCode = `$ complio scan --framework iso27001 --region eu-west-1
 
