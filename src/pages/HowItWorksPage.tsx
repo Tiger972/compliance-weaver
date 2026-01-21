@@ -865,7 +865,7 @@ jobs:
               coverage: "8% Annex A",
               framework: "ISO 27001"
             }, {
-              phase: "MAINTENANT",
+              phase: "BIENTOT DISPONIBLE",
               version: "v0.2.0",
               tests: "70 tests",
               coverage: "20% Annex A",
