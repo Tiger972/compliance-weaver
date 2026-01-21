@@ -1082,7 +1082,7 @@ jobs:
                   phase: "BIENTOT DISPONIBLE",
                   version: "v0.3.0 | complio-pro",
                   tests: "+100 tests",
-                  coverage: "96% Annexe A.8 + HDS + NIST 2",
+                  coverage: "96% Annexe A.8 + HDS + PCI-DSS",
                   framework: "ISO 27001",
                 },
               ].map((item, index) => (
