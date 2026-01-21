@@ -1073,7 +1073,7 @@ jobs:
                 },
                 {
                   phase: "BIENTOT DISPONIBLE",
-                  version: "v0.2.0",
+                  version: "v0.2.0 | complio-pro",
                   tests: "70 tests",
                   coverage: "85% Annexe A.8 + HDS",
                   framework: "ISO 27001",
