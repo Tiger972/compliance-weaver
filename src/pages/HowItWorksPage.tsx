@@ -861,7 +861,7 @@ jobs:
               {[{
               phase: "MAINTENANT",
               version: "v0.1.0",
-              tests: "70 tests",
+              tests: "40 tests",
               coverage: "8% Annex A",
               framework: "ISO 27001"
             }, {
