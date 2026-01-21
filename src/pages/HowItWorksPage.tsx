@@ -167,7 +167,7 @@ const HowItWorksPage = () => {
     "# ↑ Paste your secret access key from step 2",
     "",
     "Default region name [None]: eu-west-3",
-    "# ↑ Enter your main AWS region (eu-west-1, us-east-1...)",
+    "# ↑ Your AWS region",
     "",
     "Default output format [None]: json",
     "# ↑ Press Enter (json recommended)"
