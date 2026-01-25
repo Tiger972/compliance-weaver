@@ -4,7 +4,7 @@ import complioLogo from "@/assets/complio-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-blue-50/50 to-white py-16 border-t border-border/30">
+    <footer className="bg-gradient-to-b from-secondary/50 to-background py-16 border-t border-border/30">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
           {/* Brand - takes 5 columns */}
@@ -14,13 +14,16 @@ const Footer = () => {
                 src={complioLogo}
                 alt="Compl.io"
                 className="h-28 w-auto object-contain object-left -ml-6 -mt-2"
+                loading="lazy"
+                width="150"
+                height="112"
               />
             </div>
             <p className="text-muted-foreground mb-4 max-w-sm">
               La plateforme de conformité automatisée pour les infrastructures cloud.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
-              <span className="w-2 h-2 bg-cyber-green rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-cyber-green rounded-full motion-reduce:animate-none animate-pulse" aria-hidden="true" />
               <span className="text-sm text-muted-foreground">HDS & PCI DSS bientôt disponibles</span>
             </div>
           </div>
@@ -29,7 +32,7 @@ const Footer = () => {
           <div className="hidden md:block md:col-span-2" />
 
           {/* Navigation - takes 2 columns */}
-          <div className="md:col-span-2 md:pt-10">
+          <nav className="md:col-span-2 md:pt-10" aria-label="Navigation du pied de page">
             <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-3">
               <li>
@@ -48,10 +51,10 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Légal - takes 3 columns */}
-          <div className="md:col-span-3 md:pt-10">
+          <nav className="md:col-span-3 md:pt-10" aria-label="Liens légaux">
             <h4 className="font-semibold text-foreground mb-4">Légal</h4>
             <ul className="space-y-3">
               <li>
@@ -70,7 +73,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom */}
@@ -81,8 +84,9 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors text-muted-foreground hover:text-foreground"
+            aria-label="Suivez Compl.io sur LinkedIn (ouvre dans un nouvel onglet)"
           >
-            <Linkedin className="w-5 h-5" />
+            <Linkedin className="w-5 h-5" aria-hidden="true" />
           </a>
         </div>
       </div>
