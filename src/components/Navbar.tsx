@@ -7,7 +7,6 @@ import complioLogo from "@/assets/complio-logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
 
   const navLinks = [
     { label: "Accueil", href: "/", isAnchor: false },
@@ -17,12 +16,22 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md">
+    <nav 
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md"
+      role="navigation"
+      aria-label="Navigation principale"
+    >
       <div className="container">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
+          {/* Logo - optimized size */}
           <Link to="/" className="flex items-center">
-            <img src={complioLogo} alt="Compl.io" className="h-20 lg:h-24 w-auto" />
+            <img 
+              src={complioLogo} 
+              alt="Compl.io - Accueil" 
+              className="h-20 lg:h-24 w-auto"
+              width="107"
+              height="80"
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -41,6 +50,7 @@ const Navbar = () => {
                   key={link.href}
                   to={link.href}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  aria-current={location.pathname === link.href ? "page" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -61,19 +71,21 @@ const Navbar = () => {
           <button
             className="lg:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-foreground" aria-hidden="true" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6 text-foreground" aria-hidden="true" />
             )}
           </button>
         </div>
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
+          <div id="mobile-menu" className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 link.isAnchor ? (
@@ -91,6 +103,7 @@ const Navbar = () => {
                     to={link.href}
                     className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                     onClick={() => setIsOpen(false)}
+                    aria-current={location.pathname === link.href ? "page" : undefined}
                   >
                     {link.label}
                   </Link>
