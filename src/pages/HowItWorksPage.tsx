@@ -168,17 +168,38 @@ const HowItWorksPage = () => {
 ✅ License validated: EARLY ACCESS (Founder)
 🔍 Scanning AWS account (123456789012)...
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- ISO 27001 Infrastructure Tests          4/4
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ISO 27001 Infrastructure Tests                          40/40
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ S3 Bucket Encryption              PASS  15/15 buckets
-⚠️  EC2 Security Groups              FAIL  2 issues found
-✅ IAM Password Policy               PASS  Policy compliant
-✅ CloudTrail Logging                PASS  Multi-region enabled
+▸ Encryption & Data (12 tests)                            12/12
+  ✅ S3 Bucket Encryption                 PASS  15/15 buckets
+  ✅ EBS Volume Encryption                PASS  All encrypted
+  ✅ RDS Encryption at Rest               PASS  3/3 instances
+  ✅ KMS Key Rotation                     PASS  Enabled
+  ... +8 more tests passed
 
-📊 Compliance Score: 75%
-⏱️  Duration: 2m 34s`;
+▸ Network Security (11 tests)                             10/11
+  ✅ VPC Flow Logs                        PASS  All VPCs logged
+  ✅ Security Group Rules                 PASS  No open 0.0.0.0/0
+  ⚠️  NACLs Configuration                 FAIL  1 issue found
+  ✅ WAF Protection                       PASS  Active on ALB
+  ... +7 more tests passed
+
+▸ Identity & Access (7 tests)                               7/7
+  ✅ IAM Password Policy                  PASS  Policy compliant
+  ✅ MFA Enforcement                      PASS  100% users
+  ✅ Root Account Protection              PASS  MFA enabled
+  ... +4 more tests passed
+
+▸ Logging & Monitoring (10 tests)                         10/10
+  ✅ CloudTrail Logging                   PASS  Multi-region
+  ✅ CloudWatch Alarms                    PASS  12 active
+  ✅ GuardDuty Enabled                    PASS  All regions
+  ... +7 more tests passed
+
+📊 Compliance Score: 97.5% (39/40 tests passed)
+⏱️  Duration: 4m 12s`;
   const iamPolicy = `{
   "Version": "2012-10-17",
   "Statement": [
