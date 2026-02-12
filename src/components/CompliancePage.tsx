@@ -56,7 +56,7 @@ const CompliancePage = ({
 
       <Navbar />
 
-      <main id="main-content" className="min-h-screen pt-24 pb-16">
+      <main id="main-content" className="min-h-screen page-gradient pt-24 pb-16">
         {/* Hero */}
         <section className="container max-w-4xl mx-auto px-4 mb-16">
           <div className="flex items-center gap-3 mb-6">
