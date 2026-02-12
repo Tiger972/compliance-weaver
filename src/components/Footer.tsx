@@ -7,8 +7,8 @@ const Footer = () => {
     <footer className="bg-gradient-to-b from-secondary/50 to-background py-16 border-t border-border/30">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
-          {/* Brand - takes 5 columns */}
-          <div className="md:col-span-5">
+          {/* Brand - takes 4 columns */}
+          <div className="md:col-span-4">
             <div className="flex items-start h-20">
               <img
                 src={complioLogo}
@@ -28,8 +28,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Spacer - takes 2 columns */}
-          <div className="hidden md:block md:col-span-2" />
 
           {/* Navigation - takes 2 columns */}
           <nav className="md:col-span-2 md:pt-10" aria-label="Navigation du pied de page">
@@ -48,6 +46,38 @@ const Footer = () => {
               <li>
                 <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                   Contact
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Solutions - takes 3 columns, replaces spacer */}
+          <nav className="md:col-span-3 md:pt-10" aria-label="Solutions de conformité">
+            <h4 className="font-semibold text-foreground mb-4">Solutions</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/conformite-iso-27001" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Conformité ISO 27001
+                </Link>
+              </li>
+              <li>
+                <Link to="/conformite-hds" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Conformité HDS
+                </Link>
+              </li>
+              <li>
+                <Link to="/conformite-pci-dss" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Conformité PCI-DSS
+                </Link>
+              </li>
+              <li>
+                <Link to="/conformite-nis2" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Conformité NIS2
+                </Link>
+              </li>
+              <li>
+                <Link to="/conformite-cloud-saas" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  Pour les SaaS
                 </Link>
               </li>
             </ul>
