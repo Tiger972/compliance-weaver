@@ -14,8 +14,8 @@ const solutionLinks = [
 
 const navLinks = [
   { label: "Accueil", href: "/" },
-  { label: "Produit", href: "/produit" },
-  { label: "Documentation", href: "/documentation" },
+  { label: "Fonctionnalités", href: "/produit" },
+  { label: "Docs", href: "/documentation" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                 aria-expanded={solutionsOpen}
                 aria-haspopup="true"
               >
-                Solutions
+                Conformités
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? "rotate-180" : ""}`}
                   aria-hidden="true"
@@ -142,7 +142,7 @@ const Navbar = () => {
                   onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
                   aria-expanded={mobileSolutionsOpen}
                 >
-                  Solutions
+                  Conformités
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${mobileSolutionsOpen ? "rotate-180" : ""}`}
                     aria-hidden="true"
