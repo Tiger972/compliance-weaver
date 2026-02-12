@@ -1,75 +1,73 @@
-import { Link2, Scan, FileText } from "lucide-react";
+import { X, Check, Clock, AlertCircle, FileSpreadsheet, UserX, Zap, Link2, BarChart3, Shield } from "lucide-react";
 
 const HowItWorks = () => {
-  const steps = [
-    {
-      number: "01",
-      icon: Link2,
-      title: "Connexion sécurisée",
-      description:
-        "Connectez votre environnement AWS en quelques clics. Accès read-only uniquement, vos données restent sécurisées.",
-      highlight: "5 minutes de setup",
-    },
-    {
-      number: "02",
-      icon: Scan,
-      title: "Scan automatisé",
-      description:
-        "Compl.io scanne votre infrastructure AWS et teste 40 contrôles ISO 27001. Rapports pdf/json prêts pour auditeurs.",
-      highlight: "Monitoring 24/7",
-    },
-    {
-      number: "03",
-      icon: FileText,
-      title: "Rapports & alertes",
-      description: "Recevez des rapports d'audit prêts à l'emploi et des alertes instantanées en cas d'écart détecté.",
-      highlight: "Temps réel",
-    },
+  const manual = [
+    { icon: Clock, text: "Processus long de plusieurs semaines" },
+    { icon: FileSpreadsheet, text: "Documentation manuelle obsolète rapidement" },
+    { icon: UserX, text: "Erreurs humaines dans la collecte de preuves" },
+    { icon: AlertCircle, text: "Visibilité limitée entre deux audits" },
+  ];
+
+  const automatise = [
+    { icon: Link2, text: "Connexion directe à l'infrastructure cloud AWS" },
+    { icon: Zap, text: "Collecte automatique des preuves de conformité" },
+    { icon: Shield, text: "Contrôles ISO 27001 exécutés en continu, 24/7" },
+    { icon: BarChart3, text: "Tableaux de bord et rapports en temps réel" },
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary/30">
+    <section className="py-24 lg:py-32">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Comment <span className="gradient-text">Compl.io</span> sécurise votre infrastructure
+            Audit manuel vs Audit{" "}
+            <span className="gradient-text">automatisé</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Un processus simple en 3 étapes pour une conformité sans effort
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            La préparation certification ISO 27001 traditionnelle est coûteuse et inefficace. Découvrez pourquoi l'audit automatisé change la donne.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="relative group">
-              {/* Connector line */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-border to-transparent z-0" />
-              )}
-
-              <div className="relative bg-background rounded-2xl p-8 border border-border hover:border-accent/30 hover:shadow-glass-lg transition-all h-full">
-                {/* Step number */}
-                <div className="absolute -top-4 left-8 px-4 py-1 gradient-primary rounded-full">
-                  <span className="text-sm font-bold text-primary-foreground">{step.number}</span>
-                </div>
-
-                {/* Icon */}
-                <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:gradient-primary transition-colors">
-                  <step.icon className="w-8 h-8 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground mb-4">{step.description}</p>
-
-                {/* Highlight badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 rounded-full">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                  <span className="text-xs font-medium text-accent">{step.highlight}</span>
-                </div>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Manuel */}
+          <div className="p-8 lg:p-10 rounded-3xl border border-border bg-background">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 bg-destructive/10 rounded-xl flex items-center justify-center">
+                <X className="w-5 h-5 text-destructive" />
               </div>
+              <h3 className="text-xl font-semibold text-foreground">Audit manuel</h3>
             </div>
-          ))}
+            <ul className="space-y-5">
+              {manual.map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-destructive/10 rounded-xl flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-destructive" />
+                  </div>
+                  <span className="text-muted-foreground pt-2">{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Automatisé */}
+          <div className="p-8 lg:p-10 rounded-3xl border border-accent/30 bg-background shadow-glow">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center">
+                <Check className="w-5 h-5 text-primary-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">Audit automatisé avec Complio</h3>
+            </div>
+            <ul className="space-y-5">
+              {automatise.map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-cyber-green/10 rounded-xl flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-cyber-green" />
+                  </div>
+                  <span className="text-muted-foreground pt-2">{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
