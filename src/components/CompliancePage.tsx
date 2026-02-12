@@ -130,7 +130,7 @@ const CompliancePage = ({
         )}
 
         {/* CTA */}
-        <section className="py-16 bg-primary/5">
+        <section className="py-16">
           <div className="container max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{cta.title}</h2>
             {cta.comingSoon && (
