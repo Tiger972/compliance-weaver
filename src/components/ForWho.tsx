@@ -1,30 +1,54 @@
-import { Code, ClipboardCheck, TrendingUp, Eye } from "lucide-react";
+import { Rocket, TrendingUp, Cloud, Building2 } from "lucide-react";
 
 const ForWho = () => {
   const personas = [
     {
-      icon: Code,
-      role: "DevSecOps",
-      title: "Pour les équipes DevSecOps",
+      icon: Rocket,
+      role: "Startups SaaS",
+      title: "Pour les startups SaaS",
       benefits: [
-        "Intégration native avec vos pipelines CI/CD",
-        "APIs pour automatiser vos workflows",
-        "Alertes Slack, Teams ou webhook",
-        "Tableaux de bord techniques détaillés",
+        "Obtenez la certification ISO 27001 rapidement pour rassurer vos premiers clients",
+        "Automatisez dès le départ pour éviter la dette de conformité",
+        "Rapports prêts pour les due diligences et levées de fonds",
+        "Setup en 5 minutes, sans expertise sécurité interne",
       ],
-      quote: "Plus besoin de courir après les preuves avant chaque audit.",
+      quote: "La certification nous a ouvert les portes des grands comptes.",
     },
     {
-      icon: ClipboardCheck,
-      role: "RSSI / CTO",
-      title: "Pour les RSSI et CTO",
+      icon: TrendingUp,
+      role: "Scale-ups",
+      title: "Pour les scale-ups",
       benefits: [
-        "Vue d'ensemble de la posture sécurité",
-        "Rapports exécutifs automatisés",
-        "Suivi de la progression vers la certification",
-        "Historique complet pour les auditeurs",
+        "Maintenez la conformité malgré la croissance rapide de l'équipe et de l'infra",
+        "Alertes en temps réel sur les écarts de sécurité",
+        "Historique complet pour les audits de surveillance annuels",
+        "Intégration dans vos pipelines CI/CD existants",
       ],
-      quote: "Une vision claire de notre conformité, à tout moment.",
+      quote: "Complio grandit avec nous sans friction.",
+    },
+    {
+      icon: Cloud,
+      role: "Cloud-native",
+      title: "Pour les entreprises cloud-native",
+      benefits: [
+        "Contrôles spécifiques AWS (S3, EC2, IAM, CloudTrail, VPC)",
+        "Architecture multi-comptes supportée nativement",
+        "Accès read-only sécurisé à votre infrastructure",
+        "Compliance-as-Code intégré à votre workflow DevOps",
+      ],
+      quote: "Enfin un outil pensé pour le cloud, pas adapté après coup.",
+    },
+    {
+      icon: Building2,
+      role: "Réglementé",
+      title: "Pour les organisations réglementées",
+      benefits: [
+        "Couverture des exigences ISO 27001, HDS, PCI-DSS et NIS2",
+        "Preuves horodatées et inaltérables pour les régulateurs",
+        "Rapports exécutifs pour la direction et le RSSI",
+        "Traçabilité complète des actions correctives",
+      ],
+      quote: "Un gain de temps considérable pour nos équipes conformité.",
     },
   ];
 
@@ -33,24 +57,22 @@ const ForWho = () => {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Conçu pour <span className="gradient-text">votre équipe</span>
+            Pour quelles <span className="gradient-text">entreprises</span> ?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Que vous soyez dans les tranchées du code ou aux commandes de la stratégie
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Complio accompagne toutes les organisations qui souhaitent préparer ou maintenir leur certification ISO 27001 sur AWS.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {personas.map((persona, index) => (
             <div
               key={index}
               className="relative p-8 lg:p-10 rounded-3xl border border-border bg-background hover:shadow-glass-lg transition-all group overflow-hidden"
             >
-              {/* Background decoration */}
               <div className="absolute top-0 right-0 w-64 h-64 gradient-primary opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              
+
               <div className="relative">
-                {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center">
                     <persona.icon className="w-7 h-7 text-primary-foreground" />
@@ -61,19 +83,17 @@ const ForWho = () => {
                   </div>
                 </div>
 
-                {/* Benefits */}
                 <ul className="space-y-3 mb-6">
                   {persona.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-cyber-green/20 flex items-center justify-center shrink-0 mt-0.5">
                         <div className="w-2 h-2 bg-cyber-green rounded-full" />
                       </div>
-                      <span className="text-muted-foreground">{benefit}</span>
+                      <span className="text-muted-foreground text-sm">{benefit}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Quote */}
                 <div className="p-4 bg-secondary/50 rounded-xl border-l-4 border-accent">
                   <p className="text-sm italic text-foreground">"{persona.quote}"</p>
                 </div>
