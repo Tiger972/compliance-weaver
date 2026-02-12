@@ -16,8 +16,8 @@ const Footer = () => {
                 className="h-28 w-auto object-contain object-left -ml-6 -mt-2"
                 loading="lazy"
                 width="150"
-                height="112"
-              />
+                height="112" />
+
             </div>
             <p className="text-muted-foreground mb-4 max-w-sm">
               La plateforme de conformité automatisée pour les infrastructures cloud.
@@ -39,8 +39,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/produit" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                  Produit
+                <Link to="/produit" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Fonctionnalit
+
                 </Link>
               </li>
               <li>
@@ -53,7 +53,7 @@ const Footer = () => {
 
           {/* Solutions - takes 3 columns, replaces spacer */}
           <nav className="md:col-span-3 md:pt-10" aria-label="Solutions de conformité">
-            <h4 className="font-semibold text-foreground mb-4">Solutions</h4>
+            <h4 className="font-semibold text-foreground mb-4">​Conformités</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/conformite-iso-27001" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
@@ -114,14 +114,14 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors text-muted-foreground hover:text-foreground"
-            aria-label="Suivez Compl.io sur LinkedIn (ouvre dans un nouvel onglet)"
-          >
+            aria-label="Suivez Compl.io sur LinkedIn (ouvre dans un nouvel onglet)">
+
             <Linkedin className="w-5 h-5" aria-hidden="true" />
           </a>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
