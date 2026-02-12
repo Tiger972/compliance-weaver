@@ -23,14 +23,14 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground opacity-0 animate-fade-in-up">
-              Automatisez votre conformité{" "}
-              <span className="gradient-text">ISO 27001</span>{" "}
-              sur AWS
+              Audit ISO 27001 : sécurisez votre{" "}
+              <span className="gradient-text">conformité</span>{" "}
+              sans complexité
             </h1>
 
             <div className="space-y-3 opacity-0 animate-fade-in-up animation-delay-100">
               <p className="text-lg sm:text-xl text-muted-foreground max-w-xl">
-                Conformité ISO 27001 automatisée pour AWS
+                Un audit ISO 27001 permet d'évaluer votre niveau de conformité à la norme ISO 27001, d'identifier les écarts de sécurité et de préparer efficacement une certification.
               </p>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
