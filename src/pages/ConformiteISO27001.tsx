@@ -2,8 +2,8 @@ import CompliancePage from "@/components/CompliancePage";
 
 const ConformiteISO27001 = () => (
   <CompliancePage
-    metaTitle="Conformité ISO 27001 sur AWS | Automatisez vos audits – Complio"
-    metaDescription="Automatisez votre conformité ISO 27001 sur AWS. Scannez votre infrastructure, identifiez les non-conformités et préparez vos audits en quelques minutes."
+    metaTitle="Conformité ISO 27001 AWS | Automatisez vos audits cloud – Complio"
+    metaDescription="Automatisez votre conformité ISO 27001 sur AWS. Scannez 40 contrôles, identifiez les non-conformités et préparez votre certification en continu."
     h1="Conformité ISO 27001 sur AWS : automatisez vos audits"
     canonicalPath="/conformite-iso-27001"
     sections={[

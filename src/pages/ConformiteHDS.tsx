@@ -2,8 +2,8 @@ import CompliancePage from "@/components/CompliancePage";
 
 const ConformiteHDS = () => (
   <CompliancePage
-    metaTitle="Conformité HDS (Hébergeur de Données de Santé) | Complio"
-    metaDescription="Préparez votre certification HDS sur AWS. Complio automatise les contrôles de sécurité exigés pour l'hébergement de données de santé."
+    metaTitle="Conformité HDS sur AWS | Hébergement données de santé – Complio"
+    metaDescription="Préparez votre certification HDS sur AWS avec Complio. Contrôles automatisés ISO 27001 + exigences santé pour sécuriser vos données médicales."
     h1="Conformité HDS : sécurisez vos données de santé sur le cloud"
     canonicalPath="/conformite-hds"
     sections={[

@@ -2,8 +2,8 @@ import CompliancePage from "@/components/CompliancePage";
 
 const ConformitePCIDSS = () => (
   <CompliancePage
-    metaTitle="Conformité PCI-DSS sur AWS | Sécurisez vos paiements – Complio"
-    metaDescription="Automatisez votre conformité PCI-DSS sur AWS. Protégez les données de paiement et préparez vos audits de certification."
+    metaTitle="Conformité PCI-DSS sur AWS | Sécurité des paiements – Complio"
+    metaDescription="Automatisez votre conformité PCI-DSS sur AWS. Vérifiez le chiffrement, la segmentation réseau et les accès pour protéger les données de paiement."
     h1="Conformité PCI-DSS : protégez les données de paiement sur AWS"
     canonicalPath="/conformite-pci-dss"
     sections={[
