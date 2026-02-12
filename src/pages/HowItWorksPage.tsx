@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   Terminal,
   Activity,
@@ -618,6 +619,10 @@ jobs:
 
   return (
     <div className="min-h-screen page-gradient">
+      <Helmet>
+        <title>Audit conformité AWS | Sécurisez votre cloud – Complio</title>
+        <meta name="description" content="Analysez la sécurité et la conformité de votre infrastructure AWS. Identifiez les risques et automatisez les contrôles." />
+      </Helmet>
       <Navbar />
 
       {/* Hero Section */}

@@ -1,4 +1,5 @@
 import { useState, useLayoutEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Mail, Calendar, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -83,6 +84,10 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen page-gradient">
+      <Helmet>
+        <title>Contact | Demandez une démo de conformité ISO 27001 – Complio</title>
+        <meta name="description" content="Contactez Complio pour automatiser votre audit ISO 27001 sur AWS. Réponse sous 24h, démo gratuite et sans engagement." />
+      </Helmet>
       <Navbar />
 
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-28">

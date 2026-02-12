@@ -27,10 +27,10 @@ const Index = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <Helmet>
-        <title>Audit ISO 27001 automatisé pour AWS | Complio - Conformité Cloud</title>
+        <title>Audit ISO 27001 automatisé | Conformité rapide et fiable – Complio</title>
         <meta
           name="description"
-          content="Automatisez votre audit ISO 27001 sur AWS avec Complio. Scannez 40 contrôles en 30 secondes, 100% local, open source. Préparez votre certification facilement."
+          content="Réalisez votre audit ISO 27001 plus rapidement grâce à l'automatisation. Identifiez les écarts, sécurisez votre conformité et préparez votre certification."
         />
       </Helmet>
 

@@ -2,8 +2,8 @@ import CompliancePage from "@/components/CompliancePage";
 
 const ConformiteCloudSaaS = () => (
   <CompliancePage
-    metaTitle="Conformité cloud SaaS | Sécurité et croissance – Complio"
-    metaDescription="Assurez la conformité sécurité de votre SaaS cloud. Gagnez la confiance de vos clients et accélérez vos ventes."
+    metaTitle="Conformité SaaS cloud | Sécurité et confiance client – Complio"
+    metaDescription="Assurez la conformité sécurité de votre SaaS sur AWS. Automatisez les contrôles, gagnez la confiance de vos clients et accélérez votre croissance."
     h1="Conformité cloud SaaS : un levier de confiance et de croissance"
     canonicalPath="/conformite-cloud-saas"
     sections={[

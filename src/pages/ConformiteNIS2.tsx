@@ -2,8 +2,8 @@ import CompliancePage from "@/components/CompliancePage";
 
 const ConformiteNIS2 = () => (
   <CompliancePage
-    metaTitle="Conformité NIS2 | Directive européenne cybersécurité – Complio"
-    metaDescription="Préparez-vous à la directive NIS2. Complio vous aide à atteindre la conformité cybersécurité exigée par l'Union Européenne."
+    metaTitle="Conformité NIS2 | Anticipez la directive cybersécurité – Complio"
+    metaDescription="Préparez votre conformité NIS2 sur AWS. Gestion des risques, sécurité supply chain et notification des incidents automatisés avec Complio."
     h1="Conformité NIS2 : anticipez la directive européenne cybersécurité"
     canonicalPath="/conformite-nis2"
     sections={[

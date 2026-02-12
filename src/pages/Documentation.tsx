@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams, useNavigate } from "react-router-dom";
 import DocHeader from "@/components/documentation/DocHeader";
 import DocSidebar from "@/components/documentation/DocSidebar";
@@ -59,6 +60,10 @@ const Documentation = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Outil de conformité ISO 27001 | Pilotez votre conformité – Complio</title>
+        <meta name="description" content="Pilotez votre conformité ISO 27001 avec un outil automatisé. Centralisez les preuves et préparez vos audits." />
+      </Helmet>
       <DocHeader onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
       <div className="flex">
