@@ -7,9 +7,9 @@ const ForWho = () => {
       role: "Startups SaaS",
       title: "Pour les startups SaaS",
       benefits: [
-        "Obtenez la certification ISO 27001 rapidement pour rassurer vos premiers clients",
+        "Préparez votre certification ISO 27001 rapidement pour rassurer vos premiers clients",
         "Automatisez dès le départ pour éviter la dette de conformité",
-        "Rapports prêts pour les due diligences et levées de fonds",
+        "Identifiez vos écarts avant les due diligences et levées de fonds",
         "Setup en 5 minutes, sans expertise sécurité interne",
       ],
       quote: "La certification nous a ouvert les portes des grands comptes.",
@@ -21,7 +21,7 @@ const ForWho = () => {
       benefits: [
         "Maintenez la conformité malgré la croissance rapide de l'équipe et de l'infra",
         "Alertes en temps réel sur les écarts de sécurité",
-        "Historique complet pour les audits de surveillance annuels",
+        "Visibilité continue sur votre posture de conformité",
         "Intégration dans vos pipelines CI/CD existants",
       ],
       quote: "Complio grandit avec nous sans friction.",
@@ -43,9 +43,9 @@ const ForWho = () => {
       role: "Réglementé",
       title: "Pour les organisations réglementées",
       benefits: [
-        "Couverture des exigences ISO 27001, HDS, PCI-DSS et NIS2",
-        "Preuves horodatées et inaltérables pour les régulateurs",
-        "Rapports exécutifs pour la direction et le RSSI",
+        "Contrôles techniques alignés sur ISO 27001 (HDS, PCI-DSS, NIS2 bientôt)",
+        "Rapports de scan horodatés",
+        "Rapports de conformité technique clairs",
         "Traçabilité complète des actions correctives",
       ],
       quote: "Un gain de temps considérable pour nos équipes conformité.",
